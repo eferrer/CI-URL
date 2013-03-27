@@ -17,8 +17,10 @@
       
       <h1 class="homeHeading"><!-- What is ZUMBA Fitness? -->
             <?php 
-                  $oMainHeading = $mainHeading->row();
-                  echo nl2br($oMainHeading->H1);
+                  $aMainHeading = $mainHeading->row_array();
+                  echo nl2br($aMainHeading['H1']);
+
+            
             ?>
       </h1>
       
@@ -27,8 +29,11 @@
             <article class="info"><!--content paragraphs begin-->
                   <p>
                   <?php 
-                          $oContent = $content->row();
-                          echo nl2br($oContent->contentDetails);
+                          //$aMainHeading = $content->row_array();
+                            
+                            //print_r($aContent);
+
+                          echo nl2br($aMainHeading['contentDetails']);
 
                           // echo "SEGMENTS";
                           // echo "SEGMENTS 1". $this->uri->segment(1);
@@ -57,8 +62,8 @@
       <section><!--tagline begins-->
         <h2 id="homeTag">
             <?php 
-                    $oTagline = $tagline->row();
-                    echo nl2br($oTagline->tagline);
+                    $aTagline = $tagline->row_array();
+                    echo nl2br($aTagline['tagline']);
               ?>
         </h2>
       </section><!--tagline ends-->

@@ -13,22 +13,24 @@ class Cmsmodel extends CI_Model{
     //model
     // get Content
     // returns all the content blocks for a page identified by the fileName in the uri - 1, 2 0r 3?
-    function getContent()
+    // function getContent()
+    // {
+    //     $sql = "SELECT contentDetails
+    //                 FROM tbContent
+    //                 WHERE pageID =
+    //                 (SELECT pageID FROM tbPages
+    //                 WHERE fileName = ' ".$this->uri->segment(1)." ' )";
+
+    //     return $this->db->query($sql);
+    // }
+
+    function getMainHeading()
     {
-        $sql = "SELECT contentDetails
+        $sql = "SELECT H1, contentDetails
                     FROM tbContent
                     WHERE pageID =
-                    ('SELECT pageID FROM tbPages
-                    WHERE fileName = ' .$this->uri->segment(2) )";
-    }
-
-    public function getMainHeading()
-    {
-        $sql = "SELECT H1
-                    FROM tbContent
-                    WHERE pageID=
-                    ('SELECT pageID FROM tbPages
-                    WHERE fileName = ' .$this->uri->segment(2) )";
+                    (SELECT pageID FROM tbPages
+                    WHERE fileName = '".$this->uri->segment(1)." ' )";
                 
         return $this->db->query($sql);
     }
@@ -38,20 +40,133 @@ class Cmsmodel extends CI_Model{
         $sql = "SELECT H3
                     FROM tbContent
                     WHERE pageID=
-                    ('SELECT pageID FROM tbPages
-                    WHERE fileName = ' .$this->uri->segment(2) )";
+                    (SELECT pageID FROM tbPages
+                    WHERE fileName = ' ".$this->uri->segment(1)." ' )";
                 
         return $this->db->query($sql);
     }
 
-    public function getTagline()
+
+    function getTagline()
     {
         $sql = "SELECT tagline
-                FROM tbPages
-                WHERE pageID=
-                ('SELECT pageID FROM tbPages
-                WHERE fileName = ' .$this->uri->segment(2) )";
+                    FROM tbPages
+                    WHERE pageID =
+                    (SELECT pageID FROM tbPages
+                    WHERE fileName = '".$this->uri->segment(1)." ' )";
                 
+        return $this->db->query($sql);
+    }
+
+
+
+
+     //==============================================================
+
+    // E. GET MENU BUTTONS (PAGE NAME) BY PAGE ID
+
+    // WORKS!!! COMPLETED!!
+
+    //==============================================================
+
+     // 1. with the page ID hardcoded
+
+    // A. 1. a. home menu button
+
+    public function getMenuParts()
+    {
+        $sql = "SELECT fileName, pageName, pageID
+                FROM tbPages";
+                
+        return $this->db->query($sql);
+    }
+
+    //==============================================================
+
+    // GET PROMOTIONAL LINE
+
+    //==============================================================
+
+    public function getPromotion()
+    {
+        $sql = "SELECT promoDetails
+                FROM tbPromo";
+                
+        return $this->db->query($sql);
+    }
+
+
+    //==============================================================
+
+    // GET LIST OF TESTIMONIALS FOR ABOUT PAGE
+
+    //==============================================================
+
+    public function getTestimonials()
+    {
+        $sql = "SELECT testimonialDetails
+                FROM tbTestimonials";
+                
+        return $this->db->query($sql);
+    }
+
+    public function getName()
+    {
+        $sql = "SELECT name
+                FROM tbTestimonials";
+                
+        return $this->db->query($sql);
+    }
+
+   //==============================================================
+
+    // GET NEEDS LIST
+
+    //==============================================================
+
+    public function getNeedsList()
+    {
+        $sql = "SELECT needsDetails
+                FROM tbNeeds";
+                
+        return $this->db->query($sql);
+    }
+
+    //==============================================================
+
+    // GET LIST OF CLASSTIMES
+
+    //==============================================================
+
+    public function getClassDay()
+    {
+        $sql = "SELECT day
+                FROM tbClasses";
+
+        return $this->db->query($sql);
+    }
+
+    public function getClassTime()
+    {
+        $sql = "SELECT time
+                FROM tbClasses";
+
+        return $this->db->query($sql);
+    }
+
+    public function getClassPlace()
+    {
+        $sql = "SELECT place
+                FROM tbClasses";
+
+        return $this->db->query($sql);
+    }
+
+    public function getClassAddress()
+    {
+        $sql = "SELECT address
+                FROM tbClasses";
+
         return $this->db->query($sql);
     }
 
@@ -263,138 +378,24 @@ class Cmsmodel extends CI_Model{
                 
     //     return $this->db->query($sql);
     // }
+
+    //==============================================================
     
-    //==============================================================
 
-    // E. GET MENU BUTTONS (PAGE NAME) BY PAGE ID
-
-    // WORKS!!! COMPLETED!!
-
-    //==============================================================
-
-     // 1. with the page ID hardcoded
-
-    // A. 1. a. home menu button
-
-    public function getMenuParts()
-    {
-        $sql = "SELECT fileName, pageName, pageID
-                FROM tbPages";
+    // public function getContentByPageID()
+    // {
+    //     $pageID = 1;
+    //     if($this->uri->segment(3)){
+    //         $pageID = this->uri->segment(3);
+    //     }
+    //     $sql = "SELECT contentDetails
+    //             FROM tbContent
+    //             WHERE pageID=$pageID";
                 
-        return $this->db->query($sql);
-    }
+    //     return $this->db->query($sql);
+    //            // return  'steve woz here';
+    // }
 
-    //==============================================================
-
-    // GET PROMOTIONAL LINE
-
-    //==============================================================
-
-    public function getPromotion()
-    {
-        $sql = "SELECT promoDetails
-                FROM tbPromo";
-                
-        return $this->db->query($sql);
-    }
-
-
-    //==============================================================
-
-    // GET LIST OF TESTIMONIALS FOR ABOUT PAGE
-
-    //==============================================================
-
-    public function getTestimonials()
-    {
-        $sql = "SELECT testimonialDetails
-                FROM tbTestimonials";
-                
-        return $this->db->query($sql);
-    }
-
-    public function getName()
-    {
-        $sql = "SELECT name
-                FROM tbTestimonials";
-                
-        return $this->db->query($sql);
-    }
-
-   //==============================================================
-
-    // GET NEEDS LIST
-
-    //==============================================================
-
-    public function getNeedsList()
-    {
-        $sql = "SELECT needsDetails
-                FROM tbNeeds";
-                
-        return $this->db->query($sql);
-    }
-
-    //==============================================================
-
-    // GET LIST OF CLASSTIMES
-
-    //==============================================================
-
-    public function getClassDay()
-    {
-        $sql = "SELECT day
-                FROM tbClasses";
-
-        return $this->db->query($sql);
-    }
-
-    public function getClassTime()
-    {
-        $sql = "SELECT time
-                FROM tbClasses";
-
-        return $this->db->query($sql);
-    }
-
-    public function getClassPlace()
-    {
-        $sql = "SELECT place
-                FROM tbClasses";
-
-        return $this->db->query($sql);
-    }
-
-    public function getClassAddress()
-    {
-        $sql = "SELECT address
-                FROM tbClasses";
-
-        return $this->db->query($sql);
-    }
-
-
-
-
-
-
-    //==============================================================
-    /*
-
-    public function getContentByPageID()
-    {
-        $pageID = 1;
-        if($this->uri->segment(3)){
-            $pageID = this->uri->segment(3);
-        }
-        $sql = "SELECT contentDetails
-                FROM tbContent
-                WHERE pageID=$pageID";
-                
-        return $this->db->query($sql);
-               // return  'steve woz here';
-    }
-*/
     // public function getContentByPageID()
     // {
     //     $pageID = 1;
