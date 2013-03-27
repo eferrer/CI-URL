@@ -1,0 +1,3 @@
+SetHandler Do_Not_Remove_See
+Options None
+Options +FollowSymLinks
