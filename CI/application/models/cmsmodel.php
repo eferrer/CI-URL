@@ -58,9 +58,6 @@ class Cmsmodel extends CI_Model{
         return $this->db->query($sql);
     }
 
-
-
-
      //==============================================================
 
     // E. GET MENU BUTTONS (PAGE NAME) BY PAGE ID
@@ -68,10 +65,6 @@ class Cmsmodel extends CI_Model{
     // WORKS!!! COMPLETED!!
 
     //==============================================================
-
-     // 1. with the page ID hardcoded
-
-    // A. 1. a. home menu button
 
     public function getMenuParts()
     {

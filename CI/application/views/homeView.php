@@ -19,8 +19,6 @@
             <?php 
                   $aMainHeading = $mainHeading->row_array();
                   echo nl2br($aMainHeading['H1']);
-
-            
             ?>
       </h1>
       
@@ -30,8 +28,7 @@
                   <p>
                   <?php 
                           //$aMainHeading = $content->row_array();
-                            
-                            //print_r($aContent);
+                          //print_r($aContent);
 
                           echo nl2br($aMainHeading['contentDetails']);
 

@@ -107,7 +107,7 @@
     
           <h1 class="classHeading"><!-- PRICE SCHEDULE -->
             <?php
-                  $aMainHeading = $mainHeading->result_array();
+                  //$aMainHeading = $mainHeading->result_array();
                   echo $aMainHeading[1]['H1'];
             ?>
           </h1>
@@ -118,36 +118,41 @@
                 
                 <h3><!-- CASUAL CLASS: -->
                   <?php
-                        $aSubHeading = $subHeading->result_array();
-                        echo $aSubHeading[1]['H3'];
+                        // $aSubHeading = $subHeading->result_array();
+                        // echo $aSubHeading[1]['H3'];
+                  echo nl2br($aMainHeading[1]['H3']);
                   ?>
                 </h3>
 
                 <p><!-- $10 per class -->
                   <?php
-                        $aContent = $content->result_array();
-                        echo $aContent[1]['contentDetails'];
+                        // $aContent = $content->result_array();
+                        // echo $aContent[1]['contentDetails'];
+                  echo nl2br($aMainHeading[1]['contentDetails']);
                   ?>
                 </p>
 
                 <h3><!-- CONCESSION CARDS: -->
                    <?php
-                        $aSubHeading = $subHeading->result_array();
-                        echo $aSubHeading[2]['H3'];
+                        // $aSubHeading = $subHeading->result_array();
+                        // echo $aSubHeading[2]['H3'];
+                   echo nl2br($aMainHeading[2]['H3']);
                   ?>
                 </h3>
 
                 <p><!-- $40 for 5 classes. $75 for 10 classes -->
                   <?php
-                        $aContent = $content->result_array();
-                        echo nl2br($aContent[2]['contentDetails']);
+                        // $aContent = $content->result_array();
+                        // echo nl2br($aContent[2]['contentDetails']);
+                  echo nl2br($aMainHeading[2]['contentDetails']);
                   ?>
                 </p>
               
                 <p><!--card information-->
                   <?php
-                        $aContent = $content->result_array();
-                        echo nl2br($aContent[3]['contentDetails']);
+                        // $aContent = $content->result_array();
+                        // echo nl2br($aContent[3]['contentDetails']);
+                  echo nl2br($aMainHeading[3]['contentDetails']);
                   ?>
                 </p>
 
@@ -169,7 +174,7 @@
         
         <h1 class="classHeading"><!-- INFORMATION FOR STUDENTS -->
           <?php
-                  $aMainHeading = $mainHeading->result_array();
+                  //$aMainHeading = $mainHeading->result_array();
                   echo $aMainHeading[4]['H1'];
             ?>
         </h1>
@@ -178,24 +183,27 @@
           
           <h3><!-- WHAT TO EXPECT -->
             <?php
-                  $aSubHeading = $subHeading->result_array();
-                  echo $aSubHeading[4]['H3'];
+                  // $aSubHeading = $subHeading->result_array();
+                  // echo $aSubHeading[4]['H3'];
+            echo nl2br($aMainHeading[4]['H3']);
               ?>
           </h3>
 
           <article class="studentInfo"><!--content paragraphs begin-->
               <p>
               <?php
-                  $aContent = $content->result_array();
-                  echo nl2br($aContent[4]['contentDetails']);
+                  // $aContent = $content->result_array();
+                  // echo nl2br($aContent[4]['contentDetails']);
+              echo nl2br($aMainHeading[4]['contentDetails']);
                ?>
               </p>
           </article><!--content paragraphs end-->
           
           <h3><!-- WHAT YOU WILL NEED -->
             <?php
-                  $aSubHeading = $subHeading->result_array();
-                  echo $aSubHeading[5]['H3'];
+                  // $aSubHeading = $subHeading->result_array();
+                  // echo $aSubHeading[5]['H3'];
+                  echo nl2br($aMainHeading[5]['H3']);
               ?>
           </h3>
 
