@@ -26,7 +26,7 @@ class Cmsmodel extends CI_Model{
 
     function getMainHeading()
     {
-        $sql = "SELECT H1, contentDetails
+        $sql = "SELECT H1, contentDetails, H3
                     FROM tbContent
                     WHERE pageID =
                     (SELECT pageID FROM tbPages
@@ -35,16 +35,16 @@ class Cmsmodel extends CI_Model{
         return $this->db->query($sql);
     }
 
-    public function getSubHeading()
-    {
-        $sql = "SELECT H3
-                    FROM tbContent
-                    WHERE pageID=
-                    (SELECT pageID FROM tbPages
-                    WHERE fileName = ' ".$this->uri->segment(1)." ' )";
+    // public function getSubHeading()
+    // {
+    //     $sql = "SELECT H3
+    //                 FROM tbContent
+    //                 WHERE pageID=
+    //                 (SELECT pageID FROM tbPages
+    //                 WHERE fileName = ' ".$this->uri->segment(1)." ' )";
                 
-        return $this->db->query($sql);
-    }
+    //     return $this->db->query($sql);
+    // }
 
 
     function getTagline()
