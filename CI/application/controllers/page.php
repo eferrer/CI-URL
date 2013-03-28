@@ -155,10 +155,12 @@ class Page extends CI_Controller {
 	            $data['tagline'] = $this->Cmsmodel->getTagline();
 
 		// GET CLASS DETAILS
-	            $data['day'] = $this->Cmsmodel->getClassDay();
-	            $data['time'] = $this->Cmsmodel->getClassTime();
-	            $data['place'] = $this->Cmsmodel->getClassPlace();
-	            $data['address'] = $this->Cmsmodel->getClassAddress();
+	            // $data['day'] = $this->Cmsmodel->getClassDay();
+	            // $data['time'] = $this->Cmsmodel->getClassTime();
+	            // $data['place'] = $this->Cmsmodel->getClassPlace();
+	            // $data['address'] = $this->Cmsmodel->getClassAddress();
+
+	            $data['classDetails'] = $this->Cmsmodel->getClassDetails();
 	            
 	            // GET LIST OF WHAT IS NEEDED FOR CLASS
 	            $data['needsDetails'] = $this->Cmsmodel->getNeedsList();

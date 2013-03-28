@@ -131,37 +131,45 @@ class Cmsmodel extends CI_Model{
 
     //==============================================================
 
-    public function getClassDay()
+     public function getClassDetails()
     {
-        $sql = "SELECT day
+        $sql = "SELECT day, time, place, address
                 FROM tbClasses";
 
         return $this->db->query($sql);
     }
 
-    public function getClassTime()
-    {
-        $sql = "SELECT time
-                FROM tbClasses";
+    // public function getClassDay()
+    // {
+    //     $sql = "SELECT day
+    //             FROM tbClasses";
 
-        return $this->db->query($sql);
-    }
+    //     return $this->db->query($sql);
+    // }
 
-    public function getClassPlace()
-    {
-        $sql = "SELECT place
-                FROM tbClasses";
+    // public function getClassTime()
+    // {
+    //     $sql = "SELECT time
+    //             FROM tbClasses";
 
-        return $this->db->query($sql);
-    }
+    //     return $this->db->query($sql);
+    // }
 
-    public function getClassAddress()
-    {
-        $sql = "SELECT address
-                FROM tbClasses";
+    // public function getClassPlace()
+    // {
+    //     $sql = "SELECT place
+    //             FROM tbClasses";
 
-        return $this->db->query($sql);
-    }
+    //     return $this->db->query($sql);
+    // }
+
+    // public function getClassAddress()
+    // {
+    //     $sql = "SELECT address
+    //             FROM tbClasses";
+
+    //     return $this->db->query($sql);
+    // }
 
     //==============================================================
     // Test 1. Test that the about controller is calling Cmsmodel correctly
