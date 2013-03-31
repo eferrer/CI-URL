@@ -24,6 +24,24 @@ class Admin extends CI_Controller {
 		echo '</pre>';
 	}
 	
+	function login()
+	{
+		
+		$this->load->helper('form');
+		
+        $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|max_length[12]|xss_clean');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required|valid_password');
+
+        if ($this->form_validation->run() == FALSE)
+        {
+            $this->load->view('loginView');
+        }
+        else
+        {
+            $this->load->view('formsuccess');
+        }
+    }
+	
 	function update()
 	{
 		echo 'File :'. __FILE__;
@@ -37,6 +55,9 @@ class Admin extends CI_Controller {
 			print_r($arr);	
 		echo '</pre>';
 	}
+	
+	
+	
 
 }
 // end class
