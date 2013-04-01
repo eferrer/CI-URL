@@ -1131,6 +1131,7 @@ footer {
 
   .place {
     clear: both;
+    width: 100%;
     text-transform: uppercase;
     padding-top: 1rem;
   }
@@ -1646,15 +1647,19 @@ footer {
   }
 
   .place {
-    float: right;
-    width: 45%;
+    /*float: right;*/
+    clear: both;
+    /*display: block;*/
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
     text-transform: uppercase;
   }
 
   .address {
     clear: both;
-    float: right;
-    width: 45%;
+    /*float: right;*/
+    width: 100%;
   }
 
   .directions {
