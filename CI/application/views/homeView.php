@@ -8,11 +8,11 @@
     
       
        <section id="slideshow"><!-- slideshow begins -->
-           <ul class="rslides" id="slider1">
-                  <li><img src="<?=base_url()?>public/images/full/1.jpg" alt=""></li>
-                  <li><img src="<?=base_url()?>public/images/full/2.jpg" alt=""></li>
-                  <li><img src="<?=base_url()?>public/images/full/3.jpg" alt=""></li>
-          </ul>
+           <!-- <ul class="rslides" id="slider1">
+                  <li><img src="base_url()public/images/full/1.jpg" alt=""></li>
+                  <li><img src="base_url()public/images/full/2.jpg" alt=""></li>
+                  <li><img src="base_url()public/images/full/3.jpg" alt=""></li>
+          </ul> -->
       </section>   <!-- slideshow ends -->   
       
       <h1 class="homeHeading"><!-- What is ZUMBA Fitness? -->
