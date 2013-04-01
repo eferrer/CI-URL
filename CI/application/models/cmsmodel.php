@@ -8,23 +8,13 @@ class Cmsmodel extends CI_Model{
     }
     
 
-    ################################################################
+    //==============================================================
 
-    //model
-    // get Content
-    // returns all the content blocks for a page identified by the fileName in the uri - 1, 2 0r 3?
-    // function getContent()
-    // {
-    //     $sql = "SELECT contentDetails
-    //                 FROM tbContent
-    //                 WHERE pageID =
-    //                 (SELECT pageID FROM tbPages
-    //                 WHERE fileName = ' ".$this->uri->segment(1)." ' )";
+    // GET MAIN HEADINGS (H1), SUBHEADINGS (H3) AND CONTENT
 
-    //     return $this->db->query($sql);
-    // }
+    //==============================================================
 
-    function getMainHeading()
+    function getMainHeading() 
     {
         $sql = "SELECT H1, contentDetails, H3
                     FROM tbContent
@@ -35,18 +25,12 @@ class Cmsmodel extends CI_Model{
         return $this->db->query($sql);
     }
 
-    // public function getSubHeading()
-    // {
-    //     $sql = "SELECT H3
-    //                 FROM tbContent
-    //                 WHERE pageID=
-    //                 (SELECT pageID FROM tbPages
-    //                 WHERE fileName = ' ".$this->uri->segment(1)." ' )";
-                
-    //     return $this->db->query($sql);
-    // }
+    //==============================================================
 
+    // GET TAGLINES
 
+    //==============================================================
+    
     function getTagline()
     {
         $sql = "SELECT tagline
@@ -60,9 +44,7 @@ class Cmsmodel extends CI_Model{
 
      //==============================================================
 
-    // E. GET MENU BUTTONS (PAGE NAME) BY PAGE ID
-
-    // WORKS!!! COMPLETED!!
+    // GET MENU BUTTONS
 
     //==============================================================
 
@@ -76,7 +58,7 @@ class Cmsmodel extends CI_Model{
 
     //==============================================================
 
-    // GET PROMOTIONAL LINE
+    // GET PROMOTIONAL LINES
 
     //==============================================================
 
@@ -131,14 +113,59 @@ class Cmsmodel extends CI_Model{
 
     //==============================================================
 
-     public function getClassDetails()
+    public function getClassDetails()
     {
         $sql = "SELECT day, time, place, address
                 FROM tbClasses";
 
         return $this->db->query($sql);
     }
+    
+    
+    
+  
+    
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+     //model
+    // get Content
+    // returns all the content blocks for a page identified by the fileName in the uri - 1, 2 0r 3?
+    // function getContent()
+    // {
+    //     $sql = "SELECT contentDetails
+    //                 FROM tbContent
+    //                 WHERE pageID =
+    //                 (SELECT pageID FROM tbPages
+    //                 WHERE fileName = ' ".$this->uri->segment(1)." ' )";
+
+    //     return $this->db->query($sql);
+    // }
+    
+    // public function getSubHeading()
+    // {
+    //     $sql = "SELECT H3
+    //                 FROM tbContent
+    //                 WHERE pageID=
+    //                 (SELECT pageID FROM tbPages
+    //                 WHERE fileName = ' ".$this->uri->segment(1)." ' )";
+                
+    //     return $this->db->query($sql);
+    // }
+    
     // public function getClassDay()
     // {
     //     $sql = "SELECT day
