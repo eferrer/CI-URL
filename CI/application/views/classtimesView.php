@@ -75,12 +75,17 @@
                             <li class="time"><!-- 7 - 8 PM --><?php echo $aClassDetails[0]['time']; ?></li>
                             <li class="place"><!--RANGITOTO COLLEGE--><?php echo $aClassDetails[0]['place']; ?></li>
                             <li class="address"><!-- 564 East Coast Road, Mairangi Bay --><?php echo $aClassDetails[0]['address']; ?></li>
-                            <li class="directions"><!-- 564 East Coast Road, Mairangi Bay --><?php echo $aClassDetails[0]['address']; ?></li>
                           </ul>
                     </section><!--class details ends-->
 
                         <section class="directions"><!--location details begins-->
-                              <div class="mapHolder">Google Map container</div>
+                          <form action="http://maps.google.com/maps" method="get" target="_blank">
+                             <label for="saddr">Enter your location</label>
+                             <input type="text" class="saddr" name="saddr" />
+                             <input type="hidden" name="daddr" value="564 East Coast Road, Mairangi Bay, Auckland, New Zealand"/>
+                             <input type="submit" value="Get directions" />
+                          </form>
+                              <!-- <div class="mapHolder">Google Map container</div> -->
                               <!-- <article class="details">Location Details</article> -->
                               <!-- <input type="button" id="toggleButton" value="View Details"/> -->
                         </section><!--location details ends-->
@@ -91,13 +96,19 @@
                           <li class="day"><!-- TUESDAY --><?php echo $aClassDetails[1]['day']; ?></li>
                           <li class="time"><!-- 9.30 - 10.30 AM --><?php echo $aClassDetails[1]['time']; ?></li>
                           <li class="place"><!-- Torbay Community Hall --><?php echo $aClassDetails[1]['place']; ?></li>
-                          <li class="address"><!-- 35 Watea Rd, Torbay --><?php echo $aClassDetails[1]['address']; ?></li> 
-                          <li class="directions"><!-- 564 East Coast Road, Mairangi Bay --><?php echo $aClassDetails[0]['address']; ?></li> 
+                          <li class="address"><!-- 35 Watea Rd, Torbay --><?php echo $aClassDetails[1]['address']; ?></li>  
                         </ul>
                       </section><!--class details ends-->
 
                         <section class="directions"><!--location details begins-->
-                          <div class="mapHolder">Google Map container</div>
+                          <form action="http://maps.google.com/maps" method="get" target="_blank">
+                             <label for="saddr">Enter your location</label>
+                             <input type="text" name="saddr" />
+                             <input type="hidden" name="daddr" value="35 Watea Rd, Torbay, Auckland"/>
+                             <input type="submit" value="Get directions" />
+                          </form>
+                          
+                          <!-- <div class="mapHolder">Google Map container</div> -->
                           <!-- <article class="details">Location Details</article> -->
                         <!-- <input type="button" id="toggleButton" value="View Details"/> -->
                   </section><!--location details ends-->

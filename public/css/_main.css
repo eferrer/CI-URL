@@ -693,11 +693,11 @@ footer {
     text-transform: uppercase;
     padding-top: 1rem;
   }
-
+  
   .directions {
     width: 100%;
     margin: auto;
-    margin-top: 2rem;
+    margin-top: 1rem;
     margin-bottom: 2rem;
     padding-bottom: 2rem;
     border-bottom: 1px dotted #1fe0fc;
@@ -705,10 +705,6 @@ footer {
 
   .directions:last-child {
     border-bottom: none;
-  }
-
-  .mapHolder {
-    margin-bottom: 2rem;
   }
 
   .classPrice {
@@ -2176,15 +2172,19 @@ footer {
   }
 
   .place {
-    float: right;
-    width: 45%;
+    /*float: right;*/
+    clear: both;
+    /*display: block;*/
+    width: 100%;
+    padding-top: 2rem;
+    padding-bottom: 1rem;
     text-transform: uppercase;
   }
 
   .address {
     clear: both;
-    float: right;
-    width: 45%;
+    /*float: right;*/
+    width: 100%;
   }
 
   .directions {
