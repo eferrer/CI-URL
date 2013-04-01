@@ -60,7 +60,7 @@
             </fieldset> <!--enquiry ends-->
     
             <p class="required"><sup>*</sup>&nbsp;Required field</p> 
-            <p class="submit"><input type="submit" value="SUBMIT" /></p>
+            <p class="submit"><input type="submit" value="Submit" /></p>
             
           </form>
           
