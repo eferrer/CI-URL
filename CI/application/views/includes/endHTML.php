@@ -1,23 +1,30 @@
 <footer><!--footer begins-->
-      <section id="footerLinks"><!--social and contact links begins-->
-        <section class="zin"><!--zin network image begins-->
-          <article class="zinNetwork">
+      <!-- <section id="footerLinks">--><!--social and contact links begins-->
+        <!-- <section class="zin"> --><!--zin network image begins-->
+          <!-- <article class="zinNetwork"> -->
             <!-- <img src="assets/images/full/photo3.jpg"/> -->
-          </article>
-          <p class="zinDate">since June 2011</p>
-        </section><!--zin network image ends-->
+          <!-- </article>
+        </section> --><!--zin network image ends-->
         
-        <section class="atomic"><!--zumbatomic image begins-->
-          <article class="zumbatomic">
+        <!-- <section class="atomic"> --><!--zumbatomic image begins-->
+          <!-- <article class="zumbatomic"> -->
             <!-- <img src="assets/images/full/photo3.jpg"/> -->
-          </article>
-        </section><!--zumbatomic image ends-->
-
+          <!-- </article> -->
+        <!-- </section> --><!--zumbatomic image ends--> -->
+        
+        <article class="badges">
+        <ul >
+          <li class="zinNetwork"><p>zinnetwork</p></li>
+          <li class="zumbatomic"><p>zumbatomic</p></li>
+          <!-- <li class="zumbaButton">zumbabutton</li>
+          <li class="zumbatomicButton">zumbatomicbutton</li> -->
+        </ul>
+        </article>
         
         <article class="social">
         <ul >
-          <li class="connect"><a  href="connect.html"><span class="fontAwesome">&#xf082;</span>&nbsp;&nbsp;<span class="text">Connect with Us</span></a></li>
-          <li class="contactUs"><a href="contact.html"><span class="fontAwesome">&#xf0e0;</span>&nbsp;&nbsp;<span class="text">Contact Me</span></a></li>
+          <li class="connect"><a  href="connect.html">connect<!-- <span class="fontAwesome">&#xf082;</span>&nbsp;&nbsp; --></a></li>
+          <li class="contactUs"><a href="contact">contact<!-- <span class="fontAwesome">&#xf0e0;</span>&nbsp;&nbsp; --></a></li>
         </ul>
         </article>
           

@@ -363,20 +363,6 @@ footer {
   background-color: #14080a;
 }
 
-.zinNetwork {
-  background-image: url("../images/full/zin.png");
-  background-repeat: no-repeat;
-}
-
-.zinDate {
-  color: #8e9192;
-}
-
-.zumbatomic {
-  background-image: url("../images/full/zumbatomic.png");
-  background-repeat: no-repeat;
-}
-
 .social {
     border-top: 2px solid #f7931e;
   }
@@ -419,11 +405,11 @@ footer {
   }
 
   #slideshow {
-    background-image: url("../images/full/zumbaHome.jpg");
+    background-image: url("../images/thumb/zumbaHome30.jpg");
     background-repeat: no-repeat;
     width: 350px;
     max-width: 90%;
-    height: 233px;
+    height: 209px;
     margin: auto;
     margin-top: 2rem;
   }
@@ -574,45 +560,80 @@ footer {
   }
 
   footer {
-    padding-top: 1rem;
+    /*padding-top: 1rem;*/
   }
 
-  .zinNetwork {
-    display: block;
-    width: 150px;
-    max-width: 100%;
-    height: 53px;
+  .badges {
+    width: 80%;
     margin: auto;
   }
-
-  .zinDate {
-    font-size: 0.8rem;
+  
+  .badges li {
+    display: inline-block;
+    width: 40%;
+    height: 45px;
   }
 
-  .zumbatomic {
+  .zinNetwork p{
     display: block;
-    width: 192px;
+    background-image: url("../images/thumb/zinnet.png");
+    background-repeat: no-repeat;
+    width: 77px;
     max-width: 100%;
-    height: 47px;
+    height: 41px;
     margin: auto;
-    margin-top: 1rem;
+    font-size: 0;
+  } 
+  
+  .zumbatomic p{
+    display: block;
+    background-image: url("../images/thumb/zumbatomic.png");
+    background-repeat: no-repeat;
+    width: 166px;
+    max-width: 100%;
+    height: 42px;
+    margin: auto;
+    font-size: 0;
   }
 
   .social {
+    clear: both;
     width: 80%;
     margin: auto;
     margin-top: 2rem;
+    border-top: 2px solid #f7931e;
   }
-
+  
   .social li {
     display: inline-block;
-    width: 20%;
-    height: 2rem;
+    width: 15%;
+    height: 50px;
     margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
+  
   .social a {
-    font-size: 2rem;
+    font-size: 0;
+  }
+  
+  .connect a{
+    display: block;
+    background-image: url("../images/thumb/fb_square.png");
+    background-repeat: no-repeat;
+    width: 41px;
+    max-width: 100%;
+    height: 41px;
+    margin: auto;
+  }
+  
+  .contactUs a{
+    display: block;
+    background-image: url("../images/thumb/mail_square.png");
+    background-repeat: no-repeat;
+    width: 41px;
+    max-width: 100%;
+    height: 41px;
+    margin: auto;
   }
 
   #copyright {
@@ -836,11 +857,11 @@ footer {
   }
 
   #slideshow {
-    background-image: url("../images/full/zumbaHome.jpg");
+    background-image: url("../images/full/zumbaHome50.jpg");
     background-repeat: no-repeat;
-    width: 800px;
+    width: 700px;
     max-width: 90%;
-    height: 233px;
+    height: 418px;
     margin: auto;
     margin-top: 2rem;
   }
@@ -1009,49 +1030,84 @@ footer {
   }
 
   footer {
-    padding-top: 1rem;
+    /*padding-top: 1rem;*/
   }
 
-  .zinNetwork {
-    display: block;
-    width: 150px;
-    max-width: 100%;
-    height: 53px;
+  .badges {
+    width: 80%;
     margin: auto;
   }
-
-  .zinDate {
-    font-size: 0.8rem;
+  
+  .badges li {
+    display: inline-block;
+    width: 45%;
+    height: 45px;
   }
 
-  .zumbatomic {
+  .zinNetwork p{
     display: block;
-    width: 192px;
+    background-image: url("../images/thumb/zinnet.png");
+    background-repeat: no-repeat;
+    width: 77px;
     max-width: 100%;
-    height: 47px;
+    height: 41px;
     margin: auto;
-    margin-top: 1rem;
+    font-size: 0;
+  } 
+  
+  .zumbatomic p{
+    display: block;
+    background-image: url("../images/thumb/zumbatomic.png");
+    background-repeat: no-repeat;
+    width: 166px;
+    max-width: 100%;
+    height: 42px;
+    margin: auto;
+    font-size: 0;
   }
 
   .social {
+    clear: both;
     width: 80%;
     margin: auto;
     margin-top: 2rem;
     border-top: 2px solid #f7931e;
   }
+  
   .social li {
     display: inline-block;
-    width: 10%;
-    height: 2rem;
+    width: 15%;
+    height: 50px;
     margin-top: 1rem;
-    margin-bottom: 2rem;
+    margin-bottom: 1rem;
   }
+  
   .social a {
-    font-size: 2rem;
+    font-size: 0;
+  }
+  
+  .connect a{
+    display: block;
+    background-image: url("../images/thumb/fb_square.png");
+    background-repeat: no-repeat;
+    width: 41px;
+    max-width: 100%;
+    height: 41px;
+    margin: auto;
+  }
+  
+  .contactUs a{
+    display: block;
+    background-image: url("../images/thumb/mail_square.png");
+    background-repeat: no-repeat;
+    width: 41px;
+    max-width: 100%;
+    height: 41px;
+    margin: auto;
   }
 
   #copyright {
-    height: 4rem;
+    height: 3rem;
     margin-top: -1rem;
   }
   #copyright p {
@@ -1279,7 +1335,7 @@ footer {
     background-repeat: no-repeat;
     width: 800px;
     max-width: 90%;
-    height: 533px;
+    height: 477px;
     margin: auto;
     margin-top: 2rem;
   }
@@ -1488,37 +1544,37 @@ footer {
     padding-top: 1rem;
   }
 
-  .zin {
-    float: left;
-    width: 30%;
-    margin-left: 20%;
-  }
-
-  .atomic {
-    float: right;
-    width: 30%;
-    margin-right: 20%;
-  }
-
-  .zinNetwork {
-    display: block;
-    width: 150px;
-    max-width: 100%;
-    height: 53px;
+  .badges {
+    width: 80%;
     margin: auto;
   }
-
-  .zinDate {
-    font-size: 0.8rem;
+  
+  .badges li {
+    display: inline-block;
+    width: 35%;
+    height: 80px;
   }
 
-  .zumbatomic {
+  .zinNetwork p{
     display: block;
+    background-image: url("../images/full/zinnet.png");
+    background-repeat: no-repeat;
+    width: 150px;
+    max-width: 100%;
+    height: 72px;
+    margin: auto;
+    font-size: 0;
+  } 
+  
+  .zumbatomic p{
+    display: block;
+    background-image: url("../images/full/zumbatomic.png");
+    background-repeat: no-repeat;
     width: 192px;
     max-width: 100%;
     height: 47px;
     margin: auto;
-    margin-top: 1rem;
+    font-size: 0;
   }
 
   .social {
@@ -1531,18 +1587,34 @@ footer {
   
   .social li {
     display: inline-block;
-    width: 30%;
-    height: 2rem;
+    width: 20%;
+    height: 100px;
     margin-top: 1rem;
     margin-bottom: 2rem;
   }
   
   .social a {
-    font-size: 2rem;
+    font-size: 0;
   }
-
-  .text {
-    font-size: 1rem;
+  
+  .connect a{
+    display: block;
+    background-image: url("../images/full/fb_square.png");
+    background-repeat: no-repeat;
+    width: 80px;
+    max-width: 100%;
+    height: 80px;
+    margin: auto;
+  }
+  
+  .contactUs a{
+    display: block;
+    background-image: url("../images/full/mail_square.png");
+    background-repeat: no-repeat;
+    width: 80px;
+    max-width: 100%;
+    height: 80px;
+    margin: auto;
   }
 
   #copyright {
@@ -1812,7 +1884,7 @@ footer {
     background-repeat: no-repeat;
     width: 800px;
     max-width: 90%;
-    height: 550px;
+    height: 477px;
     margin: auto;
     margin-top: 2rem;
   }
@@ -2013,40 +2085,40 @@ footer {
 
   footer {
     margin-top: -1rem;
-    padding-top: 1rem;
+    /*padding-top: 1rem;*/
   }
 
-  .zin {
-    float: left;
-    width: 20%;
-    margin-left: 30%;
-  }
-
-  .atomic {
-    float: right;
-    width: 20%;
-    margin-right: 30%;
-  }
-
-  .zinNetwork {
-    display: block;
-    width: 150px;
-    max-width: 100%;
-    height: 53px;
+  .badges {
+    width: 80%;
     margin: auto;
   }
-
-  .zinDate {
-    font-size: 1rem;
+  
+  .badges li {
+    display: inline-block;
+    width: 20%;
+    height: 80px;
   }
 
-  .zumbatomic {
+  .zinNetwork p{
     display: block;
+    background-image: url("../images/full/zinnet.png");
+    background-repeat: no-repeat;
+    width: 150px;
+    max-width: 100%;
+    height: 72px;
+    margin: auto;
+    font-size: 0;
+  } 
+  
+  .zumbatomic p{
+    display: block;
+    background-image: url("../images/full/zumbatomic.png");
+    background-repeat: no-repeat;
     width: 192px;
     max-width: 100%;
     height: 47px;
     margin: auto;
-    margin-top: 1rem;
+    font-size: 0;
   }
 
   .social {
@@ -2056,19 +2128,37 @@ footer {
     margin-top: 2rem;
     border-top: 2px solid #f7931e;
   }
+  
   .social li {
     display: inline-block;
-    width: 20%;
-    height: 2rem;
+    width: 10%;
+    height: 100px;
     margin-top: 1rem;
     margin-bottom: 2rem;
   }
+  
   .social a {
-    font-size: 2.2rem;
+    font-size: 0;
   }
-
-  .text {
-    font-size: 1.2rem;
+  
+  .connect a{
+    display: block;
+    background-image: url("../images/full/fb_square.png");
+    background-repeat: no-repeat;
+    width: 80px;
+    max-width: 100%;
+    height: 80px;
+    margin: auto;
+  }
+  
+  .contactUs a{
+    display: block;
+    background-image: url("../images/full/mail_square.png");
+    background-repeat: no-repeat;
+    width: 80px;
+    max-width: 100%;
+    height: 80px;
+    margin: auto;
   }
 
   #copyright {
@@ -2201,9 +2291,9 @@ footer {
     border-bottom: none;
   }
 
-  .mapHolder {
+/*  .mapHolder {
     margin-bottom: 2rem;
-  }
+  }*/
 
   .classPrice {
     width: 100%;
@@ -2318,4 +2408,5 @@ footer {
     width: 50%;
     margin: 0 auto;
   }
+
 }
