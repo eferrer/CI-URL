@@ -31,6 +31,7 @@
         <ul id="menu">
 
           <?php
+          //echo base_url();
           $aMenu = $menu->result_array();
 
           // echo "<pre>";
@@ -38,7 +39,7 @@
           //   echo "</pre>";
 
           foreach ($aMenu as $key=>$aRow){
-            echo '<li class="'.$aRow['fileName'].'"><a href="'.$aRow['fileName']. '/'. $aRow['pageID'].  '">'.$aRow['pageName'].'</a></li>';
+            echo '<li class=" '.$aRow['fileName'].' "><a href=" '. base_url() .$aRow['fileName']. '/'. $aRow['pageID'].  ' ">'.$aRow['pageName'].'</a></li>';
           }
 
           ?>
