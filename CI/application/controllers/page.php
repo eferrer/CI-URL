@@ -153,7 +153,7 @@ class Page extends CI_Controller {
         $data['mainHeading'] = $this->Cmsmodel->getMainHeading();
         $data['tagline'] = $this->Cmsmodel->getTagline();
 
-// GET CLASS DETAILS
+        // GET CLASS DETAILS
         // $data['day'] = $this->Cmsmodel->getClassDay();
         // $data['time'] = $this->Cmsmodel->getClassTime();
         // $data['place'] = $this->Cmsmodel->getClassPlace();

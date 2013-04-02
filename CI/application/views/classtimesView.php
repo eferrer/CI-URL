@@ -80,8 +80,8 @@
 
                         <section class="directions"><!--location details begins-->
                           <form action="http://maps.google.com/maps" method="get" target="_blank">
-                             <label for="saddr">Enter your location</label>
-                             <input type="text" class="saddr" name="saddr" />
+                             <label for="saddr">Enter your starting point</label>
+                             <input type="text" name="saddr" />
                              <input type="hidden" name="daddr" value="564 East Coast Road, Mairangi Bay, Auckland, New Zealand"/>
                              <input type="submit" value="Get directions" />
                           </form>
@@ -102,7 +102,7 @@
 
                         <section class="directions"><!--location details begins-->
                           <form action="http://maps.google.com/maps" method="get" target="_blank">
-                             <label for="saddr">Enter your location</label>
+                             <label for="saddr">Enter your starting point</label>
                              <input type="text" name="saddr" />
                              <input type="hidden" name="daddr" value="35 Watea Rd, Torbay, Auckland"/>
                              <input type="submit" value="Get directions" />

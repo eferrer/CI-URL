@@ -55,6 +55,30 @@ class Admin extends CI_Controller {
 			print_r($arr);	
 		echo '</pre>';
 	}
+	
+	function homeUpdate()
+	{
+        $data=array();
+
+        $this->load->model('Cmsmodel');
+        
+        $data['menu'] = $this->Cmsmodel->getMenuParts();
+        $data['mainHeading'] = $this->Cmsmodel->getMainHeading();
+        $data['tagline'] = $this->Cmsmodel->getTagline();
+        
+        // PUT THIS IN TO AVOID BROWSER CACHING IN CI
+        $this->output->set_header("HTTP/1.0 200 OK");
+        $this->output->set_header("HTTP/1.1 200 OK");
+        $this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
+        $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
+        $this->output->set_header("Cache-Control: post-check=0, pre-check=0");
+        $this->output->set_header("Pragma: no-cache");
+
+        $this->load->view('includes/startHTML', $data);
+        $this->load->view('aboutUpdate', $data);
+        $this->load->view('includes/endHTML');
+    }
+	
     
     function aboutUpdate()
     {
@@ -84,6 +108,10 @@ class Admin extends CI_Controller {
         $this->load->view('includes/startHTML', $data);
         $this->load->view('aboutUpdate', $data);
         $this->load->view('includes/endHTML');
+    }
+    
+    function classtimesUpdate(){
+        
     }
 	
 	
