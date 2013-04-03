@@ -55,8 +55,7 @@ class Admin extends CI_Controller {
 			print_r($arr);	
 		echo '</pre>';
 	}
-<<<<<<< HEAD
-=======
+
 	
     
  
@@ -65,7 +64,6 @@ class Admin extends CI_Controller {
 	function homeUpdate()
 	{
         $data=array();
->>>>>>> added lines
 
             //==============Sample add new page code==========
 
