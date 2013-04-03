@@ -2,13 +2,9 @@
     <h1 class="contactHeading"><!-- CONTACT ME -->
             <?php  
                   //$oMainHeading = $mainHeading->row();
-                  $aMainHeading = $mainHeading->result_array();
+                  $aPageParts = $pageParts->result_array();
                   
-                  // echo "<pre>";
-                  // print_r($aMainHeading);
-                  // echo "</pre>";
-                  
-                  echo $aMainHeading[0]['H1'];
+                  echo $aPageParts[0]['H1'];
             ?>
           </h1>
         
@@ -29,7 +25,7 @@
                   // $aSubHeading = $subHeading->result_array();
                   // echo $aSubHeading[5]['H3'];
                   
-                  echo nl2br($aMainHeading[1]['H3']);
+                  echo nl2br($aPageParts[1]['H3']);
               ?>
             </h3>
               
@@ -52,7 +48,7 @@
               <?php
                   // $aSubHeading = $subHeading->result_array();
                   // echo $aSubHeading[5]['H3'];
-                  echo nl2br($aMainHeading[2]['H3']);
+                  echo nl2br($aPageParts[2]['H3']);
               ?>
             </h3>     
               <textarea rows="3" cols="20"></textarea>

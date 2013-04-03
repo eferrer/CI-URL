@@ -3,8 +3,8 @@
     
       <h1 class="aboutHeading"><!-- ABOUT ME -->
             <?php  
-                  $aMainHeading = $mainHeading->row_array();
-                  echo nl2br($aMainHeading['H1']);
+                  $aPageParts = $pageParts->row_array();
+                  echo nl2br($aPageParts['H1']);
             ?>
       </h1>
     
@@ -13,9 +13,9 @@
         <article class="info"><!--content paragraphs begin-->
             <p>
             <?php 
-                  // $oContent = $content->row_arrar();
+                  // $oContent = $content->row_array();
                   //echo nl2br($oContent['contentDetails']);
-            echo nl2br($aMainHeading['contentDetails']);
+            echo nl2br($aPageParts['contentDetails']);
             ?>
             </p>
         </article><!--content paragraphs end-->
@@ -39,7 +39,7 @@
               // $oSubHeading = $subHeading->row_array();
               // echo nl2br($oSubHeading['H3']);
 
-            echo nl2br($aMainHeading['H3']);
+            echo nl2br($aPageParts['H3']);
         ?>
         </h3>
 

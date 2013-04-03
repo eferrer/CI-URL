@@ -17,8 +17,8 @@
       
       <h1 class="homeHeading"><!-- What is ZUMBA Fitness? -->
             <?php 
-                  $aMainHeading = $mainHeading->row_array();
-                  echo nl2br($aMainHeading['H1']);
+                  $aPageParts = $pageParts->row_array();
+                  echo nl2br($aPageParts['H1']);
             ?>
       </h1>
       
@@ -30,7 +30,7 @@
                           //$aMainHeading = $content->row_array();
                           //print_r($aContent);
 
-                          echo nl2br($aMainHeading['contentDetails']);
+                          echo nl2br($aPageParts['contentDetails']);
 
                           // echo "SEGMENTS";
                           // echo "SEGMENTS 1". $this->uri->segment(1);

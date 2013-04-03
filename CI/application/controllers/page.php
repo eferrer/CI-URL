@@ -35,7 +35,7 @@ class Page extends CI_Controller {
         $this->load->model('Cmsmodel');
         
         $data['menu'] = $this->Cmsmodel->getMenuParts();
-        $data['mainHeading'] = $this->Cmsmodel->getMainHeading();
+        $data['pageParts'] = $this->Cmsmodel->getPageParts();
         $data['tagline'] = $this->Cmsmodel->getTagline();
         
         // PUT THIS IN TO AVOID BROWSER CACHING IN CI
@@ -75,7 +75,7 @@ class Page extends CI_Controller {
         $this->load->model('Cmsmodel');
         
         $data['menu'] = $this->Cmsmodel->getMenuParts();
-        $data['mainHeading'] = $this->Cmsmodel->getMainHeading();
+        $data['pageParts'] = $this->Cmsmodel->getPageParts();
         $data['tagline'] = $this->Cmsmodel->getTagline();
         
         // PUT THIS IN TO AVOID BROWSER CACHING IN CI
@@ -109,7 +109,7 @@ class Page extends CI_Controller {
         $this->load->model('Cmsmodel');
         
         $data['menu'] = $this->Cmsmodel->getMenuParts();
-        $data['mainHeading'] = $this->Cmsmodel->getMainHeading();
+        $data['pageParts'] = $this->Cmsmodel->getPageParts();
         $data['tagline'] = $this->Cmsmodel->getTagline();
 
         // GET LIST OF TESTIMONIALS FOR ABOUT PAGE 
@@ -150,7 +150,7 @@ class Page extends CI_Controller {
         $this->load->model('Cmsmodel');
         
         $data['menu'] = $this->Cmsmodel->getMenuParts();
-        $data['mainHeading'] = $this->Cmsmodel->getMainHeading();
+        $data['pageParts'] = $this->Cmsmodel->getPageParts();
         $data['tagline'] = $this->Cmsmodel->getTagline();
 
         // GET CLASS DETAILS
@@ -258,7 +258,7 @@ class Page extends CI_Controller {
 
 
 	        $data['menu'] = $this->Cmsmodel->getMenuParts();
-	        $data['mainHeading'] = $this->Cmsmodel->getMainHeading();
+	        $data['pageParts'] = $this->Cmsmodel->getPageParts();
 	        $data['tagline'] = $this->Cmsmodel->getTagline();
 
 	        // GET PROMOTIONAL DETAILS
