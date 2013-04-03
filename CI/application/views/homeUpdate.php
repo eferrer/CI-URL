@@ -10,15 +10,31 @@
        <!-- <img src="assets/images/full/photo2.jpg" width="800" height="600" alt="zumba"/> -->
       </section>   
       
-      <form>
-        <input type="text" name="mainHeading" value="WHAT IS ZUMBA FITNESS?" />
+      <?php 
+      $aPageParts = $pageParts->row_array();
+
+            // print_r($aMainHeading[1]);
+            // echo $aMainHeading[1]['H1'];
+
+            // echo "<pre>";
+            // print_r($aMainHeading);
+            // echo "</pre>";
+      
+      // $mainHeading = $oMainHeading->mainHeading;
+      // $contentDetails = $oMainHeading->contentDetails;
+      
+      echo form_open('cmsmodel/homeUpdate');
+      ?>
+      
+      <!-- <form> -->
+        <input type="text" name="mainHeading" value="<?php //echo set_value('mainHeading',$mainHeading); ?>" />
         <!-- <h1 class="homeHeading">WHAT IS ZUMBA FITNESS?</h1> -->
       
       <section id="content"> <!--content begins-->    
         
-        <label for="title">Content</label>
+        <!-- <label for="title">Content</label> -->
         <article class="info"><!--content paragraphs begin-->
-          <textarea name="content" rows="5" cols="30">Home content</textarea>
+          <textarea name="content" rows="5" cols="30"><?php //echo set_value('contentDetails',$contentDetails); ?></textarea>
         </article><!--content paragraphs end-->
         
       </section> <!--content ends--> 
@@ -37,7 +53,13 @@
       </section> <!--right hand side content ends-->
       
       <section><!--tagline begins-->
-        <input type="text" name="mainHeading" value="Its Zumba! Feel the music and let loose" />
+      <?php 
+            $oTagline = $tagline->row();
+            
+      ?>
+              
+      
+        <input type="text" name="tagline" value="<?php //echo set_value('tagline); ?>" />
         <!-- <h2 id="homeTag">Its Zumba! Feel the music and let loose</h2> -->
       </section><!--tagline ends-->
       
