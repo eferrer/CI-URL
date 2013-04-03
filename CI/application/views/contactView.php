@@ -21,7 +21,7 @@
         
         //echo validation_errors();
         ?>
-        <form id="contact" action="" method="post" novalidate="novalidate">
+        <form id="form" action="" method="post">
       
             <fieldset class="contactDetails"> <!--personal details begins-->
               <h3><!-- Your details -->
@@ -34,21 +34,18 @@
             </h3>
               
                 <p class="firstName">
-                  <label for="firstname">First Name <sup>*</sup></label> 
-                  <input type="text" id="firstname" name="firstname" placeholder="First name" required="required" autofocus="autofocus"/>
-                  <?php //echo form_error('firstname'); ?>
+                  <label for="firstname">Name <sup>*</sup></label> 
+                  <input type="text" id="firstname" name="firstname" placeholder="First name" required/>
                 </p>
                 
                 <p class="lastName">
-                  <label for="lastname">Last Name <sup>*</sup></label> 
-                  <input type="text" id="lastname" name="lastname" placeholder="Last Name" required/>
-                  <?php echo form_error('lastname'); ?>
+                  <label for="lastName">Name <sup>*</sup></label> 
+                  <input type="text" id="lastname" name="lastname" placeholder="Last name" required/>
                 </p>
 
                 <p class="email">
                   <label for="email">Email <sup>*</sup></label> 
                   <input type="email" id="email" name="email" placeholder="e.g. your@email.co.nz" required/>
-                  <?php echo form_error('email'); ?>
                 </p>
                
               <h3><!-- Make an Enquiry -->
