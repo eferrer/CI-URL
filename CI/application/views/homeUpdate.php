@@ -27,12 +27,13 @@
       ?>
       
       <!-- <form> -->
+      <label for="title">Main Heading</label>
         <input type="text" name="mainHeading" value="<?php //echo set_value('mainHeading',$mainHeading); ?>" />
         <!-- <h1 class="homeHeading">WHAT IS ZUMBA FITNESS?</h1> -->
       
       <section id="content"> <!--content begins-->    
         
-        <!-- <label for="title">Content</label> -->
+        <label for="title">Content</label>
         <article class="info"><!--content paragraphs begin-->
           <textarea name="content" rows="5" cols="30"><?php //echo set_value('contentDetails',$contentDetails); ?></textarea>
         </article><!--content paragraphs end-->
@@ -55,11 +56,11 @@
       <section><!--tagline begins-->
       <?php 
             $oTagline = $tagline->row();
-            
+            $tagline = $oTagline->tagline;
       ?>
               
-      
-        <input type="text" name="tagline" value="<?php //echo set_value('tagline); ?>" />
+      <label for="tagline">Tagline</label>
+        <input type="text" name="tagline" value="<?php  echo set_value('tagline', $tagline);?>" />
         <!-- <h2 id="homeTag">Its Zumba! Feel the music and let loose</h2> -->
       </section><!--tagline ends-->
       

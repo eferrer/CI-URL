@@ -45,6 +45,8 @@ $route['404_override'] = '';
 $route['admin'] = 'admin';
 // 4: admin/anything goers to admin controller, anything method
 $route['admin/(:any)'] = 'admin/$1';
+// 4: admin/anything goers to admin controller, anything method
+$route['admin/(:any)/(:num)'] = 'admin/$1/$2';
 // 5: Apart from those mentioned before this, anything in the uri(1) will be called as the method in pages
 $route['(:any)'] = 'page/$1';
 // 6: One last one to handle the second uri segment

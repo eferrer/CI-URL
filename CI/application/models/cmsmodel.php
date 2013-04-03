@@ -25,6 +25,17 @@ class Cmsmodel extends CI_Model{
         return $this->db->query($sql);
     }
 
+    function getPagePartsAdmin() 
+    {
+        $sql = "SELECT H1, contentDetails, H3
+                    FROM tbContent
+                    WHERE pageID =
+                    (SELECT pageID FROM tbPages
+                    WHERE fileName = '".$this->uri->segment(2)." ' )";
+                
+        return $this->db->query($sql);
+    }
+
     //==============================================================
 
     // GET TAGLINES
@@ -39,6 +50,17 @@ class Cmsmodel extends CI_Model{
                     (SELECT pageID FROM tbPages
                     WHERE fileName = '".$this->uri->segment(1)." ' )";
                 
+        return $this->db->query($sql);
+    }
+
+      function getTaglineAdmin()
+    {
+        $sql = "SELECT tagline
+                    FROM tbPages
+                    WHERE pageID =
+                    (SELECT pageID FROM tbPages
+                    WHERE fileName = '".$this->uri->segment(2)." ' )";
+        
         return $this->db->query($sql);
     }
 

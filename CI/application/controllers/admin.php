@@ -157,19 +157,17 @@ class Admin extends CI_Controller {
             }
             
     
-            function aboutUpdate()
+            function about()
             {
                 $data=array();
 
                 $this->load->model('Cmsmodel');
                 
                 $data['menu'] = $this->Cmsmodel->getMenuParts();
-                $data['pageParts'] = $this->Cmsmodel->getPageParts();
-                $data['tagline'] = $this->Cmsmodel->getTagline();
+                $data['pageParts'] = $this->Cmsmodel->getPagePartsAdmin();
+                $data['tagline'] = $this->Cmsmodel->getTaglineAdmin();
 
-                // GET LIST OF TESTIMONIALS FOR ABOUT PAGE 
-                $data['testimonialDetails'] = $this->Cmsmodel->getTestimonials();
-                $data['name'] = $this->Cmsmodel->getName();
+             
                 
                 // GET PROMOTIONAL DETAILS
                 $data['promoDetails'] = $this->Cmsmodel->getPromotion();
@@ -186,7 +184,13 @@ class Admin extends CI_Controller {
                 $this->load->view('aboutUpdate', $data);
                 $this->load->view('includes/endHTML');
             }
+
+            //separate method for testimonials
+               // GET LIST OF TESTIMONIALS FOR ABOUT PAGE 
+                // $data['testimonialDetails'] = $this->Cmsmodel->getTestimonials();
+                // $data['name'] = $this->Cmsmodel->getName();
     
+
     function classtimesUpdate(){
         
     }
