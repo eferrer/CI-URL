@@ -45,6 +45,12 @@
 <!-- <script src="javascripts/responsiveslides.js"></script>
 <script src="javascripts/responsiveslides.min.js"></script> -->
 
+<!-- Javascripts for form validation -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.js"></script>
+  
+  <script>window.jQuery || document.write('<script src="http://natcoll.net.nz/JS-LIBS/jquery-validation.1.9.js"><\/script>')</script>
+
+  
 <script src="<?=base_url()?>public/js/main.js"></script> 
 
 <script src="<?=base_url()?>public/js/jquery.easing.1.3.js" type="text/javascript"></script>  

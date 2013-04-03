@@ -15,11 +15,13 @@
       <section id="contact"> <!--content begins-->    
         
         <?php
-        echo validation_errors();
-        echo form_open('contact');
         
+        // $attributes = array('class'=>'contact', 'id'=>'contact');
+        // echo form_open('contact', $attributes);
+        
+        //echo validation_errors();
         ?>
-        <!-- <form id="form" action="" method="post"> -->
+        <form id="contact" action="" method="post" novalidate="novalidate">
       
             <fieldset class="contactDetails"> <!--personal details begins-->
               <h3><!-- Your details -->
@@ -33,8 +35,8 @@
               
                 <p class="firstName">
                   <label for="firstname">First Name <sup>*</sup></label> 
-                  <input type="text" id="firstname" name="firstname" placeholder="First name" required/>
-                  <?php echo form_error('firstname'); ?>
+                  <input type="text" id="firstname" name="firstname" placeholder="First name" required="required" autofocus="autofocus"/>
+                  <?php //echo form_error('firstname'); ?>
                 </p>
                 
                 <p class="lastName">

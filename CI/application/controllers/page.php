@@ -218,7 +218,8 @@ class Page extends CI_Controller {
         $this->load->view('includes/endHTML');
 	}
 
-	function contact(){
+	function contact()
+	{
 		// echo "SELECT H1
   		// FROM tbContent
   		// WHERE pageID =
@@ -238,9 +239,9 @@ class Page extends CI_Controller {
 
 		$data=array();
 
-        $this->load->model('Cmsmodel');
+        		$this->load->model('Cmsmodel');
         
-        $this->load->helper(array('form', 'url'));
+        		$this->load->helper(array('form', 'url'));
 
 		$this->load->library('form_validation');
 		
@@ -256,15 +257,15 @@ class Page extends CI_Controller {
 		$this->form_validation->set_error_delimiters('<div class="error">', '</div>');
 
 
-        $data['menu'] = $this->Cmsmodel->getMenuParts();
-        $data['mainHeading'] = $this->Cmsmodel->getMainHeading();
-        $data['tagline'] = $this->Cmsmodel->getTagline();
+	        $data['menu'] = $this->Cmsmodel->getMenuParts();
+	        $data['mainHeading'] = $this->Cmsmodel->getMainHeading();
+	        $data['tagline'] = $this->Cmsmodel->getTagline();
 
-        // GET PROMOTIONAL DETAILS
-        $data['promoDetails'] = $this->Cmsmodel->getPromotion();
+	        // GET PROMOTIONAL DETAILS
+	        $data['promoDetails'] = $this->Cmsmodel->getPromotion();
         
-        // PUT THIS IN TO AVOID BROWSER CACHING IN CI
-       	$this->output->set_header("HTTP/1.0 200 OK");
+	        // PUT THIS IN TO AVOID BROWSER CACHING IN CI
+	       	$this->output->set_header("HTTP/1.0 200 OK");
 		$this->output->set_header("HTTP/1.1 200 OK");
 		$this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
 		$this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
@@ -274,8 +275,8 @@ class Page extends CI_Controller {
 		if ($this->form_validation->run() == FALSE)
 		{
 			$this->load->view('includes/startHTML', $data);
-            $this->load->view('contactView', $data);
-            $this->load->view('includes/endHTML');
+            		$this->load->view('contactView', $data);
+            		$this->load->view('includes/endHTML');
 		}
 		else
 		{

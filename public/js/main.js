@@ -1,8 +1,5 @@
  $(document).ready(function(){
            
-           
-          
-    
             
             //***************************************************************
             
@@ -67,14 +64,14 @@
             
             //***************************************
    
-          $(function () {
+          // $(function () {
 
-              // Slideshow 1
-              $("#slider1").responsiveSlides({
-                maxwidth: 800,
-                speed: 800
-              });
-          });
+          //     // Slideshow 1
+          //     $("#slider1").responsiveSlides({
+          //       maxwidth: 800,
+          //       speed: 800
+          //     });
+          // });
      
         //***************************************
             
@@ -82,21 +79,81 @@
             
             //***************************************
             
-            // the disclaimer is hidden by default
-            // when the "show" button is clicked, show the disclaimer
-            // hide the disclaimer when "hide" button is clicked
+            // the information is hidden by default
+            // when the "show" button is clicked, show the details
+            // hide the details when "hide" button is clicked
             
-            $('.details').hide();
+            // $('.details').hide();
             
-            $('#toggleButton').click(function(){
-                $('.details').toggle();
+            // $('#toggleButton').click(function(){
+            //     $('.details').toggle();
                 
-              if($('.details').is(':visible')){
-                $(this).attr('value', 'Hide Details');
-                }else{
-                    $(this).attr('value', 'View Details');
-                }
+            //   if($('.details').is(':visible')){
+            //     $(this).attr('value', 'Hide Details');
+            //     }else{
+            //         $(this).attr('value', 'View Details');
+            //     }
                 
-            }); //eof disclaimer toggle
+            // }); //eof details toggle
+
+            //******************************************
+
+            // FORM VALIDATION
+
+            //******************************************
+
+
+            //http://stackoverflow.com/questions/4622232/jquery-validation-onblur
+
+            jQuery("#contact").validate({
+            onfocusout: function(element) { $(element).valid();
+
+                      //=========== Source: http://net.tutsplus.com/tutorials/other/8-regular-expressions-you-should-know AND
+                      //============Source: http://stackoverflow.com/questions/280759/jquery-validate-how-to-add-a-rule-for-regular-expression-validation
+               
+                      // $.validator.addMethod("email", function(value, element) {  
+                      // return this.optional(element) || /^[a-zA-Z0-9._-]+@[a-zA-Z0-9-]+\.[a-zA-Z.]{2,5}$/i.test(value);  
+                      // }, "Please enter a valid email address");
+                    
+                    }
+
+           , onkeyup: false
+
+           
+ 
+          //starts ===========http://stackoverflow.com/questions/4115372/jquery-validate-plugin-adding-a-custom-validator-to-accept-letters-only?rq=1
+ 
+           , rules: {
+             firstname: {
+               required: true
+               , minlength: 5
+             }
+ 
+           } //rules end
+           
+           , messages: {
+             firstname: {
+               required: "please enter your name"
+               , minlength: "your name must consist of at least 5 characters"
+             }
+ 
+           }
+           
+           , errorClass: "invalid"
+           , validClass: 'success',
+         
+           success: function(){
+             console.log("hello");
+           }
+
+          //ends =============http://stackoverflow.com/questions/4115372/jquery-validate-plugin-adding-a-custom-validator-to-accept-letters-only?rq=1
+
+
+           // FORM RESET
+          //  var validator = $("#orderForm").validate();
+          // validator.resetForm();
+           });
+
+
 
 }); // eof ready
