@@ -16,8 +16,8 @@
         
         <?php
         
-        // $attributes = array('class'=>'contact', 'id'=>'contact');
-        // echo form_open('contact', $attributes);
+        // $attributes = array('class'=>'contactForm', 'id'=>'contactForm');
+        // echo form_open('contactForm', $attributes);
         
         //echo validation_errors();
         ?>

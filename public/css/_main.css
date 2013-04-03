@@ -317,7 +317,7 @@ header {
   box-shadow: 1px 7px 10px rgba(20, 8, 10, 0.8);
 }
 
-#form {
+#contactForm {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
   border-radius: 20px;
@@ -799,7 +799,7 @@ footer {
     margin: auto;
   }
 
-  #form {
+  #contactForm {
     width: 90%;
     margin: auto;
     margin-top: 2rem;
@@ -1278,7 +1278,7 @@ footer {
     margin: auto;
   }
 
-  #form {
+  #contactForm {
     width: 70%;
     margin: auto;
     margin-top: 2rem;
@@ -1826,7 +1826,7 @@ footer {
     margin: auto;
   }
 
-  #form {
+  #contactForm {
     width: 70%;
     margin: auto;
     margin-top: 3rem;
@@ -2374,7 +2374,7 @@ footer {
     margin: auto;
   }
 
-  #form {
+  #contactForm {
     width: 70%;
     margin: auto;
     margin-top: 3rem;
