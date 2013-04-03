@@ -36,6 +36,7 @@
     
     
 <section id="mainContainer" class="cf"><!--main container begins-->  
+
 <form>
   <ul id="classTimes">
     <li class=""><input type="text" name="day" placeholder="Day" value=""/></li>
