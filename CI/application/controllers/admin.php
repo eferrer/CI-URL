@@ -133,23 +133,29 @@ class Admin extends CI_Controller {
                 $this->form_validation->set_message('required', 'We need at least %s characters, please');
                 $this->form_validation->set_message('min_length', 'We need at least %s characters, please');
                 
-                $data['menu'] = $this->Cmsmodel->getMenuParts();
-                $data['pageParts'] = $this->Cmsmodel->getPageParts();
-                $data['tagline'] = $this->Cmsmodel->getTagline();
-                
                 // PUT THIS IN TO AVOID BROWSER CACHING IN CI
-                $this->output->set_header("HTTP/1.0 200 OK");
-                $this->output->set_header("HTTP/1.1 200 OK");
-                $this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
-                $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
-                $this->output->set_header("Cache-Control: post-check=0, pre-check=0");
-                $this->output->set_header("Pragma: no-cache");
+                // $this->output->set_header("HTTP/1.0 200 OK");
+                // $this->output->set_header("HTTP/1.1 200 OK");
+                // $this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
+                // $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
+                // $this->output->set_header("Cache-Control: post-check=0, pre-check=0");
+                // $this->output->set_header("Pragma: no-cache");
+                
+                if ($this->form_validation->run() == FALSE){
+                    $data['menu'] = $this->Cmsmodel->getMenuParts();
+                    $data['pageParts'] = $this->Cmsmodel->getPageParts();
+                    $data['tagline'] = $this->Cmsmodel->getTagline();
 
-                $this->load->view('includes/startHTML', $data);
-                $this->load->view('homeUpdate', $data);
-                $this->load->view('includes/endHTML');
+                    $this->load->view('includes/adminStartHTML', $data);
+                    $this->load->view('homeUpdate', $data);
+                    $this->load->view('includes/endHTML');
+                }else{
+                    if($this->Cmsmodel->homeUpdate() ){
+                            redirect('admin');
+                        }
+                    }
             }
-	
+            
     
             function aboutUpdate()
             {
@@ -176,7 +182,7 @@ class Admin extends CI_Controller {
                 $this->output->set_header("Cache-Control: post-check=0, pre-check=0");
                 $this->output->set_header("Pragma: no-cache");
 
-                $this->load->view('includes/startHTML', $data);
+                $this->load->view('includes/adminStartHTML', $data);
                 $this->load->view('aboutUpdate', $data);
                 $this->load->view('includes/endHTML');
             }

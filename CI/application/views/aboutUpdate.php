@@ -58,17 +58,21 @@
       <section><!--tagline begins-->
         <?php 
                $oTagline = $tagline->row();
-               
+               $tagline = $oTagline->tagline;
         ?>
         <label for="tagline">Tagline</label>
-        <input type="text" name="tagline" value="<?php //echo set_value('tagline);?>" />
+        <input type="text" name="tagline" value="<?php echo set_value('tagline', $tagline);?>" />
         
       </section><!--tagline ends-->
       
     </section><!--main container ends-->
     
     <section id="promo" class="promoAbout"><!--promotional tag begins-->
-          <textarea name="content" rows="5" cols="30">Promotional Statement</textarea>
+      <?php 
+              $oPromoDetails = $promoDetails->row();
+              $promo = $oPromoDetails->promoDetails;
+        ?>
+          <textarea name="content" rows="5" cols="30"><?php echo set_value('promoDetails', $promo);?></textarea>
     </section><!--promotional tag begins-->
     
   </div> <!--wrapper ends-->

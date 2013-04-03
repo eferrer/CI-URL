@@ -16,9 +16,9 @@
             // print_r($aMainHeading[1]);
             // echo $aMainHeading[1]['H1'];
 
-            // echo "<pre>";
-            // print_r($aMainHeading);
-            // echo "</pre>";
+            echo "<pre>";
+            print_r($aPageParts);
+            echo "</pre>";
       
       // $mainHeading = $oMainHeading->mainHeading;
       // $contentDetails = $oMainHeading->contentDetails;

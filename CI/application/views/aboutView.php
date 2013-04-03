@@ -73,7 +73,8 @@
     </section><!--main container ends-->
     
     <section id="promo" class="promoAbout"><!--promotional tag begins-->
-           <p><!--Mention this website and receive <span class="prmsgAbout">50%</span> off all classes in your first week OR bring a friend for <span class="prmsgAbout">FREE!</span>--> <?php 
+           <p><!--Mention this website and receive <span class="prmsgAbout">50%</span> off all classes in your first week OR bring a friend for <span class="prmsgAbout">FREE!</span>--> 
+            <?php 
               $oPromoDetails = $promoDetails->row();
               echo nl2br($oPromoDetails->promoDetails);
         ?></p>
