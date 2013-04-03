@@ -28,9 +28,13 @@ class Admin extends CI_Controller {
 	{
 		
 		$this->load->helper('form');
-		
+		$this->load->library('form_validation');
+        
                 $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|max_length[12]|xss_clean');
                 $this->form_validation->set_rules('password', 'Password', 'trim|required|valid_password');
+                
+                // $this->form_validation->set_message('required', 'We need at least %s characters, please');
+                // $this->form_validation->set_message('min_length', 'Surely you can manage %s lousy characters');
 
                 if ($this->form_validation->run() == FALSE)
                 {
@@ -110,22 +114,27 @@ class Admin extends CI_Controller {
                     }else{
                         redirect('cms/admin');
                     }
-                    
                 } 
             }
 
             // ===========end sample update Page code============
 
-
-
-	function homeUpdate()
-	{
+        	function homeUpdate()
+        	{
                 $data=array();
-
+                
+                $this->load->helper(array('form', 'url'));
+                $this->load->library('form_validation');
                 $this->load->model('Cmsmodel');
                 
+                $this->form_validation->set_rules('pageParts', '5', 'required|min_length[5]');
+                $this->form_validation->set_rules('contentDetails', '5', 'required|min_length[5]');
+                
+                $this->form_validation->set_message('required', 'We need at least %s characters, please');
+                $this->form_validation->set_message('min_length', 'We need at least %s characters, please');
+                
                 $data['menu'] = $this->Cmsmodel->getMenuParts();
-                $data['mainHeading'] = $this->Cmsmodel->getMainHeading();
+                $data['pageParts'] = $this->Cmsmodel->getPageParts();
                 $data['tagline'] = $this->Cmsmodel->getTagline();
                 
                 // PUT THIS IN TO AVOID BROWSER CACHING IN CI
@@ -149,7 +158,7 @@ class Admin extends CI_Controller {
                 $this->load->model('Cmsmodel');
                 
                 $data['menu'] = $this->Cmsmodel->getMenuParts();
-                $data['mainHeading'] = $this->Cmsmodel->getMainHeading();
+                $data['pageParts'] = $this->Cmsmodel->getPageParts();
                 $data['tagline'] = $this->Cmsmodel->getTagline();
 
                 // GET LIST OF TESTIMONIALS FOR ABOUT PAGE 
