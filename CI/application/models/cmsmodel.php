@@ -14,7 +14,7 @@ class Cmsmodel extends CI_Model{
 
     //==============================================================
 
-    function getMainHeading() 
+    function getPageParts() 
     {
         $sql = "SELECT H1, contentDetails, H3
                     FROM tbContent
@@ -121,6 +121,26 @@ class Cmsmodel extends CI_Model{
         return $this->db->query($sql);
     }
     
+    //==============================================================
+
+    // UPDATE HOME CONTENT
+
+    //==============================================================
+    
+    public function homeUpdate()
+    {
+        $mainHeading = $this->db->escape($this->input->post('mainHeading'));
+        $contentDetails = $this->db->escape($this->input->post('contentDetails'));
+        $sql = "UPDATE tbContent
+                SET H1 = $mainHeading,
+                contentDetails = $contentDetails 
+        
+                WHERE pageID = ".$this->session->flashdata('pageID');
+        $this->db->query($sql);
+        
+        return true;
+        //}
+    }
     
     
   
