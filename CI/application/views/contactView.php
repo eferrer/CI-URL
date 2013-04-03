@@ -16,12 +16,12 @@
         
         <?php
         
-        // $attributes = array('class'=>'contactForm', 'id'=>'contactForm');
-        // echo form_open('contactForm', $attributes);
+        $attributes = array('class'=>'contactForm', 'id'=>'contactForm');
+        echo form_open('contactForm', $attributes);
         
         //echo validation_errors();
         ?>
-        <form id="contactForm" action="" method="post">
+        <!-- <form id="contactForm" action="" method="post"> -->
       
             <fieldset class="contactDetails"> <!--personal details begins-->
               <h3><!-- Your details -->
