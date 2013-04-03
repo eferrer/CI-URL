@@ -21,7 +21,7 @@
         
         //echo validation_errors();
         ?>
-        <form id="form" action="" method="post">
+        <form id="contactForm" action="" method="post">
       
             <fieldset class="contactDetails"> <!--personal details begins-->
               <h3><!-- Your details -->
