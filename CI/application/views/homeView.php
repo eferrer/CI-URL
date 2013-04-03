@@ -7,7 +7,7 @@
     <section id="mainContainer" class="cf"><!--main container begins-->
     
       
-       <section id="slideshow"><!-- slideshow begins -->
+       <section id="mainImage"><!-- slideshow begins -->
            <!-- <ul class="rslides" id="slider1">
                   <li><img src="base_url()public/images/full/1.jpg" alt=""></li>
                   <li><img src="base_url()public/images/full/2.jpg" alt=""></li>

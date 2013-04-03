@@ -404,7 +404,7 @@ footer {
     margin: auto;
   }
 
-  #slideshow {
+  #mainImage {
     background-image: url("../images/thumb/zumbaHome30.jpg");
     background-repeat: no-repeat;
     width: 350px;
@@ -856,7 +856,7 @@ footer {
     margin: auto;
   }
 
-  #slideshow {
+  #mainImage {
     background-image: url("../images/full/zumbaHome50.jpg");
     background-repeat: no-repeat;
     width: 700px;
@@ -1330,7 +1330,7 @@ footer {
     margin: auto;
   }
 
-  #slideshow {
+  #mainImage {
     background-image: url("../images/full/zumbaHome.jpg");
     background-repeat: no-repeat;
     width: 800px;
@@ -1879,7 +1879,7 @@ footer {
     margin: auto;
   }
   
-  #slideshow {
+  #mainImage {
     background-image: url("../images/full/zumbaHome.jpg");
     background-repeat: no-repeat;
     width: 800px;

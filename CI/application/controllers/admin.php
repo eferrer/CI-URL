@@ -56,15 +56,6 @@ class Admin extends CI_Controller {
 		echo '</pre>';
 	}
 
-	
-    
- 
-        
-        
-	function homeUpdate()
-	{
-        $data=array();
-
             //==============Sample add new page code==========
 
             // make a new page
