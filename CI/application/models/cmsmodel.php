@@ -154,6 +154,27 @@ class Cmsmodel extends CI_Model{
         
         return true;
     }
+
+    //==============================================================
+
+    // UPDATE CONTENT
+
+    //==============================================================
+    
+    public function updateContent()
+    {
+        $content = $this->db->escape($this->input->post('content'));
+    
+        $sql = "UPDATE tbContent
+                SET contentDetails = $content
+                WHERE pageID = 
+                (SELECT pageID FROM tbPages
+                WHERE fileName = '".$this->uri->segment(2)." ' )";
+        //exit(__FILE__.__LINE__.$sql);
+        $this->db->query($sql);
+        
+        return true;
+    }
     
   
     
