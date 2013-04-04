@@ -43,22 +43,21 @@
   </section><!--promotional tag begins-->
 </section><!--main container ends-->
 
-
-
-
 <section id="mainContainer" class="cf"><!-- container for testimonials forms begins-->  
-  <h1>ADMIN AREA: TESTIMONIALS</h1>
+  <h2>ADMIN AREA: TESTIMONIALS</h2>
   <p class="adminAdd"><a href="aboutAddTestimonial.php">+ ADD NEW TESTIMONIAL</a></p>
   
   <section id="testimonials"><!--testimonials begin-->
     
   <?php  
     echo form_open('cmsmodel/aboutUpdate');
+    
     $aTestimonialDetails= $testimonialDetails->result_array();
     
     foreach($aTestimonialDetails as $key=>$aTestimonials){
       $testimonials = $aTestimonials['testimonialDetails'];
-      $name = $aTestimonials['name']?>
+      $name = $aTestimonials['name']
+  ?>
 
       <ul>
         <li><textarea name="content" rows="5" cols="30"> <?php echo set_value('testimonialDetails', $testimonials)?>;</textarea></li>
