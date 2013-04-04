@@ -181,6 +181,10 @@ header {
   border-bottom: 5px solid #1fe0fc;
 }
 
+.videoHeading{
+  border-bottom: 5px solid #f7931e;
+}
+
 .contactHeading {
   border-bottom: 5px solid #9f4ac8;
 }
@@ -505,7 +509,8 @@ footer {
   .homeHeading, 
   .aboutHeading,
   .classHeading,
-  .contactHeading {
+  .contactHeading,
+  .videoHeading{
     display: block;
     width: 95%;
     margin-left: 5%;
@@ -799,7 +804,7 @@ footer {
   #video embed {
     position: absolute;
     top: 3rem;
-    left: 2rem;
+    left: 1rem;
     width: 90%;
     height: 90%;
   }
@@ -958,7 +963,8 @@ footer {
   .homeHeading, 
   .aboutHeading,
   .classHeading,
-  .contactHeading {
+  .contactHeading, 
+  .videoHeading {
     display: block;
     width: 95%;
     margin-left: 5%;
@@ -1450,7 +1456,8 @@ footer {
   .homeHeading, 
   .aboutHeading,
   .classHeading,
-  .contactHeading {
+  .contactHeading, 
+  .videoHeading {
     display: block;
     width: 90%;
     margin-left: 5%;
@@ -1994,13 +2001,14 @@ footer {
   .homeHeading, 
   .aboutHeading,
   .classHeading,
-  .contactHeading  {
+  .contactHeading, 
+  .videoHeading  {
     display: block;
     width: 90%;
     margin-left: 5%;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    font-size: 2rem;
+    font-size: 2.8rem;
   }
   
   h3{

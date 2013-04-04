@@ -197,6 +197,7 @@ class Page extends CI_Controller {
         $this->load->model('Cmsmodel');
         
         $data['menu'] = $this->Cmsmodel->getMenuParts();
+        $data['pageParts'] = $this->Cmsmodel->getPageParts();
         $data['tagline'] = $this->Cmsmodel->getTagline();
         
         // PUT THIS IN TO AVOID BROWSER CACHING IN CI

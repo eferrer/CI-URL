@@ -1,6 +1,11 @@
-
-    
       <section class="mainContainer" class="cf"><!--main container begins-->
+
+        <h1 class="videoHeading"><!-- VIDEO -->
+    <?php  
+          $aPageParts = $pageParts->row_array();
+          echo nl2br($aPageParts['H1']);
+    ?>
+  </h1>
             
             <section id="videoContainer"><!--video container begins-->
                     <section id="video">

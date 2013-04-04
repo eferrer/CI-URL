@@ -232,6 +232,7 @@ class Admin extends CI_Controller {
         $this->load->model('Cmsmodel');
         
         $data['menu'] = $this->Cmsmodel->getMenuParts();
+        $data['pageParts'] = $this->Cmsmodel->getPagePartsAdmin();
         $data['tagline'] = $this->Cmsmodel->getTaglineAdmin();
         
         // PUT THIS IN TO AVOID BROWSER CACHING IN CI
