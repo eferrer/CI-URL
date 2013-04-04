@@ -2,8 +2,13 @@
   <h1>ADMIN AREA: CLASS SCHEDULE </h1>
       
       <?php
-        $aPageParts = $pageParts->row_array();
-        $mainHeading=$aPageParts['H1'];
+        $aPageParts = $pageParts->result_array();
+        
+        echo "<pre>";
+        print_r($aPageParts);
+        echo "</pre>";
+        
+        $mainHeading=$aPageParts[0]['H1'];
         echo form_open('cmsmodel/classtimes');
       ?><!-- <form> -->
         
@@ -44,18 +49,28 @@
       <p class="submit"><input type="submit" value="Delete" /></p>
                    
   <?php } ?>
-    </form>               
-                
-                  
-            </section> <!--class schedule content ends--> 
-        
-      </section><!--class schedule container ends-->
+    </form>
+  </section> <!--class schedule content ends--> 
+</section><!--class schedule container ends-->
 
+<section id="mainContainer" class="cf"><!--main container for main heading begins-->  
+  <h2>ADMIN AREA: PRICE SCHEDULE</h2>
+      
+  <?php
+    $aPageParts = $pageParts->result_array();
+    $mainHeading=$aPageParts[1]['H1'];
+    echo form_open('cmsmodel/classtimes');
+  ?><!-- <form> -->
+    
+      <label for="mainHeading" class="adminLabel">Main Heading</label>
+      <input type="text" name="mainHeading" value="<?php echo set_value('mainHeading', $mainHeading);?>" />
+        <!-- <h1 class="classHeading">PRICE SCHEDULE</h1> -->
+    </form>
+</section><!--main container for main heading ends-->
 
-      <section id="mainContainer" class="cf"><!--price schedule container begins-->
+       
+       
           
-          <input type="text" name="mainHeading" value="<?php //echo set_value('mainHeading',$mainHeading); ?>" />
-          <!-- <h1 class="classHeading">PRICE SCHEDULE</h1> -->
             
             <section id="priceSchedule"> <!--price schedule content begins-->    
               
@@ -74,9 +89,33 @@
           <textarea name="content" rows="5" cols="30"><?php //echo set_value('mainHeading',$mainHeading); ?></textarea>
     </section><!--promotional tag begins-->
       
-      <section id="mainContainer" class="cf"><!--class info container begins-->
-        
-        <input type="text" name="mainHeading" value="<?php //echo set_value('mainHeading',$mainHeading); ?>" />
+      
+      
+      
+      
+      
+
+<section id="mainContainer" class="cf"><!--main container for main heading begins-->  
+  <h2>ADMIN AREA: STUDENT INFORMATION</h2>
+      
+  <?php
+    $aPageParts = $pageParts->result_array();
+    $mainHeading=$aPageParts[4]['H1'];
+    echo form_open('cmsmodel/classtimes');
+  ?><!-- <form> -->
+    
+      <label for="mainHeading" class="adminLabel">Main Heading</label>
+      <input type="text" name="mainHeading" value="<?php echo set_value('mainHeading', $mainHeading);?>" />
+        <!-- <h1 class="classHeading">INFORMATION FOR STUDENTS</h1> -->
+    </form>
+</section><!--main container for main heading ends-->
+      
+      
+      
+      
+      
+      
+      
         <!-- <h1 class="classHeading">INFORMATION FOR STUDENTS</h1> -->
         
         <section id="studentInfo"> <!--student information content begins-->    
