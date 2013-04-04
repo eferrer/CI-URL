@@ -8,7 +8,7 @@
   ?>
     <section id="mainContainer" class="cf"><!--main container begins-->  
       
-      <form>
+      <!-- <form> -->
         <h1>ADMIN AREA: ABOUT ME </h1>
         <label for="mainHeading" class="adminLabel">Main Heading</label>
         <input type="text" name="mainHeading" value="<?php echo set_value('mainHeading', $mainHeading);?>" />
@@ -73,17 +73,18 @@
 
 
 <?php  
-        $aPageParts = $pageParts->row_array();
-        
-        $mainHeading=$aPageParts['H1'];
-        $contentDetails=$aPageParts['contentDetails'];
+        $aTestimonialDetails= $testimonialDetails->result_array();
+        //$aName= $name->result_array();
 
         echo form_open('cmsmodel/aboutUpdate');
   ?>
     <section id="mainContainer" class="cf"><!-- container for testiminials form begins-->  
+      <h1>ADMIN AREA: TESTIMONIALS</h1>
 
       <section id="testimonials"><!--testimonials begin-->
         <label for="title">Subheading</label>
+
+
         <input type="text" name="mainHeading" value="<?php //echo set_value('mainHeading', $mainHeading);?>" />
         <ul>
           <li><textarea name="content" rows="5" cols="30"><?php //echo set_value('mainHeading', $mainHeading);?></textarea><span class="reference"><input type="text" name="mainHeading" value="Christina 1" /></span></li>

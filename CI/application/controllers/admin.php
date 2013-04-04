@@ -167,10 +167,11 @@ class Admin extends CI_Controller {
                 $data['pageParts'] = $this->Cmsmodel->getPagePartsAdmin();
                 $data['tagline'] = $this->Cmsmodel->getTaglineAdmin();
 
-             
-                
                 // GET PROMOTIONAL DETAILS
                 $data['promoDetails'] = $this->Cmsmodel->getPromotion();
+
+                 $data['testimonialDetails'] = $this->Cmsmodel->getTestimonials();
+                //$data['name'] = $this->Cmsmodel->getName();
                 
                 // PUT THIS IN TO AVOID BROWSER CACHING IN CI
                 $this->output->set_header("HTTP/1.0 200 OK");
@@ -184,6 +185,17 @@ class Admin extends CI_Controller {
                 $this->load->view('aboutUpdate', $data);
                 $this->load->view('includes/endHTML');
             }
+
+            // function testimonials(){
+            //     $data=array();
+
+            //     $this->load->model('Cmsmodel');
+
+            //      $data['testimonialDetails'] = $this->Cmsmodel->getTestimonials();
+            //     $data['name'] = $this->Cmsmodel->getName();
+
+            //     $this->load->view('aboutUpdate', $data);
+            // }
 
             //separate method for testimonials
                // GET LIST OF TESTIMONIALS FOR ABOUT PAGE 
