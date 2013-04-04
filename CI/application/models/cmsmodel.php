@@ -101,19 +101,19 @@ class Cmsmodel extends CI_Model{
 
     public function getTestimonials()
     {
-        $sql = "SELECT testimonialDetails
+        $sql = "SELECT testID, testimonialDetails, name
                 FROM tbTestimonials";
                 
         return $this->db->query($sql);
     }
 
-    public function getName()
-    {
-        $sql = "SELECT name
-                FROM tbTestimonials";
+    // public function getName()
+    // {
+    //     $sql = "SELECT name
+    //             FROM tbTestimonials";
                 
-        return $this->db->query($sql);
-    }
+    //     return $this->db->query($sql);
+    // }
 
    //==============================================================
 

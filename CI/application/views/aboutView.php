@@ -46,18 +46,24 @@
         <ul>
 
           <?php
+          
           $aTestimonialDetails= $testimonialDetails->result_array();
-          $aName= $name->result_array();
+          // $aName= $name->result_array();
+
+        foreach($aTestimonialDetails as $key=>$aTestimonials){
+         // echo $aValue['testimonialDetails'];
+
+          echo '<li> '.  $aTestimonials['testimonialDetails']  . '<span class="reference"> ' .  $aTestimonials['name'] . '</span></li>';
+        }
+
+
           
           // echo "<pre>";
           // print_r($aTestimonialDetails);
           // echo "</pre>";
           ?>
           
-          <li><!-- I'm a busy mother of 4 children and originally from the USA. I would love to inspire many other women and mothers to give Zumba Fitness a go! --><?php echo $aTestimonialDetails[0]['testimonialDetails']; ?><span class="reference"> <!-- Christina 1 --><?php echo $aName[0]['name']; ?></span></li>
-          <li><?php echo $aTestimonialDetails[1]['testimonialDetails']; ?><span class="reference"> <?php echo $aName[1]['name']; ?></span></li>
-          <li><?php echo $aTestimonialDetails[2]['testimonialDetails']; ?><span class="reference"> <?php echo $aName[2]['name']; ?></span></li>
-          <li><?php echo $aTestimonialDetails[3]['testimonialDetails']; ?><span class="reference"> <?php echo $aName[3]['name']; ?></span></li>
+         
         </ul>
       </section><!--testimonials ends-->
       

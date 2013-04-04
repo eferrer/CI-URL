@@ -114,7 +114,7 @@ class Page extends CI_Controller {
 
         // GET LIST OF TESTIMONIALS FOR ABOUT PAGE 
         $data['testimonialDetails'] = $this->Cmsmodel->getTestimonials();
-        $data['name'] = $this->Cmsmodel->getName();
+        //$data['name'] = $this->Cmsmodel->getName();
         
         // GET PROMOTIONAL DETAILS
         $data['promoDetails'] = $this->Cmsmodel->getPromotion();
