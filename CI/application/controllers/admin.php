@@ -117,46 +117,43 @@ class Admin extends CI_Controller {
                 } 
             }
 
-            // ===========end sample update Page code============
+            
+            
+            //==============================================================
 
-        	function homeUpdate()
+            // UPDATE HOME PAGE
+
+            //==============================================================
+
+        	function home()
         	{
                 $data=array();
-                
-                $this->load->helper(array('form', 'url'));
-                $this->load->library('form_validation');
+
                 $this->load->model('Cmsmodel');
                 
-                $this->form_validation->set_rules('pageParts', '5', 'required|min_length[5]');
-                $this->form_validation->set_rules('contentDetails', '5', 'required|min_length[5]');
-                
-                $this->form_validation->set_message('required', 'We need at least %s characters, please');
-                $this->form_validation->set_message('min_length', 'We need at least %s characters, please');
+                $data['menu'] = $this->Cmsmodel->getMenuParts();
+                $data['pageParts'] = $this->Cmsmodel->getPagePartsAdmin();
+                $data['tagline'] = $this->Cmsmodel->getTaglineAdmin();
                 
                 // PUT THIS IN TO AVOID BROWSER CACHING IN CI
-                // $this->output->set_header("HTTP/1.0 200 OK");
-                // $this->output->set_header("HTTP/1.1 200 OK");
-                // $this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
-                // $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
-                // $this->output->set_header("Cache-Control: post-check=0, pre-check=0");
-                // $this->output->set_header("Pragma: no-cache");
-                
-                if ($this->form_validation->run() == FALSE){
-                    $data['menu'] = $this->Cmsmodel->getMenuParts();
-                    $data['pageParts'] = $this->Cmsmodel->getPageParts();
-                    $data['tagline'] = $this->Cmsmodel->getTagline();
+                $this->output->set_header("HTTP/1.0 200 OK");
+                $this->output->set_header("HTTP/1.1 200 OK");
+                $this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
+                $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
+                $this->output->set_header("Cache-Control: post-check=0, pre-check=0");
+                $this->output->set_header("Pragma: no-cache");
 
-                    $this->load->view('includes/adminStartHTML', $data);
-                    $this->load->view('homeUpdate', $data);
-                    $this->load->view('includes/endHTML');
-                }else{
-                    if($this->Cmsmodel->homeUpdate() ){
-                            redirect('admin');
-                        }
-                    }
+                $this->load->view('includes/adminStartHTML', $data);
+                $this->load->view('homeUpdate', $data);
+                $this->load->view('includes/endHTML');
             }
             
-    
+            //==============================================================
+
+            // UPDATE ABOUT ME PAGE
+
+            //==============================================================
+            
             function about()
             {
                 $data=array();
