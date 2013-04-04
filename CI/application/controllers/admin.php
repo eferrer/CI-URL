@@ -134,11 +134,15 @@ class Admin extends CI_Controller {
 
                         if($this->input->post('updatePage')){
  
-                                if ( $this->Cmsmodel->updateMainHeading()){
-                                    if ( $this->Cmsmodel->updateContent()){
+                             //   if ( $this->Cmsmodel->updateMainHeading()){
+                               //     if ( $this->Cmsmodel->updateContent()){
+                                        if ( $this->Cmsmodel->updateTagline()){
                                     redirect (base_url() . 'admin/home');
+                                }else{
+                                    redirect('http://google.com');
                                 }
-                            }
+                          //  }
+                      //  }
 
                         }else{
                                 $data['menu'] = $this->Cmsmodel->getMenuParts();
