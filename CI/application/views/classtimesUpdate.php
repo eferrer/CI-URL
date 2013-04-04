@@ -1,42 +1,52 @@
-
-    <section id="mainContainer" class="cf"><!--class schedule container begins-->
+<section id="mainContainer" class="cf"><!--main container for main heading begins-->  
+  <h1>ADMIN AREA: CLASS SCHEDULE </h1>
       
       <?php
-       $aPageParts = $pageParts->row_array();
-       
-      echo form_open('contactForm', $attributes);?>
-      <!-- <form> -->
-        <input type="text" name="mainHeading" value="<?php //echo set_value('mainHeading',$mainHeading); ?>" />
+        $aPageParts = $pageParts->row_array();
+        $mainHeading=$aPageParts['H1'];
+        echo form_open('cmsmodel/classtimes');
+      ?><!-- <form> -->
+        
+        <label for="mainHeading" class="adminLabel">Main Heading</label>
+        <input type="text" name="mainHeading" value="<?php echo set_value('mainHeading', $mainHeading);?>" />
           <!-- <h1 class="classHeading">CLASS SCHEDULE</h1> -->
+        </form>
+</section><!--main container for main heading ends-->
 
-            <section id="classSchedule"> <!--class schedule content begins-->    
+<section id="mainContainer" class="cf"><!-- container for classes forms begins-->  
+  <h2>ADMIN AREA: CLASSES</h2>
+  <p class="adminAdd"><a href="aboutAddTestimonial.php">+ ADD NEW CLASS</a></p>
+            
+  <section id="classSchedule"> <!--class schedule content begins-->    
+  
+  <?php  
+    echo form_open('cmsmodel/classtimesUpdate');
+    
+    $aClassDetails= $classDetails->result_array();
+    
+    foreach($aClassDetails as $key=>$aDetails){
+      $day = $aDetails['day'];
+      $time = $aDetails['time'];
+      $place = $aDetails['place'];
+      $address = $aDetails['address'];    
+  ?>
+             
+      <section class="classDetails"><!--class details begins-->
+        <ul id="classTimes">
+          <li class="day"><input type="text" name="day" value="<?php echo set_value('day', $day)?>;" /></li>
+          <li class="time"><input type="text" name="time" value="<?php echo set_value('time',$time); ?>" /></li>
+          <li class="place"><input type="text" name="place" value="<?php echo set_value('place',$place); ?>" /></li>
+          <li class="address"><input type="text" name="address" value="<?php echo set_value('address',$address); ?>" /></li>  ` 
+        </ul>
+              
+      </section><!--class details ends-->
+      <p class="submit"><input type="submit" value="Update" /></p>
+      <p class="submit"><input type="submit" value="Delete" /></p>
+                   
+  <?php } ?>
+    </form>               
+                
                   
-                  <section class="classDetails"><!--class details begins-->
-                          <ul id="classTimes">
-                            <li class="day"><input type="text" name="day" value="<?php //echo set_value('mainHeading',$mainHeading); ?>" /></li>
-                            <li class="time"><input type="text" name="time" value="<?php //echo set_value('mainHeading',$mainHeading); ?>" /></li>
-                            <li class="place"><input type="text" name="place" value="<?php //echo set_value('mainHeading',$mainHeading); ?>" /></li>
-                            <li class="address"><input type="text" name="address" value="<?php //echo set_value('mainHeading',$mainHeading); ?>" /></li>  ` 
-                          </ul>
-                          
-                    </section><!--class details ends-->
-
-                    <section class="directions"><!--location details begins-->
-                          <form action="http://maps.google.com/maps" method="get" target="_blank">
-                             <label for="saddr">Enter your starting point</label>
-                             <input type="text" name="saddr" />
-                             <input type="hidden" name="daddr" value="<?php //echo set_value('mainHeading',$mainHeading); ?>"/>
-                             <input type="submit" value="Get directions" />
-                          </form>
-                      
-                      <input type="button" id="deleteButton" value="Delete Class"/>
-                    </section><!--location details ends-->
-                
-                
-                  <div class="adminLinks">
-          <p class="adminAdd"><a href="classesAddNew.html">+ Add New Class</a></p>
-                    
-        </div>
             </section> <!--class schedule content ends--> 
         
       </section><!--class schedule container ends-->

@@ -168,7 +168,6 @@ class Admin extends CI_Controller {
                 $data['promoDetails'] = $this->Cmsmodel->getPromotion();
 
                  $data['testimonialDetails'] = $this->Cmsmodel->getTestimonials();
-                //$data['name'] = $this->Cmsmodel->getName();
                 
                 // PUT THIS IN TO AVOID BROWSER CACHING IN CI
                 $this->output->set_header("HTTP/1.0 200 OK");
@@ -200,8 +199,34 @@ class Admin extends CI_Controller {
                 // $data['name'] = $this->Cmsmodel->getName();
     
 
-    function classtimesUpdate(){
+    function classtimes(){
+        $data=array();
+
+                $this->load->model('Cmsmodel');
+                
+                $data['menu'] = $this->Cmsmodel->getMenuParts();
+                $data['pageParts'] = $this->Cmsmodel->getPagePartsAdmin();
+                $data['tagline'] = $this->Cmsmodel->getTaglineAdmin();
+                
+                $data['classDetails'] = $this->Cmsmodel->getClassDetails();
         
+                // GET LIST OF WHAT IS NEEDED FOR CLASS
+                $data['needsDetails'] = $this->Cmsmodel->getNeedsList();
+
+                // GET PROMOTIONAL DETAILS
+                $data['promoDetails'] = $this->Cmsmodel->getPromotion();
+                
+                // PUT THIS IN TO AVOID BROWSER CACHING IN CI
+                $this->output->set_header("HTTP/1.0 200 OK");
+                $this->output->set_header("HTTP/1.1 200 OK");
+                $this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
+                $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
+                $this->output->set_header("Cache-Control: post-check=0, pre-check=0");
+                $this->output->set_header("Pragma: no-cache");
+
+                $this->load->view('includes/adminStartHTML', $data);
+                $this->load->view('classtimesUpdate', $data);
+                $this->load->view('includes/endHTML');
     }
 	
 	

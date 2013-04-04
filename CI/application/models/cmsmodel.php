@@ -92,7 +92,6 @@ class Cmsmodel extends CI_Model{
         return $this->db->query($sql);
     }
 
-
     //==============================================================
 
     // GET LIST OF TESTIMONIALS FOR ABOUT PAGE
