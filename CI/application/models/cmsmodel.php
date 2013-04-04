@@ -136,25 +136,24 @@ class Cmsmodel extends CI_Model{
     
     //==============================================================
 
-    // UPDATE HOME CONTENT
+    // UPDATE MAIN HEADING
 
     //==============================================================
     
-    public function homeUpdate()
+    public function updateMainHeading()
     {
         $mainHeading = $this->db->escape($this->input->post('mainHeading'));
-        $contentDetails = $this->db->escape($this->input->post('contentDetails'));
+    
         $sql = "UPDATE tbContent
-                SET H1 = $mainHeading,
-                contentDetails = $contentDetails 
-        
-                WHERE pageID = ".$this->session->flashdata('pageID');
+                SET H1 = $mainHeading
+                WHERE pageID = 
+                (SELECT pageID FROM tbPages
+                WHERE fileName = '".$this->uri->segment(2)." ' )";
+        //exit(__FILE__.__LINE__.$sql);
         $this->db->query($sql);
         
         return true;
-        //}
     }
-    
     
   
     

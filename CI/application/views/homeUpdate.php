@@ -5,7 +5,7 @@
   $aPageParts = $pageParts->row_array();
   $mainHeading=$aPageParts['H1'];
   $contentDetails=$aPageParts['contentDetails'];
-  echo form_open('cmsmodel/home');
+  echo form_open('admin/home');
 ?><!-- <form begins> -->
 
   <label for="mainHeading" class="adminLabel">Main Heading</label>
@@ -28,7 +28,7 @@
     <input type="text" name="tagline" value="<?php echo set_value('tagline', $tag);?>" />
   </section><!--tagline ends-->
   
-  <p class="submit"><input type="submit" value="Update" /></p>
+  <p class="submit"><input type="submit" id="updatePage" name="updatePage" value="Update" /></p>
   
  </form>     
 </section>

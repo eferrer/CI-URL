@@ -7,7 +7,7 @@ class Admin extends CI_Controller {
 	function __construct()
 	{
 		parent::__construct();
-		
+		$this->output->enable_profiler(TRUE);
     }
 	
 	function index()
@@ -122,31 +122,41 @@ class Admin extends CI_Controller {
     //==============================================================
 
     // UPDATE HOME PAGE
+    //exit(__FILE__.__LINE__);
 
     //==============================================================
 
 	function home()
 	{
-        $data=array();
+                        $data=array();
 
-        $this->load->model('Cmsmodel');
-        
-        $data['menu'] = $this->Cmsmodel->getMenuParts();
-        $data['pageParts'] = $this->Cmsmodel->getPagePartsAdmin();
-        $data['tagline'] = $this->Cmsmodel->getTaglineAdmin();
-        
-        // PUT THIS IN TO AVOID BROWSER CACHING IN CI
-        $this->output->set_header("HTTP/1.0 200 OK");
-        $this->output->set_header("HTTP/1.1 200 OK");
-        $this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
-        $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
-        $this->output->set_header("Cache-Control: post-check=0, pre-check=0");
-        $this->output->set_header("Pragma: no-cache");
+                        $this->load->model('Cmsmodel');
 
-        $this->load->view('includes/adminStartHTML', $data);
-        $this->load->view('homeUpdate', $data);
-        $this->load->view('includes/endHTML');
-    }
+                        if($this->input->post('updatePage')){
+ 
+                                if ( $this->Cmsmodel->updateMainHeading()){
+                                redirect (base_url() . 'admin/home');}
+
+                        }else{
+                                $data['menu'] = $this->Cmsmodel->getMenuParts();
+                                $data['pageParts'] = $this->Cmsmodel->getPagePartsAdmin();
+                                $data['tagline'] = $this->Cmsmodel->getTaglineAdmin();
+
+                                // PUT THIS IN TO AVOID BROWSER CACHING IN CI
+                                $this->output->set_header("HTTP/1.0 200 OK");
+                                $this->output->set_header("HTTP/1.1 200 OK");
+                                $this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
+                                $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
+                                $this->output->set_header("Cache-Control: post-check=0, pre-check=0");
+                                $this->output->set_header("Pragma: no-cache");
+
+                                $this->load->view('includes/adminStartHTML', $data);
+                                $this->load->view('homeUpdate', $data);
+                                $this->load->view('includes/endHTML');
+                         }
+             //   $this->Cmsmodel->updateMainHeading();
+                
+            }
     
     //==============================================================
 

@@ -9,7 +9,7 @@ class Page extends CI_Controller {
 		parent::__construct();
 
 		$this->output->enable_profiler(FALSE);	
-    }
+    	}
 	
 	function index()
 	{
@@ -32,25 +32,31 @@ class Page extends CI_Controller {
 
 		$data=array();
 
-        $this->load->model('Cmsmodel');
-        
-        $data['menu'] = $this->Cmsmodel->getMenuParts();
-        $data['pageParts'] = $this->Cmsmodel->getPageParts();
-        $data['tagline'] = $this->Cmsmodel->getTagline();
-        
-        // PUT THIS IN TO AVOID BROWSER CACHING IN CI
-	$this->output->set_header("HTTP/1.0 200 OK");
-	$this->output->set_header("HTTP/1.1 200 OK");
-	$this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
-	$this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
-	$this->output->set_header("Cache-Control: post-check=0, pre-check=0");
-	$this->output->set_header("Pragma: no-cache");
+	        	$this->load->model('Cmsmodel');
+	        
+	        	$data['menu'] = $this->Cmsmodel->getMenuParts();
+	        	$data['pageParts'] = $this->Cmsmodel->getPageParts();
+	        	$data['tagline'] = $this->Cmsmodel->getTagline();
+	        
+	        	// PUT THIS IN TO AVOID BROWSER CACHING IN CI
+		$this->output->set_header("HTTP/1.0 200 OK");
+		$this->output->set_header("HTTP/1.1 200 OK");
+		$this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
+		$this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
+		$this->output->set_header("Cache-Control: post-check=0, pre-check=0");
+		$this->output->set_header("Pragma: no-cache");
 
-        $this->load->view('includes/startHTML', $data);
-        $this->load->view('homeView', $data);
-        $this->load->view('includes/endHTML');
+	        	$this->load->view('includes/startHTML', $data);
+	        	$this->load->view('homeView', $data);
+	        	$this->load->view('includes/endHTML');
 	}
-	
+
+	//==============================================================
+
+    // LOAD HOME PAGE
+
+    //==============================================================
+
 	function home()
 	{
 		// echo "SELECT H1
@@ -90,6 +96,12 @@ class Page extends CI_Controller {
         $this->load->view('homeView', $data);
         $this->load->view('includes/endHTML');
 	}
+
+	//==============================================================
+
+    // LOAD ABOUT PAGE
+
+    //==============================================================
 
 	function about()
 	{
@@ -131,6 +143,12 @@ class Page extends CI_Controller {
         $this->load->view('aboutView', $data);
         $this->load->view('includes/endHTML');
 	}
+
+	//==============================================================
+
+    // LOAD CLASSES PAGE
+
+    //==============================================================
 
 	function classtimes()
 	{
@@ -174,6 +192,12 @@ class Page extends CI_Controller {
         $this->load->view('includes/endHTML');
 	}
 
+	//==============================================================
+
+    // LOAD VIDEO PAGE
+
+    //==============================================================
+
 	function video(){
 		// echo "SELECT H1
   		// FROM tbContent
@@ -212,6 +236,12 @@ class Page extends CI_Controller {
         $this->load->view('galleryView', $data);
         $this->load->view('includes/endHTML');
 	}
+
+	//==============================================================
+
+    // LOAD CONTACT ME PAGE
+
+    //==============================================================
 
 	function contact()
 	{
