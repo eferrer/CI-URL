@@ -34,9 +34,9 @@
   $concessionPrice = $aPageParts[2]['contentDetails'];
   $concessionDetails = $aPageParts[3]['contentDetails'];
   
-  echo "<pre>";
-        print_r($aPageParts);
-        echo "</pre>";
+  // echo "<pre>";
+  // print_r($aPageParts);
+  // echo "</pre>";
 
   ?>
   
@@ -149,32 +149,39 @@
           
           
           
-<section id="mainContainer" class="cf"><!--main container for Student Info - What to expect begins-->           
-          <input type="text" name="mainHeading" value="<?php //echo set_value('mainHeading',$mainHeading); ?>" />
-          <!-- <h3>WHAT YOU WILL NEED</h3> -->
-          <ul class="needs">
-            <li><textarea name="content" rows="5" cols="30"><?php //echo set_value('mainHeading',$mainHeading); ?></textarea><input type="button" id="deleteButton" value="Delete Item"/></li>
-            <li><textarea name="content" rows="5" cols="30"><?php //echo set_value('mainHeading',$mainHeading); ?></textarea><input type="button" id="deleteButton" value="Delete Item"/></li>
-            <li><textarea name="content" rows="5" cols="30"><?php //echo set_value('mainHeading',$mainHeading); ?></textarea><input type="button" id="deleteButton" value="Delete Item"/></li>
+<section id="mainContainer" class="cf"><!--main container for Student Info - What to expect begins-->    
+  <h2>ADMIN AREA: ITEMS THAT STUDENTS NEED</h2>
+  <p class="adminAdd"><a href="aboutAddTestimonial.php">+ ADD NEW ITEM</a></p>  
+    
+    <section id="classSchedule">
+      
+      <?php  
+        echo form_open('cmsmodel/classtimesUpdate');
+      
+        $aNeedsDetails= $needsDetails->result_array();
+        
+        foreach($aNeedsDetails as $key=>$aNeeds){
+          $needs = $aNeeds['needsDetails'];     
+      ?>
+        <section class="classDetailsAdmin"><!--class details begins-->
+          <ul class="needsAdmin">
+            <li><textarea name="content" rows="5" cols="30"><?php echo set_value('needs',$needs); ?></textarea></li>
           </ul>
-          <div class="adminLinks">
-          <p class="adminAdd"><a href="needsAddNew.html">+ Add New Item</a></p>
-                    
-        </div>
+        
         </section> <!--student information content ends--> 
+        <p class="submit"><input type="submit" value="Update" /></p>
+      <p class="submit"><input type="submit" value="Delete" /></p>
+                   
+  <?php } ?>
+    </form>
+  </section>
 </section><!--main container for  Student Info - What to expect ends-->
 
-        <section><!--tagline begins-->
-          <?php 
-            $oTagline = $tagline->row();    
-           ?>
-          <input type="text" name="mainHeading" value="<?php //echo set_value('mainHeading',$mainHeading); ?>" />
-          <!-- <h2 id="classesTag">Don’t wait any longer - Party Yourself into Shape today!</h2> -->
-        </section><!--tagline ends-->
+        
       
-      </section><!--class info container ends-->
+      <!-- </section> --><!--class info container ends-->
     
   </div> <!--wrapper ends-->
     
-  </form>
+
     
