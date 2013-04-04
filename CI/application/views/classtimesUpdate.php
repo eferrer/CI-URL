@@ -125,7 +125,7 @@
              
       <section class="classDetailsAdmin"><!--class details begins-->
         <ul class="classTimesAdmin">
-          <li class="day"><input type="text" name="day" value="<?php echo set_value('day', $day)?>;" /></li>
+          <li class="day"><input type="text" name="day" value="<?php echo set_value('day', $day);?>" /></li>
           <li class="time"><input type="text" name="time" value="<?php echo set_value('time',$time); ?>" /></li>
           <li class="place"><input type="text" name="place" value="<?php echo set_value('place',$place); ?>" /></li>
           <li class="address"><input type="text" name="address" value="<?php echo set_value('address',$address); ?>" /></li>  ` 
