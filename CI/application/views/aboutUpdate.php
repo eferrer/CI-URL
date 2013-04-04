@@ -48,7 +48,7 @@
 
 <section id="mainContainer" class="cf"><!-- container for testimonials forms begins-->  
   <h1>ADMIN AREA: TESTIMONIALS</h1>
-  <p class="adminAdd"><a href="aboutAddTestimonial.php">+ Add New Testimonial</a></p>
+  <p class="adminAdd"><a href="aboutAddTestimonial.php">+ ADD NEW TESTIMONIAL</a></p>
   
   <section id="testimonials"><!--testimonials begin-->
     
@@ -62,7 +62,7 @@
 
       <ul>
         <li><textarea name="content" rows="5" cols="30"> <?php echo set_value('testimonialDetails', $testimonials)?>;</textarea></li>
-          <li><input type="text" name="mainHeading" value=" <?php echo set_value('name', $name)?>;" /></li>
+          <li><input type="text" name="mainHeading" value=" <?php echo set_value('name', $name); ?>" /></li>
         <p class="submit"><input type="submit" value="Update" /></p>
         <p class="submit"><input type="submit" value="Delete" /></p>
       </ul>
