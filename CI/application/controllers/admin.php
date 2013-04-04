@@ -180,7 +180,9 @@ class Admin extends CI_Controller {
                               if ( $this->Cmsmodel->updateMainHeading()){
                                 if ( $this->Cmsmodel->updateContent()){
                                      if ( $this->Cmsmodel->updateTagline()){
+                                        if ( $this->Cmsmodel->updatePromotion()){
                                          redirect (base_url() . 'admin/about');
+                                     }
                                  }        
                              }
                          }

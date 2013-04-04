@@ -193,6 +193,22 @@ class Cmsmodel extends CI_Model{
         
         return true;
     }
+
+    //==============================================================
+
+    // UPDATE PROMOTIONAL LINE
+
+    //==============================================================
+
+    public function updatePromotion()
+    {
+        $promo = $this->db->escape($this->input->post('promo'));
+
+        $sql = "UPDATE tbPromo
+                    SET promoDetails = $promo"; 
+                
+        return $this->db->query($sql);
+    }
     
   
     
