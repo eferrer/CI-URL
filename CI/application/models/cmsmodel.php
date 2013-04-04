@@ -185,20 +185,13 @@ class Cmsmodel extends CI_Model{
     public function updateTagline()
     {
         $tagline = $this->db->escape($this->input->post('tagline'));
-    
-      
 
-
-            $sql2= "UPDATE tbPages 
-            SET tagline = ".$tagline." WHERE fileName = '".$this->uri->segment(2) ." ' ";
+        $sql= "UPDATE tbPages 
+        SET tagline = ".$tagline." WHERE fileName = '".$this->uri->segment(2) ." ' ";
                  
-        
-        $this->db->query($sql2);
+        $this->db->query($sql);
         
         return true;
-
-        
-        
     }
     
   
