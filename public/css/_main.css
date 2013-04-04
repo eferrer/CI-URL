@@ -141,11 +141,11 @@ header {
   background-color: #1fe0fc;
 }
 
-#navBar li.gallery a {
+#navBar li.video a {
   border: 20px solid #f7931e;
 }
 
-#navBar li.gallery a:hover {
+#navBar li.video a:hover {
   background-color: #f7931e;
 }
 
@@ -197,7 +197,7 @@ header {
   color: #1fe0fc;
 }
 
-#galleryTag {
+#videoTag {
   color: #f7931e;
 }
 
@@ -544,7 +544,7 @@ footer {
   #homeTag,
   #aboutTag, 
   #classesTag,
-  #galleryTag,
+  #videoTag,
   #contactTag{
     width: 90%;
     margin: auto;
@@ -771,7 +771,7 @@ footer {
     color: #191919;
   }
 
-  /* ===== == = === GALLERY PAGE === = == ===== */
+  /* ===== == = === VIDEO PAGE === = == ===== */
   /* ===== == = === 30em (480 px) portrait  smartphone === = == ===== */
 
   #videoContainer {
@@ -1013,7 +1013,7 @@ footer {
   #homeTag,
   #aboutTag, 
   #classesTag,
-  #galleryTag,
+  #videoTag,
   #contactTag
    {
     width: 90%;
@@ -1250,7 +1250,7 @@ footer {
     color: #191919;
   }
 
-  /* ===== == = === GALLERY PAGE=== = == ===== */
+  /* ===== == = === VIDEO PAGE=== = == ===== */
   /* ===== == = === 481 px - 800 px === = == ===== */
 
   #videoContainer {
@@ -1523,7 +1523,7 @@ footer {
   #homeTag,
   #aboutTag, 
   #classesTag,
-  #galleryTag,
+  #videoTag,
   #contactTag {
     clear: both;
     margin: auto;
@@ -1791,7 +1791,7 @@ footer {
     color: #191919;
   }
 
-  /* ===== == = ===GALLERY PAGE=== = == ===== */
+  /* ===== == = ===VIDEO PAGE=== = == ===== */
   /* ===== == = === 801px  - 1280 px === = == ===== */
 
   #videoContainer {
@@ -2067,7 +2067,7 @@ footer {
   #homeTag,
   #aboutTag, 
   #classesTag,
-  #galleryTag,
+  #videoTag,
   #contactTag{
     clear: both;
     margin: auto;
@@ -2339,7 +2339,7 @@ footer {
     color: #191919;
   }
 
-  /* ===== == = ===GALLERY PAGE=== = == ===== */
+  /* ===== == = ===VIDEO PAGE=== = == ===== */
   /* ===== == = === 1280 px plus=== = == ===== */
 
   #videoContainer {

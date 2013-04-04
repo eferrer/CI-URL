@@ -174,7 +174,7 @@ class Page extends CI_Controller {
         $this->load->view('includes/endHTML');
 	}
 
-	function gallery(){
+	function video(){
 		// echo "SELECT H1
   		// FROM tbContent
   		// WHERE pageID =
