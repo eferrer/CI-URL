@@ -175,6 +175,17 @@ class Admin extends CI_Controller {
 
         $this->load->model('Cmsmodel');
         
+         if($this->input->post('updatePage')){
+ 
+                              if ( $this->Cmsmodel->updateMainHeading()){
+        //                        if ( $this->Cmsmodel->updateContent()){
+        //                             if ( $this->Cmsmodel->updateTagline()){
+                                         redirect (base_url() . 'admin/about');
+                                 }        
+        //                     }
+        //                 }
+
+                         }else{
         $data['menu'] = $this->Cmsmodel->getMenuParts();
         $data['pageParts'] = $this->Cmsmodel->getPagePartsAdmin();
         $data['tagline'] = $this->Cmsmodel->getTaglineAdmin();
@@ -196,6 +207,7 @@ class Admin extends CI_Controller {
         $this->load->view('aboutUpdate', $data);
         $this->load->view('includes/endHTML');
     }
+}
     
      //==============================================================
 

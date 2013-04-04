@@ -7,7 +7,7 @@
 
   $mainHeading=$aPageParts['H1'];
   $contentDetails=$aPageParts['contentDetails'];
-  echo form_open('cmsmodel/about');
+  echo form_open('admin/about');
 ?><!-- <form begins> -->
 
   <label for="mainHeading" class="adminLabel">Main Heading</label>
@@ -36,9 +36,9 @@
       $promo = $oPromoDetails->promoDetails;
     ?>
       <label for="promo" class="adminLabel">Promotional Message</label>
-      <textarea name="content" rows="5" cols="30"><?php echo set_value('promoDetails', $promo);?></textarea>
+      <textarea name="promo" rows="5" cols="30"><?php echo set_value('promoDetails', $promo);?></textarea>
       
-      <p class="submit"><input type="submit" value="Update" /></p>
+      <p class="submit"><input type="submit" id="updatePage" name="updatePage" value="Update" /></p>
     
     </form>
   </section><!--promotional tag ends-->
