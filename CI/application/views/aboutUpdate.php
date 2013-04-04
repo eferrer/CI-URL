@@ -1,5 +1,6 @@
-<section id="mainContainer" class="cf"><!--main container begins-->  
+<section class="mainContainer" class="cf"><!--main container begins-->  
   <h1>ADMIN AREA: ABOUT ME </h1>
+<section class="contentAdmin">
   
 <?php 
   $aPageParts = $pageParts->row_array();
@@ -40,14 +41,15 @@
       <p class="submit"><input type="submit" value="Update" /></p>
     
     </form>
-  </section><!--promotional tag begins-->
+  </section><!--promotional tag ends-->
+</section>
 </section><!--main container ends-->
 
-<section id="mainContainer" class="cf"><!-- container for testimonials forms begins-->  
+<section class="mainContainer" class="cf"><!-- container for testimonials forms begins-->  
   <h2>ADMIN AREA: TESTIMONIALS</h2>
   <p class="adminAdd"><a href="aboutAddTestimonial.php">+ ADD NEW TESTIMONIAL</a></p>
   
-  <section id="testimonials"><!--testimonials begin-->
+  <section class="contentAdmin"><!--testimonials begin-->
     
   <?php  
     echo form_open('cmsmodel/aboutUpdate');
@@ -69,6 +71,8 @@
       <?php } ?>
     </form>    
   </section><!--testimonials ends-->
-</section><!-- container for testiminials form ends-->  
+</section>
+</section><!-- container for testiminials form ends--> 
+</div> <!--wrapper ends--> 
     
     

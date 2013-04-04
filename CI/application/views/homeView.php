@@ -4,7 +4,7 @@
       <p><span class="zumbaIs">Zumba is ... </span>Merengue, Salsa. Cumbia, Reggaeton, Samba, Tango, Bachata, ChaCha, Mambo, Bellydance, Calypso, Lambada, Flamenco, Rumba, HipHop, Swing, Country, Bollywood, Bhangra ...</p>
     </section>
     
-    <section id="mainContainer" class="cf"><!--main container begins-->
+    <section class="mainContainer" class="cf"><!--main container begins-->
     
       
        <section id="mainImage"><!-- slideshow begins -->

@@ -1,6 +1,6 @@
-<section id="mainContainer" class="cf"><!--main container begins-->
+<section class="mainContainer" class="cf"><!--main container begins-->
   <h1>ADMIN AREA: HOME </h1> 
-      
+<section class="contentAdmin">
 <?php 
   $aPageParts = $pageParts->row_array();
   $mainHeading=$aPageParts['H1'];
@@ -31,9 +31,10 @@
   <p class="submit"><input type="submit" value="Update" /></p>
   
  </form>     
+</section>
 </section><!--main container ends-->    
     
-<!-- </div> --> <!--wrapper ends-->
+</div> <!--wrapper ends-->
   
   
     

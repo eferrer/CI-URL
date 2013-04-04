@@ -22,7 +22,7 @@ body {
   background-image: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 50%, transparent 50%, transparent);
 }
 
-#mainContainer {
+.mainContainer {
   margin: auto;
   height: 100%;
 
@@ -383,9 +383,19 @@ footer {
 }
 
 .adminLabel{
-  color: #9f4ac8;;
+  color: #ec31b1;
+  /*text-transform: uppercase;*/
 }
 
+.adminAdd a{
+  color: #ec31b1;
+}
+
+.contentAdmin {
+    width: 90%;
+    height: 100%;
+    margin: auto;
+  }
 /**********************************************************************************************************/
 
 /* ===== == = === 30em (480 px) portrait  smartphone === = == ===== */
@@ -483,7 +493,7 @@ footer {
     display: none;
   }
 
-  #mainContainer {
+  .mainContainer {
     width: 90%;
     height: 100%;
     margin: auto;
@@ -936,7 +946,7 @@ footer {
     display: none;
   }
 
-  #mainContainer {
+  .mainContainer {
     width: 90%;
     height: 100%;
     margin: auto;
@@ -1429,7 +1439,7 @@ footer {
     line-height: 3rem;
   }
 
-  #mainContainer {
+  .mainContainer {
     max-width: 80%;
     height: 100%;
     margin-top: 3rem;
@@ -1690,7 +1700,7 @@ footer {
     margin: auto;
   }
 
-  #mainContainer:last-child {
+  .mainContainer:last-child {
     margin-bottom: 4rem;
   }
 
@@ -1817,7 +1827,7 @@ footer {
   /* ===== == = ===CONTACT ME PAGE=== = == ===== */
   /* ===== == = === 801px  - 1280 px === = == ===== */
 
-  #mainContainer {
+  .mainContainer {
     background-image: url("../assets/images/whiteWall.png");
     max-width: 80%;
     height: 100%;
@@ -1973,7 +1983,7 @@ footer {
     line-height: 3rem;
   }
 
-  #mainContainer {
+  .mainContainer {
     width: 60em;
     height: 100%;
     margin-top: 3rem;
@@ -2237,7 +2247,7 @@ footer {
     margin: auto;
   }
 
-  #mainContainer:last-child {
+  .mainContainer:last-child {
     margin-bottom: 4rem;
   }
 
@@ -2365,7 +2375,7 @@ footer {
   /* ===== == = ===CONTACT ME PAGE=== = == ===== */
   /* ===== == = === 1280 px plus=== = == ===== */
 
-  #mainContainer {
+  .mainContainer {
     background-image: url("../assets/images/whiteWall.png");
     max-width: 80%;
     height: 100%;

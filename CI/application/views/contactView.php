@@ -1,4 +1,4 @@
-      <section id="mainContainer" class="cf"><!--main container begins--> 
+      <section class="mainContainer" class="cf"><!--main container begins--> 
     <h1 class="contactHeading"><!-- CONTACT ME -->
             <?php  
                   //$oMainHeading = $mainHeading->row();

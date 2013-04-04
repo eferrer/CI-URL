@@ -1,6 +1,6 @@
 
     
-      <section id="mainContainer" class="cf"><!--main container begins-->
+      <section class="mainContainer" class="cf"><!--main container begins-->
             
             <section id="videoContainer"><!--video container begins-->
                     <section id="video">

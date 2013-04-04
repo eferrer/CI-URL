@@ -1,5 +1,6 @@
-<section id="mainContainer" class="cf"><!--main container for main heading begins-->  
+<section class="mainContainer" class="cf"><!--main container for main heading begins-->  
   <h1>ADMIN AREA: CLASSES </h1>
+  <section class="contentAdmin">
   <h2>ADMIN AREA: CLASS SCHEDULE</h2>   
       <?php
         $aPageParts = $pageParts->result_array();
@@ -46,16 +47,17 @@
         <label for="mainHeading" class="adminLabel">SubHeading</label>
         <input type="text" name="priceType" value="<?php echo set_value('subHeading1',$subHeading1); ?>" />
         <label for="mainHeading" class="adminLabel">Description</label>
-        <p><input type="text" name="day" value="<?php echo set_value('casual',$casualPrice); ?>" /></p>
+        <input type="text" name="day" value="<?php echo set_value('casual',$casualPrice); ?>" />
         <label for="mainHeading" class="adminLabel">SubHeading</label>
         <input type="text" name="priceType" value="<?php echo set_value('subHeading2',$subHeading2); ?>" />
         <label for="mainHeading" class="adminLabel">Description</label>
         <input type="text" name="day" value="<?php echo set_value('concession',$concessionPrice); ?>" />
-        <label for="mainHeading" class="adminLabel">Description</label>
+        <label for="mainHeading" class="adminLabel">Description2</label>
         <input type="text" name="details" value="<?php echo set_value('concessionDetails',$concessionDetails); ?>" />
       </article>
 
     </section> <!--price schedule content ends--> 
+    
   
     <h2>ADMIN AREA: STUDENT INFORMATION</h2>
       
@@ -64,15 +66,15 @@
       $mainHeading=$aPageParts[4]['H1'];
       $info=$aPageParts[4]['contentDetails'];
     ?><!-- <form> -->
-    
+    <section> <!--student information content begins--> 
       <label for="mainHeading" class="adminLabel">Main Heading</label>
       <input type="text" name="mainHeading" value="<?php echo set_value('mainHeading', $mainHeading);?>" />
         <!-- <h1 class="classHeading">INFORMATION FOR STUDENTS</h1> -->
-        
-      <section id="studentInfo"> <!--student information content begins-->    
-        <article class="studentInfo"><!--content paragraphs begin-->
-          <p><textarea name="content" rows="5" cols="30"><?php echo set_value('info',$info); ?></textarea></p>
-        </article><!--content paragraphs end-->
+        <label for="mainHeading" class="adminLabel">Description</label>
+         
+        <!-- <article class="studentInfo"> --><!--content paragraphs begin-->
+          <textarea name="content" rows="5" cols="30"><?php echo set_value('info',$info); ?></textarea>
+        <!-- </article> --><!--content paragraphs end-->
     </section><!--student information content ends-->   
     
     <section><!--tagline begins-->
@@ -93,19 +95,21 @@
       <textarea name="content" rows="5" cols="30"><?php echo set_value('promoDetails', $promo);?></textarea>
 
       <p class="submit"><input type="submit" value="Update" /></p>
-    </form>
-  </section><!--promotional tag ends-->
+    
+    </section><!--promotional tag ends-->
+  </form>
+</section>
 </section><!--main container ends-->
       
       
       
       
       
-<section id="mainContainer" class="cf"><!-- container for classes forms begins-->  
+<section class="mainContainer" class="cf"><!-- container for classes forms begins-->  
   <h2>ADMIN AREA: CLASS DETAILS</h2>
   <p class="adminAdd"><a href="aboutAddTestimonial.php">+ ADD NEW CLASS</a></p>
             
-  <section id="classSchedule"> <!--class schedule content begins-->    
+  <section class="contentAdmin"> <!--class schedule content begins-->    
   
   <?php  
     echo form_open('cmsmodel/classtimesUpdate');
@@ -120,7 +124,7 @@
   ?>
              
       <section class="classDetailsAdmin"><!--class details begins-->
-        <ul id="classTimesAdmin">
+        <ul class="classTimesAdmin">
           <li class="day"><input type="text" name="day" value="<?php echo set_value('day', $day)?>;" /></li>
           <li class="time"><input type="text" name="time" value="<?php echo set_value('time',$time); ?>" /></li>
           <li class="place"><input type="text" name="place" value="<?php echo set_value('place',$place); ?>" /></li>
@@ -135,25 +139,13 @@
     </form>
   </section> <!--class schedule content ends--> 
 </section><!--container for classes forms ends-->
-
-
-
-
-
-
       
-      
-      
-
-        
           
-          
-          
-<section id="mainContainer" class="cf"><!--main container for Student Info - What to expect begins-->    
+<section class="mainContainer" class="cf"><!--main container for Student Info - What to expect begins-->    
   <h2>ADMIN AREA: ITEMS THAT STUDENTS NEED</h2>
   <p class="adminAdd"><a href="aboutAddTestimonial.php">+ ADD NEW ITEM</a></p>  
     
-    <section id="classSchedule">
+    <section class="contentAdmin">
       
       <?php  
         echo form_open('cmsmodel/classtimesUpdate');
@@ -181,7 +173,7 @@
       
       <!-- </section> --><!--class info container ends-->
     
-  </div> <!--wrapper ends-->
+</div> <!--wrapper ends-->
     
 
     

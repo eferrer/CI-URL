@@ -1,4 +1,4 @@
-<section id="mainContainer" class="cf"><!--class schedule container begins-->
+<section class="mainContainer" class="cf"><!--class schedule container begins-->
 
 <?php 
   // $oContent = $content->result();
@@ -81,7 +81,7 @@
   </section> <!--class schedule content ends-->         
 </section><!--class schedule container ends-->
     
-<section id="mainContainer" class="cf"><!--price schedule container begins-->
+<section class="mainContainer" class="cf"><!--price schedule container begins-->
     
   <h1 class="classHeading"><!-- PRICE SCHEDULE -->
   <?php
@@ -145,7 +145,7 @@
   </p>
 </section><!--promotional tag ends-->
       
-<section id="mainContainer" class="cf"><!--class info container begins-->
+<section class="mainContainer" class="cf"><!--class info container begins-->
       
   <h1 class="classHeading"><!-- INFORMATION FOR STUDENTS -->
   <?php
