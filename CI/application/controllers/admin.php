@@ -179,11 +179,11 @@ class Admin extends CI_Controller {
  
                               if ( $this->Cmsmodel->updateMainHeading()){
                                 if ( $this->Cmsmodel->updateContent()){
-        //                             if ( $this->Cmsmodel->updateTagline()){
+                                     if ( $this->Cmsmodel->updateTagline()){
                                          redirect (base_url() . 'admin/about');
                                  }        
                              }
-        //                 }
+                         }
 
                          }else{
         $data['menu'] = $this->Cmsmodel->getMenuParts();
