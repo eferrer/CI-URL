@@ -187,6 +187,12 @@ class Admin extends CI_Controller {
                              }
                          }
 
+                         }
+
+                         if($this->input->post('updateTestimonial')){
+                            if($this->Cmsmodel->updateTestimonial()){
+                                redirect (base_url() . 'admin/about');
+                            }
                          }else{
         $data['menu'] = $this->Cmsmodel->getMenuParts();
         $data['pageParts'] = $this->Cmsmodel->getPagePartsAdmin();

@@ -209,6 +209,22 @@ class Cmsmodel extends CI_Model{
                 
         return $this->db->query($sql);
     }
+
+    //==============================================================
+
+    // UPDATE TESTIMONIAL DETAILS
+
+    //==============================================================
+
+    public function updateTestimonial()
+    {
+        $testimonial = $this->db->escape($this->input->post('testimonial'));
+
+        $sql = "UPDATE tbTestimonials
+                    SET testimonialDetails = $testimonial"; 
+                
+        return $this->db->query($sql);
+    }
     
   
     
