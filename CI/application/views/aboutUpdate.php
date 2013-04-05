@@ -58,13 +58,14 @@
     
     foreach($aTestimonialDetails as $key=>$aTestimonials){
       $testimonials = $aTestimonials['testimonialDetails'];
-      $name = $aTestimonials['name']
+      $name = $aTestimonials['name'];
+      $testimonialsID = $aTestimonials["testID"];
   ?>
 
       <ul>
-        <li><textarea name="testimonial" rows="5" cols="30"> <?php echo set_value('testimonialDetails', $testimonials);?></textarea></li>
-          <li><input type="text" name="mainHeading" value=" <?php echo set_value('name', $name); ?>" /></li>
-        <p class="submit"><input type="submit" id="updatePage" name="updatePage" value="Update" /></p>
+        <li><textarea name="testimonial" id="<?php echo set_value('testID', $testimonialsID);?>" rows="5" cols="30"> <?php echo set_value('testimonialDetails', $testimonials);?></textarea></li>
+          <li><input type="text" name="testimonialRef" value=" <?php echo set_value('name', $name); ?>" /></li>
+        <p class="submit"><input type="submit" id="updateTestimonial" name="updateTestimonial" value="Update" /></p>
         <p class="submit"><input type="submit" value="Delete" /></p>
       </ul>
       
