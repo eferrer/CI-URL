@@ -222,7 +222,7 @@ class Cmsmodel extends CI_Model{
 
         $sql = "UPDATE tbTestimonials
                     SET testimonialDetails = $testimonial"; 
-                
+         //exit(__FILE__.__LINE__);       
         return $this->db->query($sql);
     }
     
