@@ -30,6 +30,10 @@ class Admin extends CI_Controller {
 		$this->load->helper('form');
 		$this->load->library('form_validation');
         
+        $this->load->model('Cmsmodel');
+        
+        $data['menu'] = $this->Cmsmodel->getMenuParts();
+        
                 $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|max_length[12]|xss_clean');
                 $this->form_validation->set_rules('password', 'Password', 'trim|required|valid_password');
                 
@@ -38,7 +42,9 @@ class Admin extends CI_Controller {
 
                 if ($this->form_validation->run() == FALSE)
                 {
+                    $this->load->view('includes/startHTML', $data);
                     $this->load->view('loginView');
+                    $this->load->view('includes/endHTML');
                 }
                 else
                 {
@@ -63,59 +69,61 @@ class Admin extends CI_Controller {
     //==============Sample add new page code==========
 
     // make a new page
-    public function newPage()
-    {
-        // These should be autoloaded. Included here to remind you.
-        $this->load->helper(array('form', 'url'));
-        $this->load->library('form_validation');
+  
+  
+    // public function newPage()
+    // {
+    //     // These should be autoloaded. Included here to remind you.
+    //     $this->load->helper(array('form', 'url'));
+    //     $this->load->library('form_validation');
 
-        $this->form_validation->set_rules('title', '5', 'required|min_length[5]');
-        $this->form_validation->set_rules('content', '5', 'required|min_length[5]');
+    //     $this->form_validation->set_rules('title', '5', 'required|min_length[5]');
+    //     $this->form_validation->set_rules('content', '5', 'required|min_length[5]');
         
-        $this->form_validation->set_message('required', 'We need at least %s characters, please');
-        $this->form_validation->set_message('min_length', 'Surely you can manage %s lousy characters');
+    //     $this->form_validation->set_message('required', 'We need at least %s characters, please');
+    //     $this->form_validation->set_message('min_length', 'Surely you can manage %s lousy characters');
         
-        //run the rules. If anything fails show the form
-        if ($this->form_validation->run() == FALSE){
-            $this->load->view('includes/startHTML');
-            $this->load->view('CMS_newPage');
-            $this->load->view('includes/endHTML');
-        }else{
-            // this should be in a conditional statement to handle what happens if putContent() fails
-            $this->Cmsmodel->putContent();
-            redirect('cms');            
-        }       
+    //     //run the rules. If anything fails show the form
+    //     if ($this->form_validation->run() == FALSE){
+    //         $this->load->view('includes/startHTML');
+    //         $this->load->view('CMS_newPage');
+    //         $this->load->view('includes/endHTML');
+    //     }else{
+    //         // this should be in a conditional statement to handle what happens if putContent() fails
+    //         $this->Cmsmodel->putContent();
+    //         redirect('cms');            
+    //     }       
 
-    }
+    // }
 
     // ==========end sample add new Page code===========
 
 //==============Sample update page code==========
 
-    function updatePage()
-    {
-        $this->load->helper(array('form', 'url'));
-        $this->load->library('form_validation');
-        $this->load->model('Cmsmodel');
+    // function updatePage()
+    // {
+    //     $this->load->helper(array('form', 'url'));
+    //     $this->load->library('form_validation');
+    //     $this->load->model('Cmsmodel');
 
-        $this->form_validation->set_rules('title', '5', 'required|min_length[5]');
-        $this->form_validation->set_rules('content', '5', 'required|min_length[5]');
+    //     $this->form_validation->set_rules('title', '5', 'required|min_length[5]');
+    //     $this->form_validation->set_rules('content', '5', 'required|min_length[5]');
         
-        $this->form_validation->set_message('required', 'We need at least %s characters, please');
-        $this->form_validation->set_message('min_length', 'Surely you can manage %s lousy characters');
-        //run the rules. If anything fails show the form
-        if ($this->form_validation->run() == FALSE){
-            $data['query_result']= $this->Cmsmodel->getContentById();
-            $this->load->view('CMS_updatePage',$data);
+    //     $this->form_validation->set_message('required', 'We need at least %s characters, please');
+    //     $this->form_validation->set_message('min_length', 'Surely you can manage %s lousy characters');
+    //     //run the rules. If anything fails show the form
+    //     if ($this->form_validation->run() == FALSE){
+    //         $data['query_result']= $this->Cmsmodel->getContentById();
+    //         $this->load->view('CMS_updatePage',$data);
             
-        }else{
-            if($this->Cmsmodel->updateContent() ){
-                redirect('cms');
-            }else{
-                redirect('cms/admin');
-            }
-        } 
-    }
+    //     }else{
+    //         if($this->Cmsmodel->updateContent() ){
+    //             redirect('cms');
+    //         }else{
+    //             redirect('cms/admin');
+    //         }
+    //     } 
+    // }
 
             
             
@@ -166,6 +174,56 @@ class Admin extends CI_Controller {
     //==============================================================
 
     // UPDATE ABOUT ME PAGE
+
+    //==============================================================
+    
+    function about()
+    {
+        $data=array();
+
+        $this->load->model('Cmsmodel');
+        
+         if($this->input->post('updatePage')){
+ 
+              if ( $this->Cmsmodel->updateMainHeading()){
+                if ( $this->Cmsmodel->updateContent()){
+                     if ( $this->Cmsmodel->updateTagline()){
+                        if ( $this->Cmsmodel->updatePromotion()){
+                            
+                         redirect (base_url() . 'admin/about');
+                     
+                         }
+                     }        
+                 }
+             }
+             
+         }else{
+            $data['menu'] = $this->Cmsmodel->getMenuParts();
+            $data['pageParts'] = $this->Cmsmodel->getPagePartsAdmin();
+            $data['tagline'] = $this->Cmsmodel->getTaglineAdmin();
+
+            // GET PROMOTIONAL DETAILS
+            $data['promoDetails'] = $this->Cmsmodel->getPromotion();
+
+             $data['testimonialDetails'] = $this->Cmsmodel->getTestimonials();
+            
+            // PUT THIS IN TO AVOID BROWSER CACHING IN CI
+            $this->output->set_header("HTTP/1.0 200 OK");
+            $this->output->set_header("HTTP/1.1 200 OK");
+            $this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
+            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
+            $this->output->set_header("Cache-Control: post-check=0, pre-check=0");
+            $this->output->set_header("Pragma: no-cache");
+
+            $this->load->view('includes/adminStartHTML', $data);
+            $this->load->view('aboutUpdate', $data);
+            $this->load->view('includes/endHTML');
+        }
+    }
+    
+     //==============================================================
+
+    // UPDATE TESTIMONIALS
 
     //==============================================================
     

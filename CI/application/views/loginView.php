@@ -1,9 +1,6 @@
-<html>
-<head>
-<title>Admin Login</title>
-</head>
-<body>
-
+<section class="mainContainer" class="cf"><!--main container begins-->
+    <h1>ADMIN LOGIN </h1>
+    <section class="contentAdmin">
 <?php echo validation_errors(); ?>
 
 <?php echo form_open('form'); ?>
@@ -17,6 +14,6 @@
 <div><input type="submit" value="Submit" /></div>
 
 </form>
-
-</body>
-</html>
+</section>
+</section>
+</div>
