@@ -321,28 +321,38 @@ class Admin extends CI_Controller {
 
         $this->load->model('Cmsmodel');
         
-        $data['menu'] = $this->Cmsmodel->getMenuParts();
-        $data['pageParts'] = $this->Cmsmodel->getPagePartsAdmin();
-        $data['tagline'] = $this->Cmsmodel->getTaglineAdmin();
-
-        // GET PROMOTIONAL DETAILS
-        $data['promoDetails'] = $this->Cmsmodel->getPromotion();
+        if($this->input->post('updatePage')){
+ 
+          if ( $this->Cmsmodel->updateMainHeading()){
+                 if ( $this->Cmsmodel->updateTagline()){
+                    if ( $this->Cmsmodel->updatePromotion()){
+                     redirect (base_url() . 'admin/contact');
+                 
+                     }
+                 }        
+            }
+         }else{
         
-        // PUT THIS IN TO AVOID BROWSER CACHING IN CI
-        $this->output->set_header("HTTP/1.0 200 OK");
-        $this->output->set_header("HTTP/1.1 200 OK");
-        $this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
-        $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
-        $this->output->set_header("Cache-Control: post-check=0, pre-check=0");
-        $this->output->set_header("Pragma: no-cache");
+            $data['menu'] = $this->Cmsmodel->getMenuParts();
+            $data['pageParts'] = $this->Cmsmodel->getPagePartsAdmin();
+            $data['tagline'] = $this->Cmsmodel->getTaglineAdmin();
 
-        $this->load->view('includes/adminStartHTML', $data);
-        $this->load->view('contactUpdate', $data);
-        $this->load->view('includes/endHTML');
+            // GET PROMOTIONAL DETAILS
+            $data['promoDetails'] = $this->Cmsmodel->getPromotion();
+            
+            // PUT THIS IN TO AVOID BROWSER CACHING IN CI
+            $this->output->set_header("HTTP/1.0 200 OK");
+            $this->output->set_header("HTTP/1.1 200 OK");
+            $this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
+            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
+            $this->output->set_header("Cache-Control: post-check=0, pre-check=0");
+            $this->output->set_header("Pragma: no-cache");
+
+            $this->load->view('includes/adminStartHTML', $data);
+            $this->load->view('contactUpdate', $data);
+            $this->load->view('includes/endHTML');
+        }
     }
 	
-	
-	
-
 }
 // end class
