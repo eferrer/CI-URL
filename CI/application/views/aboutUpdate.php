@@ -47,7 +47,7 @@
 
 <section class="mainContainer" class="cf"><!-- container for testimonials forms begins-->  
   <h2>ADMIN AREA: TESTIMONIALS</h2>
-  <p class="adminAdd"><a href="aboutAddTestimonial.php">+ ADD NEW TESTIMONIAL</a></p>
+  <p class="adminAdd"><a href="<?=base_url()?>admin/addTestimonial">+ ADD NEW TESTIMONIAL</a></p>
   
   <section class="contentAdmin"><!--testimonials begin-->
     

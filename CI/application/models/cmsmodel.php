@@ -16,7 +16,7 @@ class Cmsmodel extends CI_Model{
 
     function getPageParts() 
     {
-        $sql = "SELECT H1, contentDetails, H3
+        $sql = "SELECT H1, contentDetails, H3, contentID
                     FROM tbContent
                     WHERE pageID =
                     (SELECT pageID FROM tbPages
@@ -27,7 +27,7 @@ class Cmsmodel extends CI_Model{
 
     function getPagePartsAdmin() 
     {
-        $sql = "SELECT H1, contentDetails, H3
+        $sql = "SELECT H1, contentDetails, H3, contentID
                     FROM tbContent
                     WHERE pageID =
                     (SELECT pageID FROM tbPages
@@ -114,7 +114,7 @@ class Cmsmodel extends CI_Model{
 
     public function getNeedsList()
     {
-        $sql = "SELECT needsDetails
+        $sql = "SELECT needsDetails, needsID
                 FROM tbNeeds";
                 
         return $this->db->query($sql);
@@ -128,7 +128,7 @@ class Cmsmodel extends CI_Model{
 
     public function getClassDetails()
     {
-        $sql = "SELECT day, time, place, address
+        $sql = "SELECT day, time, place, address, classID
                 FROM tbClasses";
 
         return $this->db->query($sql);
@@ -136,7 +136,8 @@ class Cmsmodel extends CI_Model{
     
     //==============================================================
 
-    // UPDATE MAIN HEADING
+    // UPDATE MAIN HEADING 
+    // do I need to add the content ID especially for class page where there are several headings?
 
     //==============================================================
     
@@ -206,7 +207,7 @@ class Cmsmodel extends CI_Model{
 
         $sql = "UPDATE tbPromo
                     SET promoDetails = $promo"; 
-                
+                 
         return $this->db->query($sql);
     }
 
@@ -218,11 +219,31 @@ class Cmsmodel extends CI_Model{
 
     public function updateTestimonial()
     {
-        $testimonial = $this->db->escape($this->input->post('testimonial'));
+        
+        
+        $testimonials = $this->db->escape($this->input->post('testimonial'));
 
         $sql = "UPDATE tbTestimonials
-                    SET testimonialDetails = $testimonial"; 
-         //exit(__FILE__.__LINE__);       
+                    SET testimonialDetails = $testimonials
+                    WHERE testID=1"; 
+                            
+        return $this->db->query($sql);
+    }
+    
+    //==============================================================
+
+    // DELETE TESTIMONIAL DETAILS
+
+    //==============================================================
+
+    public function deleteTestimonial()
+    {
+        
+        $id= $this->db->escape($this->input->post('testimonial'));
+
+        $sql = "DELETE FROM tbTestimonials
+                    WHERE id=$id"; 
+                              
         return $this->db->query($sql);
     }
     
