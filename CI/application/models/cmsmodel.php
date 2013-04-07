@@ -224,8 +224,11 @@ class Cmsmodel extends CI_Model{
         $testimonials = $this->db->escape($this->input->post('testimonial'));
 
         $sql = "UPDATE tbTestimonials
-                    SET testimonialDetails = $testimonials
-                    WHERE testID=1"; 
+                    SET testimonialDetails = $testimonials,
+                    
+                    WHERE testID={$this->input->post('testID')}"; 
+
+
                             
         return $this->db->query($sql);
     }

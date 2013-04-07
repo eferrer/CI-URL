@@ -52,7 +52,7 @@
   <section class="contentAdmin"><!--testimonials begin-->
     
   <?php  
-    echo form_open('admin/about');
+   
     
     $aTestimonialDetails= $testimonialDetails->result_array();
     
@@ -60,17 +60,20 @@
       $testimonials = $aTestimonials['testimonialDetails'];
       $name = $aTestimonials['name'];
       $testimonialsID = $aTestimonials["testID"];
+
+       echo form_open('admin/updateTestimonials');
   ?>
 
       <ul>
         <li><textarea name="testimonial" id="<?php echo set_value('testID', $testimonialsID);?>" rows="5" cols="30"> <?php echo set_value('testimonialDetails', $testimonials);?></textarea></li>
+        <input type="hidden" name = "testID" value = "<?=$testimonialsID?>" />
           <li><input type="text" name="testimonialRef" value=" <?php echo set_value('name', $name); ?>" /></li>
-        <p class="submit"><input type="submit" id="updateTestimonial" name="updateTestimonial" value="Update" /></p>
+        <p class="submit"><input type="submit" id="testimonialSubmit" name="testimonialSubmit" value="Update" /></p>
         <p class="submit"><input type="submit" value="Delete" /></p>
       </ul>
-      
+      </form>  
       <?php } ?>
-    </form>    
+      
   </section><!--testimonials ends-->
 </section>
 </section><!-- container for testiminials form ends--> 

@@ -233,9 +233,9 @@ class Admin extends CI_Controller {
 
         $this->load->model('Cmsmodel');
         
-         if($this->input->post('updatePage')){
+         if($this->input->post('testimonialSubmit')){
  
-              if ( $this->Cmsmodel->updateTestimonials()){
+              if ( $this->Cmsmodel->updateTestimonial()){
                 // if ( $this->Cmsmodel->updateContent()){
                 //      if ( $this->Cmsmodel->updateTagline()){
                 //         if ( $this->Cmsmodel->updatePromotion()){
@@ -247,28 +247,29 @@ class Admin extends CI_Controller {
              //     }
              // }
              
-         }else{
-            $data['menu'] = $this->Cmsmodel->getMenuParts();
-            $data['pageParts'] = $this->Cmsmodel->getPagePartsAdmin();
-            $data['tagline'] = $this->Cmsmodel->getTaglineAdmin();
+         }
+        //  else{
+        //     $data['menu'] = $this->Cmsmodel->getMenuParts();
+        //     $data['pageParts'] = $this->Cmsmodel->getPagePartsAdmin();
+        //     $data['tagline'] = $this->Cmsmodel->getTaglineAdmin();
 
-            // GET PROMOTIONAL DETAILS
-            $data['promoDetails'] = $this->Cmsmodel->getPromotion();
+        //     // GET PROMOTIONAL DETAILS
+        //     $data['promoDetails'] = $this->Cmsmodel->getPromotion();
 
-             $data['testimonialDetails'] = $this->Cmsmodel->getTestimonials();
+        //      $data['testimonialDetails'] = $this->Cmsmodel->getTestimonials();
             
-            // PUT THIS IN TO AVOID BROWSER CACHING IN CI
-            $this->output->set_header("HTTP/1.0 200 OK");
-            $this->output->set_header("HTTP/1.1 200 OK");
-            $this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
-            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
-            $this->output->set_header("Cache-Control: post-check=0, pre-check=0");
-            $this->output->set_header("Pragma: no-cache");
+        //     // PUT THIS IN TO AVOID BROWSER CACHING IN CI
+        //     $this->output->set_header("HTTP/1.0 200 OK");
+        //     $this->output->set_header("HTTP/1.1 200 OK");
+        //     $this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
+        //     $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
+        //     $this->output->set_header("Cache-Control: post-check=0, pre-check=0");
+        //     $this->output->set_header("Pragma: no-cache");
 
-            $this->load->view('includes/adminStartHTML', $data);
-            $this->load->view('aboutUpdate', $data);
-            $this->load->view('includes/endHTML');
-        }
+        //     $this->load->view('includes/adminStartHTML', $data);
+        //     $this->load->view('aboutUpdate', $data);
+        //     $this->load->view('includes/endHTML');
+        // }
     }
     
      //==============================================================
@@ -285,7 +286,7 @@ class Admin extends CI_Controller {
         
          if($this->input->post('updatePage')){
  
-              if ( $this->Cmsmodel->updateTestimonials()){
+              if ( $this->Cmsmodel->updateTestimonials()){ // this may not be the right method to use at this point
                 // if ( $this->Cmsmodel->updateContent()){
                 //      if ( $this->Cmsmodel->updateTagline()){
                 //         if ( $this->Cmsmodel->updatePromotion()){

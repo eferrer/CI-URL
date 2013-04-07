@@ -5,9 +5,9 @@
       <?php
         $aPageParts = $pageParts->result_array();
         
-        // echo "<pre>";
-        // print_r($aPageParts);
-        // echo "</pre>";
+        echo "<pre>";
+        print_r($aPageParts);
+        echo "</pre>";
         
         $mainHeading0=$aPageParts[0]['H1'];
         echo form_open('admin/classtimes');
