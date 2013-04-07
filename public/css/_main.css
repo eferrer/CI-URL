@@ -459,7 +459,7 @@ footer {
     max-width: 90%;
     height: 209px;
     margin: auto;
-    margin-top: 2rem;
+    margin-top: 1rem;
     padding-top: 2rem;
   }
 
@@ -534,7 +534,7 @@ footer {
     margin: auto;
     margin-top: 2rem;
     margin-bottom: 3rem;
-    padding-top: 1rem;
+    padding-top: 0.5rem;
     background: white;
   }
 
@@ -1016,6 +1016,7 @@ footer {
     margin: auto;
     margin-top: 2rem;
     margin-bottom: 3rem;
+    padding-top: 0.5rem;
     background: white;
   }
 
