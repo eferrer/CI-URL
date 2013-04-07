@@ -60,6 +60,7 @@
       $testimonials = $aTestimonials['testimonialDetails'];
       $name = $aTestimonials['name'];
       $testimonialsID = $aTestimonials["testID"];
+      $nameID = $aTestimonials["testID"];
 
        echo form_open('admin/updateTestimonials');
   ?>
@@ -68,6 +69,7 @@
         <li><textarea name="testimonial" id="<?php echo set_value('testID', $testimonialsID);?>" rows="5" cols="30"> <?php echo set_value('testimonialDetails', $testimonials);?></textarea></li>
         <input type="hidden" name = "testID" value = "<?=$testimonialsID?>" />
           <li><input type="text" name="testimonialRef" value=" <?php echo set_value('name', $name); ?>" /></li>
+          <input type="hidden" name = "testID" value = "<?=$nameID?>" />
         <p class="submit"><input type="submit" id="testimonialSubmit" name="testimonialSubmit" value="Update" /></p>
         <p class="submit"><input type="submit" value="Delete" /></p>
       </ul>
