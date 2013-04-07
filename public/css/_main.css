@@ -83,7 +83,12 @@ header {
   background-color: #f7931e;
 }
 
-#logo {
+#headerContainer{
+  margin-top: -1rem;
+}
+
+#logo, 
+#logoAdmin li a{
   font-size: 0rem;
 }
 
@@ -383,7 +388,16 @@ footer {
 }
 
 #copyright p {
+  color: #14080a; 
+  font-size: 0.8rem;
+}
+
+.adminLink a {
   color: #14080a;
+}
+
+.adminLink a:hover{
+  color: #FFFFFF;
 }
 
 .adminLabel{
@@ -413,13 +427,29 @@ footer {
     padding-bottom: 0rem;
   }
 
-  #logo {
+  #logo{
     background-image: url("../images/full/logo30.png");
     background-repeat: no-repeat;
     width: 314px;
     max-width: 100%;
-    height: 139px;
+    height: 140px;
     margin: auto;
+    margin-top: 1rem;
+  }
+   
+  #logoAdmin{
+    background-image: url("../images/full/logo30.png");
+    background-repeat: no-repeat;
+    width: 314px;
+    max-width: 100%;
+    height: 220px;
+    margin: auto;
+  }
+  
+  .logout{
+    display: block;
+    margin-top: 8rem;
+    width: 100%;
   }
 
   #mainImage {
@@ -430,6 +460,7 @@ footer {
     height: 209px;
     margin: auto;
     margin-top: 2rem;
+    padding-top: 2rem;
   }
 
   /*! slideshow css http://responsiveslides.com v1.53 by @viljamis */
@@ -503,6 +534,7 @@ footer {
     margin: auto;
     margin-top: 2rem;
     margin-bottom: 3rem;
+    padding-top: 1rem;
     background: white;
   }
 
@@ -567,7 +599,7 @@ footer {
   .promoAbout, 
   .promoClasses,
   .promoContact {
-    width: 65%;
+    width: 45%;
     margin: auto;
   }
 
@@ -656,13 +688,24 @@ footer {
   }
 
   #copyright {
-    height: 4rem;
+    height: 4.5rem;
     margin-top: -1rem;
   }
-
-  #copyright p {
-    font-size: 0.8rem;
-    padding-top: 1rem;
+  
+  .adminLink a{
+    display: block;
+    margin: auto;
+    width: 10rem;
+    padding-top: 0.5rem;
+    margin-bottom: -0.5rem;
+    /*background-color: red;*/
+  }
+  
+  .siteLink{
+    display: block;
+    margin: auto;
+    width: 20rem;
+    /*background-color: blue;*/
   }
 
   /* ===== == = === HOME PAGE === = == ===== */
@@ -803,7 +846,7 @@ footer {
   #video object,
   #video embed {
     position: absolute;
-    top: 3rem;
+    top: 1rem;
     left: 1rem;
     width: 90%;
     height: 90%;
@@ -866,13 +909,29 @@ footer {
     padding-bottom: 1rem;
   }
 
-  #logo {
+  #logo{
     background-image: url("../images/full/logo30.png");
     background-repeat: no-repeat;
     width: 314px;
     max-width: 100%;
-    height: 139px;
+    height: 140px;
     margin: auto;
+    margin-top: 1rem;
+  }
+  
+  #logoAdmin {
+    background-image: url("../images/full/logo30.png");
+    background-repeat: no-repeat;
+    width: 314px;
+    max-width: 100%;
+    height: 220px;
+    margin: auto;
+  }
+  
+   .logout{
+    display: block;
+    margin-top: 8rem;
+    width: 100%;
   }
 
   #mainImage {
@@ -1038,7 +1097,7 @@ footer {
   .promoAbout, 
   .promoClasses,
   .promoContact {
-    width: 65%;
+    width: 40%;
     margin: auto;
   }
 
@@ -1125,14 +1184,26 @@ footer {
     height: 41px;
     margin: auto;
   }
-
+  
   #copyright {
-    height: 3rem;
+    height: 4.5rem;
     margin-top: -1rem;
   }
-  #copyright p {
-    font-size: 0.8rem;
-    padding-top: 1rem;
+  
+  .adminLink a{
+    display: block;
+    margin: auto;
+    width: 10rem;
+    padding-top: 0.5rem;
+    margin-bottom: -0.5rem;
+    /*background-color: red;*/
+  }
+  
+  .siteLink{
+    display: block;
+    margin: auto;
+    width: 20rem;
+    /*background-color: blue;*/
   }
 
 /* ===== == = === HOME PAGE === = == ===== */
@@ -1283,7 +1354,7 @@ footer {
   #video object,
   #video embed {
     position: absolute;
-    top: 3rem;
+    top: 1rem;
     left: 2rem;
     width: 90%;
     height: 90%;
@@ -1341,13 +1412,28 @@ footer {
 
 @media screen and (min-width: 50.1em) and (max-width: 80em) {
 
-  #logo {
+  #logo{
     background-image: url("../images/full/logo80.png");
     background-repeat: no-repeat;
     width: 514px;
     max-width: 100%;
-    height: 218px;
+    height: 200px;
     margin: auto;
+  }
+  
+  #logoAdmin{
+    background-image: url("../images/full/logo80.png");
+    background-repeat: no-repeat;
+    width: 514px;
+    max-width: 100%;
+    height: 280px;
+    margin: auto;
+  }
+  
+   .logout{
+    display: block;
+    margin-top: 12rem;
+    width: 100%;
   }
 
   #mainImage {
@@ -1549,7 +1635,7 @@ footer {
   .promoAbout, 
   .promoClasses, 
   .promoContact {
-    width: 55%;
+    width: 40%;
     margin: auto;
   }
   
@@ -1639,13 +1725,24 @@ footer {
   }
 
   #copyright {
-    height: 4rem;
+    height: 4.5rem;
     margin-top: -1rem;
   }
   
-  #copyright p {
-    font-size: 0.8rem;
-    padding-top: 1rem;
+  .adminLink a{
+    display: block;
+    margin: auto;
+    width: 10rem;
+    padding-top: 0.5rem;
+    margin-bottom: -0.5rem;
+    /*background-color: red;*/
+  }
+  
+  .siteLink{
+    display: block;
+    margin: auto;
+    width: 20rem;
+    /*background-color: blue;*/
   }
 
   /* ===== == = ===ABOUT ME PAGE=== = == ===== */
@@ -1807,10 +1904,10 @@ footer {
     margin: auto;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    background: white;
+    /*background: white;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
-    border-radius: 20px;
+    border-radius: 20px;*/
   }
 
   #video {
@@ -1825,8 +1922,8 @@ footer {
   #video object,
   #video embed {
     position: absolute;
-    top: 3rem;
-    left: 2rem;
+    top: 1rem;
+    left: 3rem;
     width: 90%;
     height: 90%;
   }
@@ -1896,8 +1993,24 @@ footer {
     background-repeat: no-repeat;
     width: 514px;
     max-width: 100%;
-    height: 218px;
+    height: 200px;
     margin: auto;
+  }
+  
+  #logoAdmin {
+    background-image: url("../images/full/logo80.png");
+    background-repeat: no-repeat;
+    width: 514px;
+    max-width: 100%;
+    height: 200px;
+    margin: auto;
+  }
+  
+   .logout{
+    display: block;
+    margin-top: 1rem;
+    margin-left: 33rem;
+    width: 70%;
   }
   
   #mainImage {
@@ -2094,7 +2207,7 @@ footer {
   .promoAbout, 
   .promoClasses, 
   .promoContact {
-    width: 55%;
+    width: 30em;
     margin: auto;
   }
   
@@ -2119,6 +2232,7 @@ footer {
     display: inline-block;
     width: 20%;
     height: 80px;
+    padding-top: 2rem;
   }
 
   .zinNetwork p{
@@ -2184,13 +2298,24 @@ footer {
   }
 
   #copyright {
-    height: 4rem;
+    height: 4.5rem;
     margin-top: -1rem;
   }
   
-  #copyright p {
-    font-size: 0.8rem;
-    padding-top: 1rem;
+  .adminLink a{
+    display: block;
+    margin: auto;
+    width: 10rem;
+    padding-top: 0.5rem;
+    margin-bottom: -0.5rem;
+    /*background-color: red;*/
+  }
+  
+  .siteLink{
+    display: block;
+    margin: auto;
+    width: 20rem;
+    /*background-color: blue;*/
   }
 
   /* ===== == = ===ABOUT ME PAGE=== = == ===== */
@@ -2356,10 +2481,10 @@ footer {
     margin: auto;
     margin-top: 2rem;
     margin-bottom: 2rem;
-    background: white;
+    /*background: white;
     -webkit-border-radius: 20px;
     -moz-border-radius: 20px;
-    border-radius: 20px;
+    border-radius: 20px;*/
   }
 
   #video {
@@ -2374,8 +2499,8 @@ footer {
   #video object,
   #video embed {
     position: absolute;
-    top: 3rem;
-    left: 2rem;
+    top: 1rem;
+    left: 3rem;
     width: 90%;
     height: 90%;
   }

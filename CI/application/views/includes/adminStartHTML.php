@@ -23,8 +23,11 @@
       
     <header id="headerContainer"> <!--logo and menu container begins-->
       
-      <div id="logo"><!-- logo begins -->
-        <a href="home.html">logo</a>
+      <div id="logoAdmin"><!-- logo begins -->
+        <ul>
+          <li><a href="home.html">logo</a></li>
+          <li class="logout"><input type="submit" id="updatePage" name="updatePage" value="Logout" /></li>
+      </ul>
       </div><!--logo ends-->     
       
       <nav id="navBar"> <!--navigation bar begins-->
