@@ -7,7 +7,12 @@ class Cmsmodel extends CI_Model{
         parent::__construct();
     }
     
-
+     //***************************************************************************************************
+    
+    //  GET MODELS
+    
+    //****************************************************************************************************
+    
     //==============================================================
 
     // GET MAIN HEADINGS (H1), SUBHEADINGS (H3) AND CONTENT
@@ -148,15 +153,15 @@ class Cmsmodel extends CI_Model{
         return $this->db->query($sql);
     }
     
-    //*******************************************************************************
+    //***************************************************************************************************
     
     //  UPDATE MODELS
     
-    //*******************************************************************************
+    //***************************************************************************************************
+    
     //==============================================================
 
     // UPDATE MAIN HEADING 
-    // do I need to add the content ID especially for class page where there are several headings?
 
     //==============================================================
     
@@ -248,24 +253,7 @@ class Cmsmodel extends CI_Model{
              
         return $this->db->query($sql);
     }
-    
-    //==============================================================
-
-    // DELETE TESTIMONIAL DETAILS
-
-    //==============================================================
-
-    public function deleteTestimonial()
-    {
-        
-        $id= $this->db->escape($this->input->post('testimonial'));
-
-        $sql = "DELETE FROM tbTestimonials
-                    WHERE id=$id"; 
-                              
-        return $this->db->query($sql);
-    }
-    
+     
      //==============================================================
 
     // UPDATE CLASSTIMES
@@ -308,13 +296,13 @@ class Cmsmodel extends CI_Model{
         return $this->db->query($sql);
     }
     
-     //==============================================================
+    //==============================================================
 
     // UPDATE LIST OF WHAT STUDENTS NEED
 
     //==============================================================
 
-    public function updateNeedsList()
+    public function updateNeedsItem()
     {
         $needsDetails = $this->db->escape($this->input->post('needs'));
         
@@ -324,7 +312,89 @@ class Cmsmodel extends CI_Model{
 
         return $this->db->query($sql);
     }
+    
+    //***************************************************************************************************
+    
+    //  DELETE MODELS **************!!!!!!!!!!!!!!!!!!!??????????????????????
+    
+    //***************************************************************************************************
   
+    //==============================================================
+
+    // DELETE TESTIMONIAL DETAILS
+
+    //==============================================================
+
+    public function deleteTestimonial()
+    {
+        
+        //$id= $this->db->escape($this->input->post('testimonial'));
+
+        $sql = "DELETE FROM tbTestimonials
+                    WHERE testID={$this->input->post('testID')}";
+                         
+        return $this->db->query($sql);
+        
+    }
+    
+    //==============================================================
+
+    // DELETE A CLASS
+
+    //==============================================================
+
+    public function deleteClass()
+    {
+        
+        //$id= $this->db->escape($this->input->post('testimonial'));
+
+        $sql = "DELETE FROM tbTestimonials
+                    WHERE classID={$this->input->post('classID')}";
+                         
+        return $this->db->query($sql);
+    }
+    
+    //==============================================================
+
+    // DELETE AN ITEM FROM STUDENT NEEDS LIST
+
+    //==============================================================
+
+    public function deleteNeedsItem()
+    {
+        
+        //$id= $this->db->escape($this->input->post('needs'));
+
+        $sql = "DELETE FROM tbNeeds
+                    WHERE needsID={$this->input->post('needsID')}";
+                         
+        return $this->db->query($sql);
+    }
+    
+    //***************************************************************************************************
+    
+    //  INSERT MODELS
+    
+    //***************************************************************************************************
+  
+    //==============================================================
+
+    // INSERT TESTIMONIAL DETAILS
+
+    //==============================================================
+
+    public function insertTestimonial()
+    {
+        
+        
+
+        $sql = "INSERT INTO tbTestimonials(testimonialDetails, name)
+                VALUES (".$this->db->escape($this->input->post('newTestimonialDetails')).',
+                        '.$this->db->escape($this->input->post('newTestimonialRef')).")";
+                                 
+        return $this->db->query($sql);
+        
+    }
     
 
 

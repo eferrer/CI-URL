@@ -71,7 +71,7 @@
           <li><input type="text" name="testimonialRef" value=" <?php echo set_value('name', $name); ?>" /></li>
           <input type="hidden" name = "testID" value = "<?=$nameID?>" />
         <p class="submit"><input type="submit" id="testimonialSubmit" name="testimonialSubmit" value="Update" /></p>
-        <p class="submit"><input type="submit" value="Delete" /></p>
+        <p class="submit"><input type="submit" id="testimonialDelete" name="testimonialDelete"value="Delete" /></p>
       </ul>
       </form>  
       <?php } ?>

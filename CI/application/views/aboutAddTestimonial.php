@@ -3,9 +3,9 @@
 <section class="contentAdmin">
 
 <form>
-<textarea name="content" rows="5" cols="30" placeholder="testimonial details"></textarea>
-<input type="text" name="name" placeholder="name" value="" />
-<input type="submit" value="Add New Testimonial"/>
+<textarea name="content" rows="5" cols="30" name="newTestimonialDetails" placeholder="testimonial details"></textarea>
+<input type="text" name="newTestimonialRef" placeholder="name" value="" />
+<p class="submit"><input type="submit" id="insertTestimonialSubmit" name="insertTestimonialSubmit" value="Update" /></p>
 </form>
 
 </section>

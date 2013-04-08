@@ -99,7 +99,6 @@
       $priceContent = $aPrices['priceDetails'];
       $priceID = $aPrices['priceID'];
      
-      
   ?>
              
       <section class="classDetailsAdmin"><!--class details begins-->
@@ -123,13 +122,6 @@
   </section> <!--class schedule content ends--> 
 </section><!--container for classes forms ends-->
       
-      
-      
-      
-      
-      
-      
-      
           
 <section class="mainContainer" class="cf"><!--main container for Student Info - What to expect begins-->    
   <h2>ADMIN AREA: ITEMS THAT STUDENTS NEED</h2>
@@ -145,7 +137,7 @@
         foreach($aNeedsDetails as $key=>$aNeeds){
           $needs = $aNeeds['needsDetails'];
           $needsID = $aNeeds['needsID'];    
-          echo form_open('admin/updateNeedsList'); 
+          echo form_open('admin/updateNeedsItem'); 
       ?>
         <section class="classDetailsAdmin"><!--Student information content begins-->
           <ul class="needsAdmin">
@@ -155,7 +147,7 @@
         
         </section> <!--student information content ends--> 
         <p class="submit"><input type="submit" id="newNeedsSubmit" name="newNeedsSubmit" value="Update" /></p>
-      <p class="submit"><input type="submit" value="Delete" /></p>
+        <p class="submit"><input type="submit" id="deleteNeedsSubmit" name="deleteNeedsSubmit" value="Update" /></p>
         </form>           
   <?php } ?>
     

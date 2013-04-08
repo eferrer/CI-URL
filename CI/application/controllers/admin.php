@@ -125,7 +125,11 @@ class Admin extends CI_Controller {
     //     } 
     // }
 
-            
+     //***************************************************************************************************
+    
+    //  HOME PAGE
+    
+    //***************************************************************************************************   
             
     //==============================================================
 
@@ -171,6 +175,11 @@ class Admin extends CI_Controller {
         
     }
     
+     //***************************************************************************************************
+    
+    //  ABOUT ME PAGE
+    
+    //***************************************************************************************************
     //==============================================================
 
     // UPDATE ABOUT ME PAGE
@@ -243,9 +252,31 @@ class Admin extends CI_Controller {
          }
     }
     
+    //==============================================================
+
+    // DELETE TESTIMONIALS
+
+    //==============================================================
+    
+    function deleteTestimonial()
+    {
+        $data=array();
+
+        $this->load->model('Cmsmodel');
+        
+         if($this->input->post('testimonialDelete')){
+ 
+            if ( $this->Cmsmodel->deleteTestimonial()){
+               
+                redirect (base_url() . 'admin/about');
+             
+            }
+         }
+    }
+    
      //==============================================================
 
-    // ADD TESTIMONIALS
+    // ADD TESTIMONIALS **************!!!!!!!!!!!!!!!!!!!??????????????????????
 
     //==============================================================
     
@@ -255,45 +286,27 @@ class Admin extends CI_Controller {
 
         $this->load->model('Cmsmodel');
         
-         if($this->input->post('updatePage')){
- 
-              if ( $this->Cmsmodel->updateTestimonials()){ // this may not be the right method to use at this point
-                // if ( $this->Cmsmodel->updateContent()){
-                //      if ( $this->Cmsmodel->updateTagline()){
-                //         if ( $this->Cmsmodel->updatePromotion()){
-                            
-                         redirect (base_url() . 'admin/about');
-                     
-                         }
-             //         }        
-             //     }
-             // }
-             
-         }else{
-            $data['menu'] = $this->Cmsmodel->getMenuParts();
-            $data['pageParts'] = $this->Cmsmodel->getPagePartsAdmin();
-            $data['tagline'] = $this->Cmsmodel->getTaglineAdmin();
-
-            // GET PROMOTIONAL DETAILS
-            $data['promoDetails'] = $this->Cmsmodel->getPromotion();
-
-             $data['testimonialDetails'] = $this->Cmsmodel->getTestimonials();
+         if($this->input->post('insertTestimonialSubmit')){
             
-            // PUT THIS IN TO AVOID BROWSER CACHING IN CI
-            $this->output->set_header("HTTP/1.0 200 OK");
-            $this->output->set_header("HTTP/1.1 200 OK");
-            $this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
-            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
-            $this->output->set_header("Cache-Control: post-check=0, pre-check=0");
-            $this->output->set_header("Pragma: no-cache");
-
+            if ( $this->Cmsmodel->insertTestimonial()){
+               
+                redirect (base_url() . 'admin/about');
+             
+            }
+         }else{
             $this->load->view('includes/adminStartHTML', $data);
-            $this->load->view('aboutAddTestimonial', $data);
+            $this->load->view('classtimesUpdate', $data);
             $this->load->view('includes/endHTML');
-        }
+         }
     }
     
-     //==============================================================
+    //***************************************************************************************************
+    
+    //  CLASSES PAGE
+    
+    //***************************************************************************************************
+    
+    //==============================================================
 
     // UPDATE CLASSES PAGE
 
@@ -426,7 +439,7 @@ class Admin extends CI_Controller {
         }
     }
     
-       //==============================================================
+    //==============================================================
 
     // UPDATE PRICE SCHEDULE
 
@@ -454,7 +467,7 @@ class Admin extends CI_Controller {
 
     //==============================================================
     
-    function updateNeedsList()
+    function updateNeedsItem()
     {
         $data=array();
 
@@ -462,7 +475,7 @@ class Admin extends CI_Controller {
         
          if($this->input->post('newNeedsSubmit')){
  
-            if ( $this->Cmsmodel->updateNeedsList()){
+            if ( $this->Cmsmodel->updateNeedsItem()){
                
                 redirect (base_url() . 'admin/classtimes');
              
@@ -470,7 +483,35 @@ class Admin extends CI_Controller {
          }
     }
     
-     //==============================================================
+    //==============================================================
+
+    // DELETE AN ITEM FROM STUDENT NEEDS LIST
+
+    //==============================================================
+    
+    function deleteNeedsItem()
+    {
+        $data=array();
+
+        $this->load->model('Cmsmodel');
+        
+         if($this->input->post('deleteNeedsSubmit')){
+ 
+            if ( $this->Cmsmodel->deleteNeedsItem()){
+               
+                redirect (base_url() . 'admin/classtimes');
+             
+            }
+         }
+    }
+    
+    //***************************************************************************************************
+    
+    //  VIDEO PAGE
+    
+    //***************************************************************************************************
+    
+    //==============================================================
 
     // UPDATE VIDEO PAGE
 
@@ -512,7 +553,13 @@ class Admin extends CI_Controller {
         }
     }
     
-     //==============================================================
+    //***************************************************************************************************
+    
+    //  CONTACT ME PAGE
+    
+    //***************************************************************************************************
+    
+    //==============================================================
 
     // UPDATE CONTACT ME PAGE
 
