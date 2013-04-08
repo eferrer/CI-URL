@@ -173,6 +173,9 @@ class Page extends CI_Controller {
 
         $data['classDetails'] = $this->Cmsmodel->getClassDetails();
         
+        // GET LIST OF PRICES
+        $data['priceDetails'] = $this->Cmsmodel->getPriceDetails();
+        
         // GET LIST OF WHAT IS NEEDED FOR CLASS
         $data['needsDetails'] = $this->Cmsmodel->getNeedsList();
 

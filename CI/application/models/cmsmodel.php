@@ -108,14 +108,14 @@ class Cmsmodel extends CI_Model{
 
    //==============================================================
 
-    // GET NEEDS LIST
+    // GET PRICE DETAILS
 
     //==============================================================
 
-    public function getNeedsList()
+    public function getPriceDetails()
     {
-        $sql = "SELECT needsDetails, needsID
-                FROM tbNeeds";
+        $sql = "SELECT priceType, priceDetails, priceID
+                FROM tbPrices";
                 
         return $this->db->query($sql);
     }
@@ -134,6 +134,25 @@ class Cmsmodel extends CI_Model{
         return $this->db->query($sql);
     }
     
+    //==============================================================
+
+    // GET NEEDS LIST
+
+    //==============================================================
+
+    public function getNeedsList()
+    {
+        $sql = "SELECT needsDetails, needsID
+                FROM tbNeeds";
+                
+        return $this->db->query($sql);
+    }
+    
+    //*******************************************************************************
+    
+    //  UPDATE MODELS
+    
+    //*******************************************************************************
     //==============================================================
 
     // UPDATE MAIN HEADING 

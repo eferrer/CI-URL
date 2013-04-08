@@ -91,46 +91,25 @@
             
   <section id="priceSchedule"> <!--price schedule content begins-->    
     <article class="classPrice">
-                
-      <h3><!-- CASUAL CLASS: -->
       <?php
-            // $aSubHeading = $subHeading->result_array();
-            // echo $aSubHeading[1]['H3'];
-        echo nl2br($aPageParts[1]['H3']);
+      $aPriceDetails = $priceDetails->result_array();
+      foreach($aPriceDetails as $key=>$aPriceDetails){
+      ?>
+      <h3><!-- Price Type-->
+      <?php
+        echo nl2br($aPriceDetails['priceType']);
       ?>
       </h3>
 
-      <p><!-- $10 per class -->
+      <p><!-- Description of the price-->
       <?php
-            // $aContent = $content->result_array();
-            // echo $aContent[1]['contentDetails'];
-        echo nl2br($aPageParts[1]['contentDetails']);
+        echo nl2br($aPriceDetails['priceDetails']);
+      }
       ?>
       </p>
 
-      <h3><!-- CONCESSION CARDS: -->
-       <?php
-            // $aSubHeading = $subHeading->result_array();
-            // echo $aSubHeading[2]['H3'];
-        echo nl2br($aPageParts[2]['H3']);
-      ?>
-      </h3>
-
-      <p><!-- $40 for 5 classes. $75 for 10 classes -->
-      <?php
-            // $aContent = $content->result_array();
-            // echo nl2br($aContent[2]['contentDetails']);
-        echo nl2br($aPageParts[2]['contentDetails']);
-      ?>
-      </p>
-          
-      <p><!--card information-->
-      <?php
-            // $aContent = $content->result_array();
-            // echo aPageParts($aContent[3]['contentDetails']);
-        echo nl2br($aPageParts[3]['contentDetails']);
-      ?>
-      </p>
+      
+  
 
     </article>
   </section> <!--price schedule content ends-->       
