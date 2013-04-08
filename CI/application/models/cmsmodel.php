@@ -348,7 +348,7 @@ class Cmsmodel extends CI_Model{
         
         //$id= $this->db->escape($this->input->post('testimonial'));
 
-        $sql = "DELETE FROM tbTestimonials
+        $sql = "DELETE FROM tbClasses
                     WHERE classID={$this->input->post('classID')}";
                          
         return $this->db->query($sql);

@@ -354,20 +354,39 @@ class Admin extends CI_Controller {
 
     //==============================================================
     
-    function updateClassSchedule()
+    // function updateClassSchedule()
+    // {
+    //     $data=array();
+
+    //     $this->load->model('Cmsmodel');
+        
+    //      if($this->input->post('newClassSubmit')){
+ 
+    //         if ( $this->Cmsmodel->updateClassSchedule()){
+               
+    //             redirect (base_url() . 'admin/classtimes');
+             
+    //         }
+    //      }
+    // }
+
+
+       function updateClassSchedule()
     {
         $data=array();
 
         $this->load->model('Cmsmodel');
-        
-         if($this->input->post('newClassSubmit')){
- 
-            if ( $this->Cmsmodel->updateClassSchedule()){
-               
-                redirect (base_url() . 'admin/classtimes');
-             
-            }
-         }
+
+         if($this->input->post('newClassSubmit') ){
+            $this->Cmsmodel->updateClassSchedule();
+
+        }elseif ($this->input->post('deleteClassSubmit') ){
+
+            $this->Cmsmodel->deleteClass();
+        }
+           
+                redirect (base_url() . 'admin/classtimes');    
+            
     }
     
     //==============================================================

@@ -75,7 +75,7 @@
               
       </section><!--class details ends-->
       <p class="submit"><input type="submit" id="newClassSubmit" name="newClassSubmit" value="Update" /></p>
-      <p class="submit"><input type="submit" value="Delete" /></p>
+      <p class="submit"><input type="submit" id="deleteClassSubmit" name="deleteClassSubmit" value="Delete" /></p>
        </form>            
   <?php } ?>
     
@@ -115,7 +115,7 @@
               
       </section><!--class details ends-->
         <p class="submit"><input type="submit" id="newPriceSubmit" name="newPriceSubmit" value="Update" /></p>
-        <p class="submit"><input type="submit" value="Delete" /></p>
+        <p class="submit"><input type="submit" id="deletePriceSubmit" name="deletePriceSubmit" value="Delete" /></p>
          </form>            
   <?php } ?>
     
@@ -147,7 +147,7 @@
         
         </section> <!--student information content ends--> 
         <p class="submit"><input type="submit" id="newNeedsSubmit" name="newNeedsSubmit" value="Update" /></p>
-        <p class="submit"><input type="submit" id="deleteNeedsSubmit" name="deleteNeedsSubmit" value="Update" /></p>
+        <p class="submit"><input type="submit" id="deleteNeedsSubmit" name="deleteNeedsSubmit" value="Delete" /></p>
         </form>           
   <?php } ?>
     
