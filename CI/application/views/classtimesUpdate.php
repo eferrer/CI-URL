@@ -115,7 +115,7 @@
   <section class="contentAdmin"> <!--class schedule content begins-->    
   
   <?php  
-    echo form_open('admin/classtimes');
+    
     
     $aClassDetails= $classDetails->result_array();
     
@@ -125,22 +125,27 @@
       $place = $aDetails['place'];
       $address = $aDetails['address'];   
       $classID = $aDetails['classID']; 
+      echo form_open('admin/updateClassSchedule');
   ?>
              
       <section class="classDetailsAdmin"><!--class details begins-->
         <ul class="classTimesAdmin">
           <li class="day"><input type="text" name="day" id="<?php echo set_value('classID', $classID);?>" value="<?php echo set_value('day', $day);?>" /></li>
+          <input type="hidden" name = "classID" value = "<?=$classID?>" />
           <li class="time"><input type="text" name="time" id="<?php echo set_value('classID', $classID);?>" value="<?php echo set_value('time',$time); ?>" /></li>
+          <input type="hidden" name = "classID" value = "<?=$classID?>" />
           <li class="place"><input type="text" name="place" id="<?php echo set_value('classID', $classID);?>" value="<?php echo set_value('place',$place); ?>" /></li>
+          <input type="hidden" name = "classID" value = "<?=$classID?>" />
           <li class="address"><input type="text" name="address" id="<?php echo set_value('classID', $classID);?>" value="<?php echo set_value('address',$address); ?>" /></li>  ` 
+          <input type="hidden" name = "classID" value = "<?=$classID?>" />
         </ul>
               
       </section><!--class details ends-->
-      <p class="submit"><input type="submit" value="Update" /></p>
+      <p class="submit"><input type="submit" id="newClassSubmit" name="newClassSubmit" value="Update" /></p>
       <p class="submit"><input type="submit" value="Delete" /></p>
-                   
+       </form>            
   <?php } ?>
-    </form>
+    
   </section> <!--class schedule content ends--> 
 </section><!--container for classes forms ends-->
       
@@ -152,12 +157,13 @@
     <section class="contentAdmin">
       
       <?php  
-        echo form_open('admin/classtimes');
+        
       
         $aNeedsDetails= $needsDetails->result_array();
         
         foreach($aNeedsDetails as $key=>$aNeeds){
-          $needs = $aNeeds['needsDetails'];     
+          $needs = $aNeeds['needsDetails'];    
+          echo form_open('admin/classtimes'); 
       ?>
         <section class="classDetailsAdmin"><!--class details begins-->
           <ul class="needsAdmin">
@@ -167,9 +173,9 @@
         </section> <!--student information content ends--> 
         <p class="submit"><input type="submit" value="Update" /></p>
       <p class="submit"><input type="submit" value="Delete" /></p>
-                   
+        </form>           
   <?php } ?>
-    </form>
+    
   </section>
 </section><!--main container for  Student Info - What to expect ends-->
 

@@ -226,9 +226,7 @@ class Cmsmodel extends CI_Model{
                     SET testimonialDetails = $testimonials,
                     name = $name 
                     WHERE testID={$this->input->post('testID')}"; 
-
-
-                            
+             
         return $this->db->query($sql);
     }
     
@@ -249,6 +247,28 @@ class Cmsmodel extends CI_Model{
         return $this->db->query($sql);
     }
     
+     //==============================================================
+
+    // UPDATE CLASSTIMES
+
+    //==============================================================
+
+    public function updateClassSchedule()
+    {
+        $day = $this->db->escape($this->input->post('day'));
+        $time = $this->db->escape($this->input->post('time'));
+        $place = $this->db->escape($this->input->post('place'));
+        $address = $this->db->escape($this->input->post('address'));
+        
+        $sql = "UPDATE tbClasses
+                SET day = $day, 
+                time = $time, 
+                place = $place, 
+                address = $address
+                WHERE classID={$this->input->post('classID')}"; 
+
+        return $this->db->query($sql);
+    }
   
     
 

@@ -235,41 +235,12 @@ class Admin extends CI_Controller {
         
          if($this->input->post('testimonialSubmit')){
  
-              if ( $this->Cmsmodel->updateTestimonial()){
-                // if ( $this->Cmsmodel->updateContent()){
-                //      if ( $this->Cmsmodel->updateTagline()){
-                //         if ( $this->Cmsmodel->updatePromotion()){
-                            
-                         redirect (base_url() . 'admin/about');
-                     
-                         }
-             //         }        
-             //     }
-             // }
+            if ( $this->Cmsmodel->updateTestimonial()){
+               
+                redirect (base_url() . 'admin/about');
              
+            }
          }
-        //  else{
-        //     $data['menu'] = $this->Cmsmodel->getMenuParts();
-        //     $data['pageParts'] = $this->Cmsmodel->getPagePartsAdmin();
-        //     $data['tagline'] = $this->Cmsmodel->getTaglineAdmin();
-
-        //     // GET PROMOTIONAL DETAILS
-        //     $data['promoDetails'] = $this->Cmsmodel->getPromotion();
-
-        //      $data['testimonialDetails'] = $this->Cmsmodel->getTestimonials();
-            
-        //     // PUT THIS IN TO AVOID BROWSER CACHING IN CI
-        //     $this->output->set_header("HTTP/1.0 200 OK");
-        //     $this->output->set_header("HTTP/1.1 200 OK");
-        //     $this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
-        //     $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
-        //     $this->output->set_header("Cache-Control: post-check=0, pre-check=0");
-        //     $this->output->set_header("Pragma: no-cache");
-
-        //     $this->load->view('includes/adminStartHTML', $data);
-        //     $this->load->view('aboutUpdate', $data);
-        //     $this->load->view('includes/endHTML');
-        // }
     }
     
      //==============================================================
@@ -374,6 +345,29 @@ class Admin extends CI_Controller {
             $this->load->view('classtimesUpdate', $data);
             $this->load->view('includes/endHTML');
         }
+    }
+    
+    
+     //==============================================================
+
+    // UPDATE CLASS SCHEDULE
+
+    //==============================================================
+    
+    function updateClassSchedule()
+    {
+        $data=array();
+
+        $this->load->model('Cmsmodel');
+        
+         if($this->input->post('newClassSubmit')){
+ 
+            if ( $this->Cmsmodel->updateClassSchedule()){
+               
+                redirect (base_url() . 'admin/classtimes');
+             
+            }
+         }
     }
     
     //==============================================================
