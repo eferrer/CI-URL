@@ -44,7 +44,7 @@
      
 <section class="mainContainer" class="cf"><!-- container for class schedule forms begins-->  
   <h2>ADMIN AREA: CLASS DETAILS</h2>
-  <p class="adminAdd"><a href="<?=base_url()?>admin/addClass">+ ADD NEW CLASS</a></p>
+  <p class="adminAdd"><a href="<?=base_url()?>admin/insertClass">+ ADD NEW CLASS</a></p>
             
   <section class="contentAdmin"> <!--class schedule content begins-->    
   
@@ -115,7 +115,7 @@
               
       </section><!--class details ends-->
         <p class="submit"><input type="submit" id="newPriceSubmit" name="newPriceSubmit" value="Update" /></p>
-        <p class="submit"><input type="submit" id="deletePriceSubmit" name="deletePriceSubmit" value="Delete" /></p>
+        
          </form>            
   <?php } ?>
     

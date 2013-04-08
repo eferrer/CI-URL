@@ -385,16 +385,35 @@ class Cmsmodel extends CI_Model{
 
     public function insertTestimonial()
     {
-// print_r($_POST);exit(__FILE__.__LINE__);
+        // print_r($_POST);exit(__FILE__.__LINE__);
         $sql = "INSERT INTO tbTestimonials(testimonialDetails, name)
-                VALUES ( ".$this->db->escape($this->input->post('newTestimonialDetails')). "  ,
+                    VALUES ( ".$this->db->escape($this->input->post('newTestimonialDetails')). "  ,
                         " .$this->db->escape($this->input->post('newTestimonialRef')).")";
-               // exit(__FILE__.__LINE__.$sql);      
+                    // exit(__FILE__.__LINE__.$sql);      
 
         return $this->db->query($sql);
         
     }
     
+    //==============================================================
+
+    // INSERT A NEW CLASS
+
+    //==============================================================
+
+    public function insertClass()
+    {
+        //print_r($_POST);exit(__FILE__.__LINE__);
+        $sql = "INSERT INTO tbClasses(day, time, place, address)
+                    VALUES ( ".$this->db->escape($this->input->post('newDay')). "  ,
+                        ".$this->db->escape($this->input->post('newTime')). "  ,
+                        ".$this->db->escape($this->input->post('newPlace')). "  ,
+                        " .$this->db->escape($this->input->post('newAddress')).")";
+                //exit(__FILE__.__LINE__.$sql);      
+
+        return $this->db->query($sql);
+        
+    }
 
 
 

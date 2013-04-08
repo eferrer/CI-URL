@@ -232,7 +232,7 @@ class Admin extends CI_Controller {
     
      //==============================================================
 
-    // UPDATE AND DELETE TESTIMONIALS
+    // UPDATE TESTIMONIALS AND DELETE TESTIMONIALS
 
     //==============================================================
 
@@ -257,7 +257,7 @@ class Admin extends CI_Controller {
     
      //==============================================================
 
-    // ADD TESTIMONIALS 
+    // ADD  A NEW TESTIMONIAL
 
     //==============================================================
     
@@ -350,28 +350,11 @@ class Admin extends CI_Controller {
     
      //==============================================================
 
-    // UPDATE CLASS SCHEDULE
+    // UPDATE CLASS SCHEDULE AND DELETE A CLASS
 
     //==============================================================
-    
-    // function updateClassSchedule()
-    // {
-    //     $data=array();
 
-    //     $this->load->model('Cmsmodel');
-        
-    //      if($this->input->post('newClassSubmit')){
- 
-    //         if ( $this->Cmsmodel->updateClassSchedule()){
-               
-    //             redirect (base_url() . 'admin/classtimes');
-             
-    //         }
-    //      }
-    // }
-
-
-       function updateClassSchedule()
+    function updateClassSchedule()
     {
         $data=array();
 
@@ -391,57 +374,34 @@ class Admin extends CI_Controller {
     
     //==============================================================
 
-    // ADD NEW CLASSES PAGE
+    // ADD NEW CLASS ============= NOT WORKING!!!!!!!
 
     //==============================================================
     
-    function addClass()
+    function insertClass()
     {
         $data=array();
+        //print_r($_POST);exit(__FILE__.__LINE__);
 
         $this->load->model('Cmsmodel');
         
-        if($this->input->post('updatePage')){
- 
-              if ( $this->Cmsmodel->updateMainHeading()){
-                if ( $this->Cmsmodel->updateContent()){
-                     if ( $this->Cmsmodel->updateTagline()){
-                        if ( $this->Cmsmodel->updatePromotion()){
-                            
-                         redirect (base_url() . 'admin/classtimes');
-                     
-                         }
-                     }        
-                 }
-             }
+         if($this->input->post('insertClassSubmit')){
+            
+            if ( $this->Cmsmodel->insertClass()){
+               
+                redirect (base_url() . 'admin/classtimes');
              
+            }
          }else{
-        
+
             $data['menu'] = $this->Cmsmodel->getMenuParts();
-            $data['pageParts'] = $this->Cmsmodel->getPagePartsAdmin();
-            $data['tagline'] = $this->Cmsmodel->getTaglineAdmin();
-            
-            $data['classDetails'] = $this->Cmsmodel->getClassDetails();
-
-            // GET LIST OF WHAT IS NEEDED FOR CLASS
-            $data['needsDetails'] = $this->Cmsmodel->getNeedsList();
-
-            // GET PROMOTIONAL DETAILS
-            $data['promoDetails'] = $this->Cmsmodel->getPromotion();
-            
-            // PUT THIS IN TO AVOID BROWSER CACHING IN CI
-            $this->output->set_header("HTTP/1.0 200 OK");
-            $this->output->set_header("HTTP/1.1 200 OK");
-            $this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
-            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
-            $this->output->set_header("Cache-Control: post-check=0, pre-check=0");
-            $this->output->set_header("Pragma: no-cache");
 
             $this->load->view('includes/adminStartHTML', $data);
             $this->load->view('classesAddNew', $data);
             $this->load->view('includes/endHTML');
-        }
+         }
     }
+    
     
     //==============================================================
 
@@ -464,50 +424,49 @@ class Admin extends CI_Controller {
             }
          }
     }
+
     
      //==============================================================
 
-    // UPDATE LIST OF WHAT STUDENTS NEED
+    // UPDATE LIST OF WHAT STUDENTS NEED AND DELETE AN ITEM
 
     //==============================================================
     
+    // function updateNeedsItem()
+    // {
+    //     $data=array();
+
+    //     $this->load->model('Cmsmodel');
+        
+    //      if($this->input->post('newNeedsSubmit')){
+ 
+    //         if ( $this->Cmsmodel->updateNeedsItem()){
+               
+    //             redirect (base_url() . 'admin/classtimes');
+             
+    //         }
+    //      }
+    // }
+    
+
     function updateNeedsItem()
     {
         $data=array();
 
         $this->load->model('Cmsmodel');
-        
-         if($this->input->post('newNeedsSubmit')){
- 
-            if ( $this->Cmsmodel->updateNeedsItem()){
-               
-                redirect (base_url() . 'admin/classtimes');
-             
-            }
-         }
+
+         if($this->input->post('newNeedsSubmit') ){
+            $this->Cmsmodel->updateNeedsItem();
+
+        }elseif ($this->input->post('deleteNeedsSubmit') ){
+
+            $this->Cmsmodel->deleteNeedsItem();
+        }
+           
+                redirect (base_url() . 'admin/classtimes');    
+            
     }
     
-    //==============================================================
-
-    // DELETE AN ITEM FROM STUDENT NEEDS LIST
-
-    //==============================================================
-    
-    function deleteNeedsItem()
-    {
-        $data=array();
-
-        $this->load->model('Cmsmodel');
-        
-         if($this->input->post('deleteNeedsSubmit')){
- 
-            if ( $this->Cmsmodel->deleteNeedsItem()){
-               
-                redirect (base_url() . 'admin/classtimes');
-             
-            }
-         }
-    }
     
     //***************************************************************************************************
     
