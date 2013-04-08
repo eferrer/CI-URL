@@ -232,51 +232,32 @@ class Admin extends CI_Controller {
     
      //==============================================================
 
-    // UPDATE TESTIMONIALS
+    // UPDATE AND DELETE TESTIMONIALS
 
     //==============================================================
-    
-    function updateTestimonials()
+
+
+     function updateTestimonials()
     {
         $data=array();
 
         $this->load->model('Cmsmodel');
-        
-         if($this->input->post('testimonialSubmit')){
- 
-            if ( $this->Cmsmodel->updateTestimonial()){
-               
-                redirect (base_url() . 'admin/about');
-             
-            }
-         }
-    }
-    
-    //==============================================================
 
-    // DELETE TESTIMONIALS
+         if($this->input->post('testimonialSubmit') ){
+            $this->Cmsmodel->updateTestimonial();
 
-    //==============================================================
-    
-    function deleteTestimonial()
-    {
-        $data=array();
+        }elseif ($this->input->post('testimonialDelete') ){
 
-        $this->load->model('Cmsmodel');
-        
-         if($this->input->post('testimonialDelete')){
- 
-            if ( $this->Cmsmodel->deleteTestimonial()){
-               
-                redirect (base_url() . 'admin/about');
-             
-            }
-         }
+            $this->Cmsmodel->deleteTestimonial();
+        }
+           
+                redirect (base_url() . 'admin/about');    
+            
     }
     
      //==============================================================
 
-    // ADD TESTIMONIALS **************!!!!!!!!!!!!!!!!!!!??????????????????????
+    // ADD TESTIMONIALS 
 
     //==============================================================
     
@@ -284,18 +265,22 @@ class Admin extends CI_Controller {
     {
         $data=array();
 
+
         $this->load->model('Cmsmodel');
         
          if($this->input->post('insertTestimonialSubmit')){
             
             if ( $this->Cmsmodel->insertTestimonial()){
                
-                redirect (base_url() . 'admin/about');
+                redirect (base_url() . 'admin/about/2');
              
             }
          }else{
+
+            $data['menu'] = $this->Cmsmodel->getMenuParts();
+
             $this->load->view('includes/adminStartHTML', $data);
-            $this->load->view('classtimesUpdate', $data);
+            $this->load->view('aboutAddTestimonial', $data);
             $this->load->view('includes/endHTML');
          }
     }

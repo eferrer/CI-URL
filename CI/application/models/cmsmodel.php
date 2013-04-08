@@ -332,7 +332,7 @@ class Cmsmodel extends CI_Model{
 
         $sql = "DELETE FROM tbTestimonials
                     WHERE testID={$this->input->post('testID')}";
-                         
+           //exit(__FILE__.__LINE__.$sql);              
         return $this->db->query($sql);
         
     }
@@ -385,13 +385,12 @@ class Cmsmodel extends CI_Model{
 
     public function insertTestimonial()
     {
-        
-        
-
+// print_r($_POST);exit(__FILE__.__LINE__);
         $sql = "INSERT INTO tbTestimonials(testimonialDetails, name)
-                VALUES (".$this->db->escape($this->input->post('newTestimonialDetails')).',
-                        '.$this->db->escape($this->input->post('newTestimonialRef')).")";
-                                 
+                VALUES ( ".$this->db->escape($this->input->post('newTestimonialDetails')). "  ,
+                        " .$this->db->escape($this->input->post('newTestimonialRef')).")";
+               // exit(__FILE__.__LINE__.$sql);      
+
         return $this->db->query($sql);
         
     }
