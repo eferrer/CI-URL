@@ -66,64 +66,6 @@ class Admin extends CI_Controller {
 		echo '</pre>';
 	}
 
-    //==============Sample add new page code==========
-
-    // make a new page
-  
-  
-    // public function newPage()
-    // {
-    //     // These should be autoloaded. Included here to remind you.
-    //     $this->load->helper(array('form', 'url'));
-    //     $this->load->library('form_validation');
-
-    //     $this->form_validation->set_rules('title', '5', 'required|min_length[5]');
-    //     $this->form_validation->set_rules('content', '5', 'required|min_length[5]');
-        
-    //     $this->form_validation->set_message('required', 'We need at least %s characters, please');
-    //     $this->form_validation->set_message('min_length', 'Surely you can manage %s lousy characters');
-        
-    //     //run the rules. If anything fails show the form
-    //     if ($this->form_validation->run() == FALSE){
-    //         $this->load->view('includes/startHTML');
-    //         $this->load->view('CMS_newPage');
-    //         $this->load->view('includes/endHTML');
-    //     }else{
-    //         // this should be in a conditional statement to handle what happens if putContent() fails
-    //         $this->Cmsmodel->putContent();
-    //         redirect('cms');            
-    //     }       
-
-    // }
-
-    // ==========end sample add new Page code===========
-
-//==============Sample update page code==========
-
-    // function updatePage()
-    // {
-    //     $this->load->helper(array('form', 'url'));
-    //     $this->load->library('form_validation');
-    //     $this->load->model('Cmsmodel');
-
-    //     $this->form_validation->set_rules('title', '5', 'required|min_length[5]');
-    //     $this->form_validation->set_rules('content', '5', 'required|min_length[5]');
-        
-    //     $this->form_validation->set_message('required', 'We need at least %s characters, please');
-    //     $this->form_validation->set_message('min_length', 'Surely you can manage %s lousy characters');
-    //     //run the rules. If anything fails show the form
-    //     if ($this->form_validation->run() == FALSE){
-    //         $data['query_result']= $this->Cmsmodel->getContentById();
-    //         $this->load->view('CMS_updatePage',$data);
-            
-    //     }else{
-    //         if($this->Cmsmodel->updateContent() ){
-    //             redirect('cms');
-    //         }else{
-    //             redirect('cms/admin');
-    //         }
-    //     } 
-    // }
 
      //***************************************************************************************************
     
@@ -424,30 +366,12 @@ class Admin extends CI_Controller {
             }
          }
     }
-
     
      //==============================================================
 
     // UPDATE LIST OF WHAT STUDENTS NEED AND DELETE AN ITEM
 
-    //==============================================================
-    
-    // function updateNeedsItem()
-    // {
-    //     $data=array();
-
-    //     $this->load->model('Cmsmodel');
-        
-    //      if($this->input->post('newNeedsSubmit')){
- 
-    //         if ( $this->Cmsmodel->updateNeedsItem()){
-               
-    //             redirect (base_url() . 'admin/classtimes');
-             
-    //         }
-    //      }
-    // }
-    
+    //============================================================== 
 
     function updateNeedsItem()
     {
@@ -465,6 +389,36 @@ class Admin extends CI_Controller {
            
                 redirect (base_url() . 'admin/classtimes');    
             
+    }
+
+      //==============================================================
+
+    // ADD  A NEW ITEM INTO THE LIST OF WHAT STUDENTS NEED FOR A CLASS
+
+    //==============================================================
+    
+    function insertNeeds()
+    {
+        $data=array();
+
+
+        $this->load->model('Cmsmodel');
+        
+         if($this->input->post('insertNeedsSubmit')){
+            
+            if ( $this->Cmsmodel->insertNeeds()){
+               
+                redirect (base_url() . 'admin/classtimes/3');
+             
+            }
+         }else{
+
+            $data['menu'] = $this->Cmsmodel->getMenuParts();
+
+            $this->load->view('includes/adminStartHTML', $data);
+            $this->load->view('classesAddNewItem', $data);
+            $this->load->view('includes/endHTML');
+         }
     }
     
     

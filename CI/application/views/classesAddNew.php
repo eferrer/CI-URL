@@ -2,14 +2,14 @@
   <h1>ADMIN AREA: ADD CLASS </h1> 
 <section class="contentAdmin">
 
-<form>
+<?php echo form_open('admin/insertClass');?>
   <ul id="classTimes">
-    <li class=""><input type="text" name="day" placeholder="Day" value=""/></li>
-    <li class=""><input type="text" name="time" placeholder="Time" value=""/></li>
-    <li class=""><input type="text" name="place" placeholder="Place" value=""/></li>
-    <li class=""><input type="text" name="address" placeholder="Address" value=""/></li>  
+    <li class=""><input type="text" name="newDay" placeholder="day" value=""/></li>
+    <li class=""><input type="text" name="newTime" placeholder="time" value=""/></li>
+    <li class=""><input type="text" name="newPlace" placeholder="place" value=""/></li>
+    <li class=""><input type="text" name="newAddress" placeholder="address" value=""/></li>  
   </ul>
-<input type="submit" value="Add New Class"/>
+<p class="submit"><input type="submit" id="insertClassSubmit" name="insertClassSubmit" value="Add Class" /></p>
 </form>
 
 </section>

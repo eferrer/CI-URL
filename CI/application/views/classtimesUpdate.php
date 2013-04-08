@@ -125,7 +125,7 @@
           
 <section class="mainContainer" class="cf"><!--main container for Student Info - What to expect begins-->    
   <h2>ADMIN AREA: ITEMS THAT STUDENTS NEED</h2>
-  <p class="adminAdd"><a href="<?=base_url()?>admin/addItem">+ ADD NEW ITEM</a></p>  
+  <p class="adminAdd"><a href="<?=base_url()?>admin/insertNeeds">+ ADD NEW ITEM</a></p>  
     
     <section class="contentAdmin">
       

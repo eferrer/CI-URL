@@ -2,10 +2,10 @@
   <h1>ADMIN AREA: ADD ITEM </h1> 
 <section class="contentAdmin">
 
-<form>
-<textarea name="content" rows="5" cols="30" placeholder="item details"></textarea>
+<?php echo form_open('admin/insertNeeds');?>
+<textarea name="newNeedItem" rows="5" cols="30" placeholder="item details"></textarea>
 
-<input type="submit" value="Add Item"/>
+<p class="submit"><input type="submit" id="insertNeedsSubmit" name="insertNeedsSubmit" value="Add Item" /></p>
 </form>
 
 </section>

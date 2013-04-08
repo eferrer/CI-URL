@@ -11,7 +11,7 @@
 <h5>Password</h5>
 <input type="text" name="password" value="" size="50" />
 
-<div><input type="submit" value="Submit" /></div>
+<div><input type="submit" value="Login" /></div>
 
 </form>
 </section>

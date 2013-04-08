@@ -416,6 +416,23 @@ class Cmsmodel extends CI_Model{
     }
 
 
+    //==============================================================
+
+    // INSERT A NEW ITEM INTO WHAT STUDENTS NEED
+
+    //==============================================================
+
+    public function insertNeeds()
+    {
+        // print_r($_POST);exit(__FILE__.__LINE__);
+        $sql = "INSERT INTO tbNeeds(needsDetails)
+                    VALUES (  " .$this->db->escape($this->input->post('newNeedItem')).")";
+                    // exit(__FILE__.__LINE__.$sql);      
+
+        return $this->db->query($sql);
+        
+    }
+
 
 
 
