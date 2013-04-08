@@ -269,6 +269,23 @@ class Cmsmodel extends CI_Model{
 
         return $this->db->query($sql);
     }
+    
+     //==============================================================
+
+    // UPDATE LIST OF WHAT STUDENTS NEED
+
+    //==============================================================
+
+    public function updateNeedsList()
+    {
+        $needsDetails = $this->db->escape($this->input->post('needs'));
+        
+        $sql = "UPDATE tbNeeds
+                SET needsDetails = $needsDetails
+                WHERE needsID={$this->input->post('needsID')}"; 
+
+        return $this->db->query($sql);
+    }
   
     
 

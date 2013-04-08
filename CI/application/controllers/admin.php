@@ -424,58 +424,26 @@ class Admin extends CI_Controller {
         }
     }
     
-    //==============================================================
+     //==============================================================
 
-    // CLASSES ADD NEW ITEM
+    // UPDATE LIST OF WHAT STUDENTS NEED
 
     //==============================================================
     
-    function addItem()
+    function updateNeedsList()
     {
         $data=array();
 
         $this->load->model('Cmsmodel');
         
-        if($this->input->post('updatePage')){
+         if($this->input->post('newNeedsSubmit')){
  
-              if ( $this->Cmsmodel->updateMainHeading()){
-                if ( $this->Cmsmodel->updateContent()){
-                     if ( $this->Cmsmodel->updateTagline()){
-                        if ( $this->Cmsmodel->updatePromotion()){
-                            
-                         redirect (base_url() . 'admin/classtimes');
-                     
-                         }
-                     }        
-                 }
-             }
+            if ( $this->Cmsmodel->updateNeedsList()){
+               
+                redirect (base_url() . 'admin/classtimes');
              
-         }else{
-        
-            $data['menu'] = $this->Cmsmodel->getMenuParts();
-            $data['pageParts'] = $this->Cmsmodel->getPagePartsAdmin();
-            $data['tagline'] = $this->Cmsmodel->getTaglineAdmin();
-            
-            $data['classDetails'] = $this->Cmsmodel->getClassDetails();
-
-            // GET LIST OF WHAT IS NEEDED FOR CLASS
-            $data['needsDetails'] = $this->Cmsmodel->getNeedsList();
-
-            // GET PROMOTIONAL DETAILS
-            $data['promoDetails'] = $this->Cmsmodel->getPromotion();
-            
-            // PUT THIS IN TO AVOID BROWSER CACHING IN CI
-            $this->output->set_header("HTTP/1.0 200 OK");
-            $this->output->set_header("HTTP/1.1 200 OK");
-            $this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
-            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
-            $this->output->set_header("Cache-Control: post-check=0, pre-check=0");
-            $this->output->set_header("Pragma: no-cache");
-
-            $this->load->view('includes/adminStartHTML', $data);
-            $this->load->view('classesAddNewItem', $data);
-            $this->load->view('includes/endHTML');
-        }
+            }
+         }
     }
     
      //==============================================================

@@ -162,22 +162,24 @@
         $aNeedsDetails= $needsDetails->result_array();
         
         foreach($aNeedsDetails as $key=>$aNeeds){
-          $needs = $aNeeds['needsDetails'];    
-          echo form_open('admin/classtimes'); 
+          $needs = $aNeeds['needsDetails'];
+          $needsID = $aNeeds['needsID'];    
+          echo form_open('admin/updateNeedsList'); 
       ?>
-        <section class="classDetailsAdmin"><!--class details begins-->
+        <section class="classDetailsAdmin"><!--Student information content begins-->
           <ul class="needsAdmin">
-            <li><textarea name="content" rows="5" cols="30"><?php echo set_value('needs',$needs); ?></textarea></li>
+            <li><textarea name="needs" rows="5" cols="30"><?php echo set_value('needs',$needs); ?></textarea></li>
+          <input type="hidden" name = "needsID" value = "<?=$needsID?>" />
           </ul>
         
         </section> <!--student information content ends--> 
-        <p class="submit"><input type="submit" value="Update" /></p>
+        <p class="submit"><input type="submit" id="newNeedsSubmit" name="newNeedsSubmit" value="Update" /></p>
       <p class="submit"><input type="submit" value="Delete" /></p>
         </form>           
   <?php } ?>
     
   </section>
-</section><!--main container for  Student Info - What to expect ends-->
+</section><!--main container for  Student Info - What to bring ends-->
 
         
       
