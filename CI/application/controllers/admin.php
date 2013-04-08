@@ -326,6 +326,8 @@ class Admin extends CI_Controller {
             $data['tagline'] = $this->Cmsmodel->getTaglineAdmin();
             
             $data['classDetails'] = $this->Cmsmodel->getClassDetails();
+            
+            $data['priceDetails'] = $this->Cmsmodel->getPriceDetails();
 
             // GET LIST OF WHAT IS NEEDED FOR CLASS
             $data['needsDetails'] = $this->Cmsmodel->getNeedsList();
@@ -422,6 +424,28 @@ class Admin extends CI_Controller {
             $this->load->view('classesAddNew', $data);
             $this->load->view('includes/endHTML');
         }
+    }
+    
+       //==============================================================
+
+    // UPDATE PRICE SCHEDULE
+
+    //==============================================================
+    
+    function updatePriceSchedule()
+    {
+        $data=array();
+
+        $this->load->model('Cmsmodel');
+        
+         if($this->input->post('newPriceSubmit')){
+ 
+            if ( $this->Cmsmodel->updatePriceSchedule()){
+               
+                redirect (base_url() . 'admin/classtimes');
+             
+            }
+         }
     }
     
      //==============================================================

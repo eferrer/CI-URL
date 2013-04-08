@@ -289,6 +289,25 @@ class Cmsmodel extends CI_Model{
         return $this->db->query($sql);
     }
     
+    //==============================================================
+
+    // UPDATE PRICE SCHEDULE
+
+    //==============================================================
+
+    public function updatePriceSchedule()
+    {
+        $priceType = $this->db->escape($this->input->post('priceType'));
+        $priceDescription = $this->db->escape($this->input->post('priceContent'));
+        
+        $sql = "UPDATE tbPrices
+                SET priceType = $priceType,
+                priceDetails = $priceDescription
+                WHERE priceID={$this->input->post('priceID')}"; 
+
+        return $this->db->query($sql);
+    }
+    
      //==============================================================
 
     // UPDATE LIST OF WHAT STUDENTS NEED

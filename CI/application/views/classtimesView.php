@@ -108,9 +108,6 @@
       ?>
       </p>
 
-      
-  
-
     </article>
   </section> <!--price schedule content ends-->       
 </section><!--price schedule container ends-->
