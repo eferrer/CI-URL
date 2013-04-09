@@ -19,7 +19,7 @@
       </section><!--social and contact links ends-->
     
      <section id="copyright"> <!-- bottom footer section begins   -->
-      <p class="adminLink"><a href="<?=base_url()?>admin/login">Admin</a></p>
+      <p class="adminLink"><a href="<?=base_url()?>admin/verifyLogin">Admin</a></p>
       <p class="siteLink">Site by Eileen Ferrer. &copy;2013.</p>
     </section><!--bottom footer section ends-->
   </footer><!--footer ends-->
