@@ -2215,7 +2215,7 @@ input[type="password"],
   .promoAbout, 
   .promoClasses, 
   .promoContact {
-    width: 30em;
+    width: 40%;
     margin: auto;
   }
   
