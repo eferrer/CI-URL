@@ -401,6 +401,18 @@ footer {
   color: #FFFFFF;
 }
 
+.logoutLink a {
+  font-family: "Wendy One", sans-serif;
+  font-size: 2rem;
+  color: #14080a;
+}
+
+.logoutLink a:hover{
+  font-family: "Wendy One", sans-serif;
+  font-size: 2rem;
+  color: #FFFFFF;
+}
+
 .adminLabel{
   color: #ec31b1;
   /*text-transform: uppercase;*/
@@ -443,7 +455,8 @@ footer {
     background-repeat: no-repeat;
     width: 314px;
     max-width: 100%;
-    height: 220px;
+    /*height: 220px;*/
+    height: 100%;
     margin: auto;
   }
   
@@ -452,6 +465,8 @@ footer {
     margin-top: 8rem;
     width: 100%;
   }
+
+
 
   #mainImage {
     background-image: url("../images/thumb/zumbaHome30.jpg");
@@ -701,6 +716,15 @@ footer {
     margin-bottom: -0.5rem;
     /*background-color: red;*/
   }
+
+  .logoutLink a{
+    display: block;
+    margin: auto;
+    width: 10rem;
+    margin-top: 8rem;
+    margin-bottom: -0.5rem;
+    /*background-color: red;*/
+  }
   
   .siteLink{
     display: block;
@@ -927,7 +951,8 @@ input[type="password"],
     background-repeat: no-repeat;
     width: 314px;
     max-width: 100%;
-    height: 220px;
+    /*height: 220px;*/
+    height: 100%;
     margin: auto;
   }
   
@@ -1202,6 +1227,15 @@ input[type="password"],
     margin-bottom: -0.5rem;
     /*background-color: red;*/
   }
+
+   .logoutLink a{
+    display: block;
+    margin: auto;
+    width: 10rem;
+    margin-top: 8rem;
+    margin-bottom: -0.5rem;
+    /*background-color: red;*/
+  }
   
   .siteLink{
     display: block;
@@ -1432,7 +1466,8 @@ input[type="password"],
     background-repeat: no-repeat;
     width: 514px;
     max-width: 100%;
-    height: 280px;
+    /*height: 280px;*/
+    height: 100%;
     margin: auto;
   }
   
@@ -1743,6 +1778,14 @@ input[type="password"],
     margin-bottom: -0.5rem;
     /*background-color: red;*/
   }
+
+   .logoutLink a{
+    display: block;
+    text-align: right;
+    width: 32rem;
+    margin-top: 12rem;
+    margin-bottom: -0.5rem;
+  }
   
   .siteLink{
     display: block;
@@ -2010,16 +2053,18 @@ input[type="password"],
     background-repeat: no-repeat;
     width: 514px;
     max-width: 100%;
-    height: 200px;
+    /*height: 200px;*/
+    height: 100%;
     margin: auto;
   }
   
-   .logout{
+  /* .logout{
     display: block;
     margin-top: 1rem;
     margin-left: 33rem;
     width: 70%;
-  }
+    background-color: red;
+  }*/
   
   #mainImage {
     background-image: url("../images/full/zumbaHome.jpg");
@@ -2317,6 +2362,14 @@ input[type="password"],
     padding-top: 0.5rem;
     margin-bottom: -0.5rem;
     /*background-color: red;*/
+  }
+
+  .logoutLink a{
+    display: block;
+    text-align: right;
+    width: 32rem;
+    margin-top: 12rem;
+    margin-bottom: -0.5rem;
   }
   
   .siteLink{

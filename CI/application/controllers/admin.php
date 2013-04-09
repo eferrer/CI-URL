@@ -82,40 +82,6 @@ class Admin extends CI_Controller {
                     return false;
                 }
             }
-
-	// function login()
-	// {
-		
- //        $this->load->helper('form');
- //        $this->load->library('form_validation');
-
- //        $this->load->model('Cmsmodel');
-    
- //        $data['menu'] = $this->Cmsmodel->getMenuParts();
-
- //        $this->form_validation->set_rules('username', 'Username', 'trim|required|valid|xss_clean');
- //        $this->form_validation->set_rules('password', 'Password', 'trim|required|valid|xss_clean|callback_check_database');
-
- //        $this->form_validation->set_message('required', 'This field cannot be left empty');
- //        $this->form_validation->set_message('valid_password', 'Sorry that password is incorrect');
-
- //        if ($this->form_validation->run() == FALSE)
- //        {
-                
- //                $this->load->view('includes/startHTML', $data);
- //                $this->load->view('loginView');
- //                $this->load->view('includes/endHTML');
-
- //        }
- //        else
- //        {
- //                redirect (base_url() . 'admin/home');
- //        }
- //    }
-            
-   
-
-            
   
  
     //***************************************************************************************************
@@ -143,41 +109,52 @@ class Admin extends CI_Controller {
 
     //==============================================================
 
-	function home()
-	{
-        $data=array();
+function home()
+{
+            if($this->session->userdata('is_logged_in')){
+                $data=array();
 
-        $this->load->model('Cmsmodel');
+                $this->load->model('Cmsmodel');
 
-        if($this->input->post('updatePage')){
+                if($this->input->post('updatePage')){
 
-             if ( $this->Cmsmodel->updateMainHeading()){
-               if ( $this->Cmsmodel->updateContent()){
-                    if ( $this->Cmsmodel->updateTagline()){
-                        redirect (base_url() . 'admin/home');
-                }        
-            }
-        }
+                     if ( $this->Cmsmodel->updateMainHeading()){
+                       if ( $this->Cmsmodel->updateContent()){
+                            if ( $this->Cmsmodel->updateTagline()){
+                                redirect (base_url() . 'admin/home');
+                        }        
+                    }
+                }
 
-        }else{
-            $data['menu'] = $this->Cmsmodel->getMenuParts();
-            $data['pageParts'] = $this->Cmsmodel->getPagePartsAdmin();
-            $data['tagline'] = $this->Cmsmodel->getTaglineAdmin();
+                }else{
+                    $data['menu'] = $this->Cmsmodel->getMenuParts();
+                    $data['pageParts'] = $this->Cmsmodel->getPagePartsAdmin();
+                    $data['tagline'] = $this->Cmsmodel->getTaglineAdmin();
 
-            // PUT THIS IN TO AVOID BROWSER CACHING IN CI
-            $this->output->set_header("HTTP/1.0 200 OK");
-            $this->output->set_header("HTTP/1.1 200 OK");
-            $this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
-            $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
-            $this->output->set_header("Cache-Control: post-check=0, pre-check=0");
-            $this->output->set_header("Pragma: no-cache");
+                    // PUT THIS IN TO AVOID BROWSER CACHING IN CI
+                    $this->output->set_header("HTTP/1.0 200 OK");
+                    $this->output->set_header("HTTP/1.1 200 OK");
+                    $this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
+                    $this->output->set_header("Cache-Control: no-store, no-cache, must-revalidate");
+                    $this->output->set_header("Cache-Control: post-check=0, pre-check=0");
+                    $this->output->set_header("Pragma: no-cache");
 
-            $this->load->view('includes/adminStartHTML', $data);
-            $this->load->view('homeUpdate', $data);
-            $this->load->view('includes/endHTML');
-         }
-     //   $this->Cmsmodel->updateMainHeading();
+                    $this->load->view('includes/adminStartHTML', $data);
+                    $this->load->view('homeUpdate', $data);
+                    $this->load->view('includes/endHTML');
+                 }
+
+            }else{
+
+                    redirect('admin/restricted');
+
+                 }
         
+    }
+
+    public function restricted()
+    {
+        $this->load->view('restricted');
     }
     
      //***************************************************************************************************
