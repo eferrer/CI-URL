@@ -23,49 +23,56 @@ class Admin extends CI_Controller {
 			print_r($arr);	
 		echo '</pre>';
 	}
-	
+
+            function update()
+            {
+                echo 'File :'. __FILE__;
+                echo '<hr />';
+                echo 'method: '.__FUNCTION__;
+                echo '<hr />';
+                echo 'uri string :'.$this->uri->uri_string();
+                echo '<hr />';
+                $arr = $this->uri->segment_array();
+                echo '<pre>';
+                    print_r($arr);  
+                echo '</pre>';
+            }
+
+ //***************************************************************************************************
+    
+    //  LOGIN
+    
+    //***************************************************************************************************   
+
 	function login()
 	{
 		
-		$this->load->helper('form');
-		$this->load->library('form_validation');
-        
-        $this->load->model('Cmsmodel');
-        
-        $data['menu'] = $this->Cmsmodel->getMenuParts();
-        
-                $this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|max_length[12]|xss_clean');
-                $this->form_validation->set_rules('password', 'Password', 'trim|required|valid_password');
-                
-                // $this->form_validation->set_message('required', 'We need at least %s characters, please');
-                // $this->form_validation->set_message('min_length', 'Surely you can manage %s lousy characters');
+                    $this->load->helper('form');
+                    $this->load->library('form_validation');
+    
+                    $this->load->model('Cmsmodel');
+                    
+                    $data['menu'] = $this->Cmsmodel->getMenuParts();
+            
+                    $this->form_validation->set_rules('username', 'Username', 'trim|required|valid|xss_clean');
+                    $this->form_validation->set_rules('password', 'Password', 'trim|required|valid');
+            
+                    $this->form_validation->set_message('required', 'This field cannot be left empty');
+                    $this->form_validation->set_message('valid_password', 'Sorry that password is incorrect');
 
-                if ($this->form_validation->run() == FALSE)
-                {
-                    $this->load->view('includes/startHTML', $data);
-                    $this->load->view('loginView');
-                    $this->load->view('includes/endHTML');
-                }
-                else
-                {
-                    $this->load->view('formsuccess');
-                }
+                    if ($this->form_validation->run() == FALSE)
+                    {
+                            
+                            $this->load->view('includes/startHTML', $data);
+                            $this->load->view('loginView');
+                            $this->load->view('includes/endHTML');
+
+                    }
+                    else
+                    {
+                            redirect (base_url() . 'admin/home');
+                    }
             }
-	
-	function update()
-	{
-		echo 'File :'. __FILE__;
-		echo '<hr />';
-		echo 'method: '.__FUNCTION__;
-		echo '<hr />';
-		echo 'uri string :'.$this->uri->uri_string();
-		echo '<hr />';
-		$arr = $this->uri->segment_array();
-		echo '<pre>';
-			print_r($arr);	
-		echo '</pre>';
-	}
-
 
      //***************************************************************************************************
     
