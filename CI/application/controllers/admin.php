@@ -51,10 +51,7 @@ class Admin extends CI_Controller {
         $this->load->library('form_validation');
 
         $this->load->model('Cmsmodel');
-        
-
-             
-        
+    
         $data['menu'] = $this->Cmsmodel->getMenuParts();
 
         $this->form_validation->set_rules('username', 'Username', 'trim|required|valid|xss_clean');
