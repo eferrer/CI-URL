@@ -21,7 +21,7 @@ class Cmsmodel extends CI_Model{
 
     function getPageParts() 
     {
-        $sql = "SELECT H1, contentDetails, H3, contentID
+        $sql = "SELECT H1, contentDetails, H3, contentID, description
                     FROM tbContent
                     WHERE pageID =
                     (SELECT pageID FROM tbPages

@@ -6,8 +6,15 @@
 <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  
-  <title>Zumba with Christina | Home</title>
+ 
+<?php
+
+ $aPageParts = $pageParts->result_array();?>
+                
+    <meta name="description" content= " <?php foreach($aPageParts as $key=>$aParts){
+      echo $aParts['description'];}  ?> " />
+     <title>Zumba with Christina | <?php foreach($aPageParts as $key=>$aParts){
+      echo $aParts['H1'];}  ?> </title>
   
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <link rel="stylesheet" href="<?=base_url()?>public/css/_main.css">
