@@ -3,7 +3,7 @@
     <section class="contentAdmin">
 <?php //echo validation_errors(); ?>
 
-<?php echo form_open('admin/login'); ?>
+<?php echo form_open('admin/verifyLogin'); ?>
 
 <h5>Admin Login</h5>
 <input type="text" name="username" id="username" value="" size="50" />
