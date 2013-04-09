@@ -442,11 +442,11 @@ class Cmsmodel extends CI_Model{
 
     public function login(){
         
-        $this -> db -> select('id, username, password');
-        $this -> db -> from('tbAdmin');
-        $this -> db -> where('username', $username);
-        $this -> db -> where('password', $password);
-        $this -> db -> limit(1);
+        $this->db->select('id, username, password');
+        $this->db->from('tbAdmin');
+        $this->db->where('username', $username);
+        $this->db->where('password', $password);
+        $this->db->limit(1);
 
         $query = $this->db->get();
 
