@@ -44,35 +44,108 @@ class Admin extends CI_Controller {
     
     //***************************************************************************************************   
 
-	function login()
+	function verifyLogin()
 	{
 		
-                    $this->load->helper('form');
-                    $this->load->library('form_validation');
+        $this->load->helper('form');
+        $this->load->library('form_validation');
+
+        $this->load->model('Cmsmodel');
+        
+
+             
+        
+        $data['menu'] = $this->Cmsmodel->getMenuParts();
+
+        $this->form_validation->set_rules('username', 'Username', 'trim|required|valid|xss_clean');
+        $this->form_validation->set_rules('password', 'Password', 'trim|required|valid|xss_clean|callback_check_database');
+
+        $this->form_validation->set_message('required', 'This field cannot be left empty');
+        $this->form_validation->set_message('valid_password', 'Sorry that password is incorrect');
+
+        if ($this->form_validation->run() == FALSE)
+        {
+                
+                $this->load->view('includes/startHTML', $data);
+                $this->load->view('loginView');
+                $this->load->view('includes/endHTML');
+
+        }
+        else
+        {
+                redirect (base_url() . 'admin/home');
+        }
+    }
+            
+    function check_database($password)
+ {
+   //Field validation succeeded.  Validate against database
+   $username = $this->input->post('username');
+   //query the database
+   $result = $this->user->login($username, $password);
+ 
+   if($result)
+   {
+     $sess_array = array();
+     foreach($result as $row)
+     {
+       $sess_array = array(
+         'id' => $row->id,
+         'username' => $row->username
+       );
+       $this->session->set_userdata('logged_in', $sess_array);
+     }
+     return TRUE;
+   }
+   else
+   {
+     $this->form_validation->set_message('check_database', 'Invalid username or password');
+     return false;
+   }
+ }
+
+            
+    // function login()
+    // {
+        
+ //                    $this->load->helper('form');
+ //                    $this->load->library('form_validation');
     
-                    $this->load->model('Cmsmodel');
+ //                    $this->load->model('Cmsmodel');
                     
-                    $data['menu'] = $this->Cmsmodel->getMenuParts();
+ //                    $data['menu'] = $this->Cmsmodel->getMenuParts();
             
-                    $this->form_validation->set_rules('username', 'Username', 'trim|required|valid|xss_clean');
-                    $this->form_validation->set_rules('password', 'Password', 'trim|required|valid');
+ //                    $this->form_validation->set_rules('username', 'Username', 'trim|required|valid|xss_clean');
+ //                    $this->form_validation->set_rules('password', 'Password', 'trim|required|valid');
             
-                    $this->form_validation->set_message('required', 'This field cannot be left empty');
-                    $this->form_validation->set_message('valid_password', 'Sorry that password is incorrect');
+ //                    $this->form_validation->set_message('required', 'This field cannot be left empty');
+ //                    $this->form_validation->set_message('valid_password', 'Sorry that password is incorrect');
 
-                    if ($this->form_validation->run() == FALSE)
-                    {
+ //                    if ($this->form_validation->run() == FALSE)
+ //                    {
                             
-                            $this->load->view('includes/startHTML', $data);
-                            $this->load->view('loginView');
-                            $this->load->view('includes/endHTML');
+ //                            $this->load->view('includes/startHTML', $data);
+ //                            $this->load->view('loginView');
+ //                            $this->load->view('includes/endHTML');
 
-                    }
-                    else
-                    {
-                            redirect (base_url() . 'admin/home');
-                    }
-            }
+ //                    }
+ //                    else
+ //                    {
+ //                            redirect (base_url() . 'admin/home');
+ //                    }
+ //            }
+ 
+    //***************************************************************************************************
+    
+    //  LOGOUT
+    
+    //*************************************************************************************************** 
+ 
+    public function logout()
+    {
+        $this->session->sess_destroy();
+        redirect('home');
+    }
 
      //***************************************************************************************************
     

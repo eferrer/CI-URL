@@ -13,32 +13,15 @@ class Page extends CI_Controller {
 	
 	function index()
 	{
-		// echo "SELECT H1
-  		// FROM tbContent
-  		// WHERE pageID =
-  		// (SELECT pageID FROM tbPages
-  		// WHERE fileName = ' ".$this->uri->segment(1)." ' )";
-		
-		// echo 'File :'. __FILE__;
-		// echo '<hr />';
-		// echo 'method: '.__FUNCTION__;
-		// echo '<hr />';
-		// echo 'uri string :'.$this->uri->uri_string();
-		// echo '<hr />';
-		// $arr = $this->uri->segment_array();
-		// echo '<pre>';
-		// 	print_r($arr);	
-		// echo '</pre>';
+	    $data=array();
 
-		$data=array();
+    	$this->load->model('Cmsmodel');
 
-	        	$this->load->model('Cmsmodel');
+    	$data['menu'] = $this->Cmsmodel->getMenuParts();
+    	$data['pageParts'] = $this->Cmsmodel->getPageParts();
+    	$data['tagline'] = $this->Cmsmodel->getTagline();
 	        
-	        	$data['menu'] = $this->Cmsmodel->getMenuParts();
-	        	$data['pageParts'] = $this->Cmsmodel->getPageParts();
-	        	$data['tagline'] = $this->Cmsmodel->getTagline();
-	        
-	        	// PUT THIS IN TO AVOID BROWSER CACHING IN CI
+    	// PUT THIS IN TO AVOID BROWSER CACHING IN CI
 		$this->output->set_header("HTTP/1.0 200 OK");
 		$this->output->set_header("HTTP/1.1 200 OK");
 		$this->output->set_header('Last-Modified: '.gmdate('D, d M Y H:i:s').' GMT');
@@ -46,9 +29,9 @@ class Page extends CI_Controller {
 		$this->output->set_header("Cache-Control: post-check=0, pre-check=0");
 		$this->output->set_header("Pragma: no-cache");
 
-	        	$this->load->view('includes/startHTML', $data);
-	        	$this->load->view('homeView', $data);
-	        	$this->load->view('includes/endHTML');
+    	$this->load->view('includes/startHTML', $data);
+    	$this->load->view('homeView', $data);
+    	$this->load->view('includes/endHTML');
 	}
 
 	//==============================================================
@@ -59,23 +42,6 @@ class Page extends CI_Controller {
 
 	function home()
 	{
-		// echo "SELECT H1
-  		// FROM tbContent
-  		// WHERE pageID =
-  		// (SELECT pageID FROM tbPages
-  		// WHERE fileName = ' ".$this->uri->segment(1)." ' )";
-		
-		// echo 'File :'. __FILE__;
-		// echo '<hr />';
-		// echo 'method: '.__FUNCTION__;
-		// echo '<hr />';
-		// echo 'uri string :'.$this->uri->uri_string();
-		// echo '<hr />';
-		// $arr = $this->uri->segment_array();
-		// echo '<pre>';
-		// 	print_r($arr);	
-		// echo '</pre>';
-
 		$data=array();
 
         $this->load->model('Cmsmodel');
@@ -105,18 +71,7 @@ class Page extends CI_Controller {
 
 	function about()
 	{
-		// echo 'File :'. __FILE__;
-		// echo '<hr />';
-		// echo 'method: '.__FUNCTION__;
-		// echo '<hr />';
-		// echo 'uri string :'.$this->uri->uri_string();
-		// echo '<hr />';
-		// $arr = $this->uri->segment_array();
-		// echo '<pre>';
-		// 	print_r($arr);	
-		// echo '</pre>';
-
-		$data=array();
+	   $data=array();
 
         $this->load->model('Cmsmodel');
         
@@ -152,17 +107,6 @@ class Page extends CI_Controller {
 
 	function classtimes()
 	{
-		// echo 'File :'. __FILE__;
-		// echo '<hr />';
-		// echo 'method: '.__FUNCTION__;
-		// echo '<hr />';
-		// echo 'uri string :'.$this->uri->uri_string();
-		// echo '<hr />';
-		// $arr = $this->uri->segment_array();
-		// echo '<pre>';
-		// 	print_r($arr);	
-		// echo '</pre>';
-
 		$data=array();
 
         $this->load->model('Cmsmodel');
@@ -201,24 +145,8 @@ class Page extends CI_Controller {
 
     //==============================================================
 
-	function video(){
-		// echo "SELECT H1
-  		// FROM tbContent
-  		// WHERE pageID =
-  		// (SELECT pageID FROM tbPages
-  		// WHERE fileName = ' ".$this->uri->segment(1)." ' )";
-		
-		// echo 'File :'. __FILE__;
-		// echo '<hr />';
-		// echo 'method: '.__FUNCTION__;
-		// echo '<hr />';
-		// echo 'uri string :'.$this->uri->uri_string();
-		// echo '<hr />';
-		// $arr = $this->uri->segment_array();
-		// echo '<pre>';
-		// 	print_r($arr);	
-		// echo '</pre>';
-
+	function video()
+    {
 		$data=array();
 
         $this->load->model('Cmsmodel');
@@ -248,23 +176,6 @@ class Page extends CI_Controller {
 
 	function contact()
 	{
-		// echo "SELECT H1
-  		// FROM tbContent
-  		// WHERE pageID =
-  		// (SELECT pageID FROM tbPages
-  		// WHERE fileName = ' ".$this->uri->segment(1)." ' )";
-		
-		// echo 'File :'. __FILE__;
-		// echo '<hr />';
-		// echo 'method: '.__FUNCTION__;
-		// echo '<hr />';
-		// echo 'uri string :'.$this->uri->uri_string();
-		// echo '<hr />';
-		// $arr = $this->uri->segment_array();
-		// echo '<pre>';
-		// 	print_r($arr);	
-		// echo '</pre>';
-
 		$data=array();
 
         $this->load->helper(array('form', 'url'));
@@ -274,6 +185,7 @@ class Page extends CI_Controller {
 		$this->form_validation->set_rules('firstname', '5', 'required|min_length[5]');
 		$this->form_validation->set_rules('lastname', '5', 'required|min_length[5]');
 		$this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+        $this->form_validation->set_rules('enquiry', 'enquiry', 'required');
 		
 		// $this->form_validation->set_message('required', 'We need at least %s characters, please');
 		$this->form_validation->set_message('required', 'This field is required');
@@ -300,17 +212,30 @@ class Page extends CI_Controller {
 
 		if ($this->form_validation->run() == FALSE)
 		{
-			$this->load->view('includes/startHTML', $data);
+			$data["message"]="";
+            $this->load->view('includes/startHTML', $data);
     		$this->load->view('contactView', $data);
     		$this->load->view('includes/endHTML');
 		}
 		else
 		{
-			$this->load->view('formsuccess');
+			//$this->load->view('formsuccess');
+            $data["message"]= "Your enquiry has successfully been sent";
+            
+             $this->load->library('email');
+
+            $this->email->from(set_value("email"), set_value('firstname'), set_value('lastname'));
+            $this->email->to('eileenferrer.nz@gmail.com'); 
+
+            $this->email->subject('Enquiry from your website');
+            $this->email->message(set_value('enquiry'));  
+
+            $this->email->send();
+
+            //echo $this->email->print_debugger();
+            
 		}
 	}
-	
-	
 
 }
 // end class

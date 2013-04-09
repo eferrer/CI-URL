@@ -77,7 +77,7 @@ class Cmsmodel extends CI_Model{
 
     public function getMenuParts()
     {
-        $sql = "SELECT fileName, pageName, pageID
+        $sql = "SELECT fileName, pageName, title, description, pageID
                 FROM tbPages";
                 
         return $this->db->query($sql);
@@ -440,32 +440,24 @@ class Cmsmodel extends CI_Model{
 
     //==============================================================
 
-    public function validate(){
-        // grab user input
-        $username = $this->security->xss_clean($this->input->post('username'));
-        $password = $this->security->xss_clean($this->input->post('password'));
+    public function login(){
         
-        // Prep the query
-        $this->db->where('username', $username);
-        $this->db->where('password', $password);
-        
-        // Run the query
-        $query = $this->db->get('users');
-        // Let's check if there are any results
-        if($query->num_rows() == 1)
-        {
-            // If there is a user, then create session data
-            $row = $query->row();
-            $data = array(
-                    'username' => $row->username,
-                    'validated' => true
-                    );
-            $this->session->set_userdata($data);
-            return true;
-        }
-        // If the previous process did not validate
-        // then return false.
-        return false;
+        $this -> db -> select('id, username, password');
+        $this -> db -> from('tbAdmin');
+        $this -> db -> where('username', $username);
+        $this -> db -> where('password', $password);
+        $this -> db -> limit(1);
+
+        $query = $this->db->get();
+
+        if($query -> num_rows() == 1){
+            
+         return $query->result();
+         
+        }else{
+
+            return false;
+       }
     }
 
 

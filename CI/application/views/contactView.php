@@ -13,7 +13,7 @@
         <?php
         
         $attributes = array('class'=>'contactForm', 'id'=>'contactForm');
-        echo form_open('contactForm', $attributes);
+        echo form_open('contact', $attributes);
         
         //echo validation_errors();
         ?>
@@ -51,11 +51,11 @@
                   echo nl2br($aPageParts[2]['H3']);
               ?>
             </h3>     
-              <textarea rows="3" cols="20"></textarea>
+              <textarea rows="3" cols="20" name="enquiry" id="enquiry"></textarea>
             </fieldset> <!--enquiry ends-->
     
             <p class="required"><sup>*</sup>&nbsp;Required field</p> 
-            <p class="submit"><input type="submit" value="Submit" /></p>
+            <p class="submit"><input type="submit" id="sendEmail" name="sendEmail" value="Submit" /></p>
             
           </form>
           
