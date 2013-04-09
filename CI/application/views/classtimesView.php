@@ -85,8 +85,9 @@
     
   <h1 class="classHeading"><!-- PRICE SCHEDULE -->
   <?php
-    echo $aPageParts[1]['H1'];
+    //echo $aPageParts[1]['H1'];
   ?>
+  PRICE SCHEDULE
   </h1>
             
   <section id="priceSchedule"> <!--price schedule content begins-->    
@@ -126,8 +127,9 @@
   <h1 class="classHeading"><!-- INFORMATION FOR STUDENTS -->
   <?php
     //$aMainHeading = $mainHeading->result_array();
-    echo $aPageParts[4]['H1'];
+    //echo $aPageParts[4]['H1'];
   ?>
+  STUDENT INFORMATION
   </h1>
   
   <section id="studentInfo"> <!--student information content begins-->    
