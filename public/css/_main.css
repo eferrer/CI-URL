@@ -921,6 +921,21 @@ input[type="password"],
     width: 90%;
     margin: 0 auto;
   }
+
+  .thankYouHeading {
+    display: block;
+    margin: auto;
+    text-align: center;  
+    font-size: 1.5rem;
+    padding-top: 3rem;
+  }
+
+   .thankYouMessage {
+    display: block;
+    margin: auto;
+    text-align: center;  
+    padding-bottom: 3rem;
+  }
 }
 
 /**********************************************************************************************************/
@@ -1441,6 +1456,21 @@ input[type="password"],
   input[type="submit"] {
     width: 50%;
     margin: 0 auto;
+  }
+
+    .thankYouHeading {
+    display: block;
+    margin: auto;
+    text-align: center;  
+    font-size: 1.5rem;
+    padding-top: 3rem;
+  }
+
+   .thankYouMessage {
+    display: block;
+    margin: auto;
+    text-align: center;  
+    padding-bottom: 3rem;
   }
 }
 
@@ -2029,6 +2059,23 @@ input[type="password"],
     width: 50%;
     margin: 0 auto;
   }
+
+   .thankYouHeading {
+    display: block;
+    margin: auto;
+    text-align: center;  
+    font-size: 2rem;
+    padding-top: 3rem;
+  }
+
+   .thankYouMessage {
+    display: block;
+    margin: auto;
+    text-align: center;  
+    padding-bottom: 3rem;
+  }
+
+
 }
 
 /**********************************************************************************************************/
@@ -2617,6 +2664,21 @@ input[type="password"],
   input[type="submit"] {
     width: 50%;
     margin: 0 auto;
+  }
+
+    .thankYouHeading {
+    display: block;
+    margin: auto;
+    text-align: center;  
+    font-size: 2rem;
+    padding-top: 3rem;
+  }
+
+   .thankYouMessage {
+    display: block;
+    margin: auto;
+    text-align: center;  
+    padding-bottom: 3rem;
   }
 
 }
