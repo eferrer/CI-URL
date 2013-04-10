@@ -46,15 +46,20 @@ class Admin extends CI_Controller {
 
             public function login()
             {
+                $this->load->model('Cmsmodel');
+                
                 $this->load->view('loginView');
+                
             }
 
             public function login_validation()
             {
                 $this->load->library('form_validation');
+                
+               
 
                 $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean|callback_validate_credentials');
-                $this->form_validation->set_rules('password', 'Password', 'trim|required');
+                $this->form_validation->set_rules('password', 'Password', 'trim|required|md5');
 
                 if($this->form_validation->run()){
                     $data=array(
@@ -64,7 +69,9 @@ class Admin extends CI_Controller {
                     $this->session->set_userdata($data);
                     redirect (base_url() . 'admin/home');
                 }else{
+                    
                     $this->load->view('loginView');
+                    
                 }
 
                 //echo $this->input->post('username');

@@ -443,7 +443,7 @@ class Cmsmodel extends CI_Model{
     public function canLogin()
     {
         $this->db->where('username', $this->input->post('username'));
-        $this->db->where('password', $this->input->post('password'));
+        $this->db->where('password', md5($this->input->post('password')));
 
         $sql = $this->db->get('tbAdmin');
 

@@ -8,7 +8,7 @@ echo form_open('admin/login_validation');
 echo validation_errors();
 ?>
 
-<h5>Admin Login</h5>
+<h5>Username</h5>
 <input type="text" name="username" id="username" value="" size="50" />
 
 
