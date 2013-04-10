@@ -433,6 +433,25 @@ class Cmsmodel extends CI_Model{
         
     }
 
+    //==============================================================
+
+    // SAVE CONTACT INTO DATABASE
+
+    //==============================================================
+
+    public function saveContact()
+    {
+        // print_r($_POST);exit(__FILE__.__LINE__);
+        $sql = "INSERT INTO tbContact(firstName, lastName, email)
+                    VALUES ( ".$this->db->escape($this->input->post('firstName')). "  ,
+                        ".$this->db->escape($this->input->post('lastName')). "  ,
+                        " .$this->db->escape($this->input->post('email')).")";
+                    // exit(__FILE__.__LINE__.$sql);      
+
+        return $this->db->query($sql);
+        
+    }
+
 
     //==============================================================
 

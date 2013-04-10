@@ -237,5 +237,45 @@ class Page extends CI_Controller {
 		}
 	}
 
+
+     //==============================================================
+
+    // SAVE CONTACT TO THE DATABASE
+
+    //==============================================================
+    
+    function saveContact()
+    {
+        $data=array();
+
+
+        $this->load->model('Cmsmodel');
+        
+         if($this->input->post('sendEmail')){
+            
+            if ( $this->Cmsmodel->saveContact()){
+               
+                //redirect (base_url() . 'admin/classtimes/3');
+             
+             $data['menu'] = $this->Cmsmodel->getMenuParts();
+             $data['pageParts'] = $this->Cmsmodel->getPageParts();
+
+            $this->load->view('includes/startHTML', $data);
+            $this->load->view('thankYou', $data);
+            $this->load->view('includes/endHTML');
+
+            }
+         }
+         // else{
+
+         //    $data['menu'] = $this->Cmsmodel->getMenuParts();
+
+         //    $this->load->view('includes/startHTML', $data);
+         //    $this->load->view('thankYouMessage', $data);
+         //    $this->load->view('includes/endHTML');
+         // }
+    }
+
+//===============================================
 }
 // end class

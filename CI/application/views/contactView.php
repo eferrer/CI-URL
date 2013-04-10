@@ -13,7 +13,7 @@
         <?php
         
         $attributes = array('class'=>'contactForm', 'id'=>'contactForm');
-        echo form_open('contact', $attributes);
+        echo form_open('saveContact', $attributes);
         
         //echo validation_errors();
         ?>
@@ -31,12 +31,12 @@
               
                 <p class="firstName">
                   <label for="firstname">Name <sup>*</sup></label> 
-                  <input type="text" id="firstname" name="firstname" placeholder="First name" required/>
+                  <input type="text" id="firstName" name="firstName" placeholder="First name" required/>
                 </p>
                 
                 <p class="lastName">
                   <label for="lastName">Name <sup>*</sup></label> 
-                  <input type="text" id="lastname" name="lastname" placeholder="Last name" required/>
+                  <input type="text" id="lastName" name="lastName" placeholder="Last name" required/>
                 </p>
 
                 <p class="email">
