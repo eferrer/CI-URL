@@ -1,4 +1,4 @@
-      <section class="mainContainer" class="cf"><!--main container begins--> 
+      <section class="mainContainer" class=""><!--main container begins--> 
     <h1 class="contactHeading"><!-- CONTACT ME -->
             <?php  
                   //$oMainHeading = $mainHeading->row();
@@ -30,12 +30,12 @@
             </h3>
               
                 <p class="firstName">
-                  <label for="firstname">Name <sup>*</sup></label> 
-                  <input type="text" id="firstName" name="firstName" placeholder="First name" required/>
+                  <label for="firstname">First Name <sup>*</sup></label> 
+                  <input type="text" id="firstName" name="firstName" placeholder="First name" autofocus="autofocus" required/>
                 </p>
                 
                 <p class="lastName">
-                  <label for="lastName">Name <sup>*</sup></label> 
+                  <label for="lastName">Last Name <sup>*</sup></label> 
                   <input type="text" id="lastName" name="lastName" placeholder="Last name" required/>
                 </p>
 
