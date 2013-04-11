@@ -16,7 +16,7 @@
         </ul>
         </article>
           
-      </section><!--social and contact links ends-->
+      
     
      <section id="copyright"> <!-- bottom footer section begins   -->
       <p class="adminLink"><a href="<?=base_url()?>admin/login">Admin</a></p>

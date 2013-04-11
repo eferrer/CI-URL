@@ -1,4 +1,4 @@
-<section class="mainContainer" class="cf"><!--main container begins-->
+<section class="mainContainer"><!--main container begins-->
   <h1>ADMIN AREA: ADD ITEM </h1> 
 <section class="contentAdmin">
 

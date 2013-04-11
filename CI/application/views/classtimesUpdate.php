@@ -1,4 +1,4 @@
-<section class="mainContainer" class="cf"><!--main container for main heading begins-->  
+<section class="mainContainer"><!--main container for main heading begins-->  
   <h1>ADMIN AREA: CLASSES </h1>
   <section class="contentAdmin">
   <h2>ADMIN AREA: CLASS SCHEDULE</h2>   

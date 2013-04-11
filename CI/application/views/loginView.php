@@ -34,7 +34,7 @@
 </header><!--logo and menu container ends-->
 
 
-<section class="mainContainer" class=""><!--main container begins-->
+<section class="mainContainer"><!--main container begins-->
     <h1>ADMIN LOGIN </h1>
     <section class="contentAdmin">
 <?php //echo validation_errors(); ?>

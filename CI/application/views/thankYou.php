@@ -37,7 +37,7 @@
 
 
 
-<section class="mainContainer" class=""><!--main container begins-->
+<section class="mainContainer"><!--main container begins-->
     <h3 class="thankYouHeading">Thank you for your enquiry</h3>
     <section class="contentAdmin">
 

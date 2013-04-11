@@ -1,4 +1,4 @@
-<section class="mainContainer" class="cf"><!--class schedule container begins-->
+<section class="mainContainer"><!--class schedule container begins-->
 
 <?php 
   // $oContent = $content->result();
