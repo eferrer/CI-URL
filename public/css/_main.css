@@ -393,13 +393,13 @@ footer {
   font-size: 0.8rem;
 }
 
-.adminLink a {
+/*.adminLink a {
   color: #14080a;
 }
 
 .adminLink a:hover{
   color: #FFFFFF;
-}
+}*/
 
 .logoutLink a {
   font-family: "Wendy One", sans-serif;
@@ -707,17 +707,24 @@ footer {
   }
 
   #copyright {
-    height: 4.5rem;
+    height: 3rem;
     margin-top: -1rem;
   }
   
-  .adminLink a{
+  /*.adminLink a{
     display: block;
     margin: auto;
     width: 10rem;
     padding-top: 0.5rem;
     margin-bottom: -0.5rem;
-    /*background-color: red;*/
+  }*/
+  
+  .siteLink{
+    display: block;
+    margin: auto;
+    width: 10rem;
+    padding-top: 0.5rem;
+    margin-bottom: -0.5rem;
   }
 
   .logoutLink a{
@@ -729,12 +736,11 @@ footer {
     /*background-color: red;*/
   }
   
-  .siteLink{
+  /*.siteLink{
     display: block;
     margin: auto;
     width: 20rem;
-    /*background-color: blue;*/
-  }
+  }*/
 
   /* ===== == = === HOME PAGE === = == ===== */
   /* ===== == = === 30em (480 px) portrait  smartphone === = == ===== */
@@ -1233,17 +1239,24 @@ footer {
   }
   
   #copyright {
-    height: 4.5rem;
+    height: 3rem;
     margin-top: -1rem;
   }
   
-  .adminLink a{
+  /*.adminLink a{
     display: block;
     margin: auto;
     width: 10rem;
     padding-top: 0.5rem;
     margin-bottom: -0.5rem;
-    /*background-color: red;*/
+  }*/
+  
+  .siteLink{
+    display: block;
+    margin: auto;
+    width: 10rem;
+    padding-top: 0.5rem;
+    margin-bottom: -0.5rem;
   }
 
    .logoutLink a{
@@ -1255,12 +1268,11 @@ footer {
     /*background-color: red;*/
   }
   
-  .siteLink{
+  /*.siteLink{
     display: block;
     margin: auto;
     width: 20rem;
-    /*background-color: blue;*/
-  }
+  }*/
 
 /* ===== == = === HOME PAGE === = == ===== */
   /* ===== == = === 481 px - 800 px === = == ===== */
@@ -1799,17 +1811,24 @@ footer {
   }
 
   #copyright {
-    height: 4.5rem;
+    height: 3rem;
     margin-top: -1rem;
   }
   
-  .adminLink a{
+  /*.adminLink a{
     display: block;
     margin: auto;
     width: 10rem;
     padding-top: 0.5rem;
     margin-bottom: -0.5rem;
-    /*background-color: red;*/
+  }*/
+  
+  .siteLink{
+    display: block;
+    margin: auto;
+    width: 10rem;
+    padding-top: 0.5rem;
+    margin-bottom: -0.5rem;
   }
 
    .logoutLink a{
@@ -1820,12 +1839,11 @@ footer {
     margin-bottom: -0.5rem;
   }
   
-  .siteLink{
+  /*.siteLink{
     display: block;
     margin: auto;
     width: 20rem;
-    /*background-color: blue;*/
-  }
+  }*/
 
   /* ===== == = ===ABOUT ME PAGE=== = == ===== */
   /* ===== == = === 801px  - 1280 px === = == ===== */
@@ -2393,17 +2411,24 @@ footer {
   }
 
   #copyright {
-    height: 4.5rem;
+    height: 3rem;
     margin-top: -1rem;
   }
   
-  .adminLink a{
+  /*.adminLink a{
     display: block;
     margin: auto;
     width: 10rem;
     padding-top: 0.5rem;
     margin-bottom: -0.5rem;
-    /*background-color: red;*/
+  }*/
+  
+  .siteLink{
+    display: block;
+    margin: auto;
+    width: 10rem;
+    padding-top: 0.5rem;
+    margin-bottom: -0.5rem;
   }
 
   .logoutLink a{
@@ -2414,12 +2439,11 @@ footer {
     margin-bottom: -0.5rem;
   }
   
-  .siteLink{
+  /*.siteLink{
     display: block;
     margin: auto;
     width: 20rem;
-    /*background-color: blue;*/
-  }
+  }*/
 
   /* ===== == = ===ABOUT ME PAGE=== = == ===== */
   /* ===== == = === 1280 px plus=== = == ===== */

@@ -44,20 +44,19 @@ class Admin extends CI_Controller {
     
 //***************************************************************************************************   
 
-            public function login()
-            {
-                $this->load->model('Cmsmodel');
+            // public function login()
+            // {
+            //     $this->load->model('Cmsmodel');
                 
-                $this->load->view('loginView');
+            //     $this->load->view('loginView');
                 
-            }
+            // }
 
             public function login_validation()
             {
                 $this->load->library('form_validation');
+                $this->load->model('Cmsmodel');
                 
-               
-
                 $this->form_validation->set_rules('username', 'Username', 'trim|required|xss_clean|callback_validate_credentials');
                 $this->form_validation->set_rules('password', 'Password', 'trim|required|md5');
 
@@ -177,6 +176,7 @@ function home()
     
     function about()
     {
+        if($this->session->userdata('is_logged_in')){
         $data=array();
 
         $this->load->model('Cmsmodel');
@@ -217,6 +217,12 @@ function home()
             $this->load->view('aboutUpdate', $data);
             $this->load->view('includes/endHTML');
         }
+        
+        }else{
+
+                    redirect('admin/restricted');
+
+                 }
     }
     
      //==============================================================
@@ -228,6 +234,7 @@ function home()
 
      function updateTestimonials()
     {
+        if($this->session->userdata('is_logged_in')){
         $data=array();
 
         $this->load->model('Cmsmodel');
@@ -240,7 +247,13 @@ function home()
             $this->Cmsmodel->deleteTestimonial();
         }
            
-                redirect (base_url() . 'admin/about');    
+                redirect (base_url() . 'admin/about');   
+        
+            }else{
+
+                redirect('admin/restricted');
+
+             } 
             
     }
     
@@ -252,8 +265,9 @@ function home()
     
     function addTestimonial()
     {
+        if($this->session->userdata('is_logged_in')){
+            
         $data=array();
-
 
         $this->load->model('Cmsmodel');
         
@@ -272,6 +286,11 @@ function home()
             $this->load->view('aboutAddTestimonial', $data);
             $this->load->view('includes/endHTML');
          }
+         }else{
+
+                    redirect('admin/restricted');
+
+                 }
     }
     
     //***************************************************************************************************
@@ -288,6 +307,7 @@ function home()
     
     function classtimes()
     {
+        if($this->session->userdata('is_logged_in')){
         $data=array();
 
         $this->load->model('Cmsmodel');
@@ -334,6 +354,12 @@ function home()
             $this->load->view('classtimesUpdate', $data);
             $this->load->view('includes/endHTML');
         }
+        
+        }else{
+
+                    redirect('admin/restricted');
+
+                 }
     }
     
     
@@ -345,6 +371,8 @@ function home()
 
     function updateClassSchedule()
     {
+        if($this->session->userdata('is_logged_in')){
+            
         $data=array();
 
         $this->load->model('Cmsmodel');
@@ -358,6 +386,11 @@ function home()
         }
            
                 redirect (base_url() . 'admin/classtimes');    
+       }else{
+
+                    redirect('admin/restricted');
+
+                 }
             
     }
     
@@ -369,6 +402,7 @@ function home()
     
     function insertClass()
     {
+        if($this->session->userdata('is_logged_in')){
         $data=array();
         //print_r($_POST);exit(__FILE__.__LINE__);
 
@@ -389,6 +423,12 @@ function home()
             $this->load->view('classesAddNew', $data);
             $this->load->view('includes/endHTML');
          }
+         
+         }else{
+
+                    redirect('admin/restricted');
+
+                 }
     }
     
     
@@ -400,6 +440,8 @@ function home()
     
     function updatePriceSchedule()
     {
+        if($this->session->userdata('is_logged_in')){
+            
         $data=array();
 
         $this->load->model('Cmsmodel');
@@ -412,6 +454,11 @@ function home()
              
             }
          }
+         }else{
+
+                    redirect('admin/restricted');
+
+                 }
     }
     
      //==============================================================
@@ -422,7 +469,9 @@ function home()
 
     function updateNeedsItem()
     {
-        $data=array();
+        
+        if($this->session->userdata('is_logged_in')){
+            $data=array();
 
         $this->load->model('Cmsmodel');
 
@@ -434,7 +483,13 @@ function home()
             $this->Cmsmodel->deleteNeedsItem();
         }
            
-                redirect (base_url() . 'admin/classtimes');    
+                redirect (base_url() . 'admin/classtimes');
+                
+                }else{
+
+                    redirect('admin/restricted');
+
+                 }    
             
     }
 
@@ -446,6 +501,7 @@ function home()
     
     function insertNeeds()
     {
+        if($this->session->userdata('is_logged_in')){
         $data=array();
 
 
@@ -466,6 +522,11 @@ function home()
             $this->load->view('classesAddNewItem', $data);
             $this->load->view('includes/endHTML');
          }
+         }else{
+
+                    redirect('admin/restricted');
+
+                 }
     }
     
     
@@ -483,6 +544,7 @@ function home()
     
     function video()
     {
+        if($this->session->userdata('is_logged_in')){
         $data=array();
 
         $this->load->model('Cmsmodel');
@@ -515,6 +577,12 @@ function home()
             $this->load->view('galleryUpdate', $data);
             $this->load->view('includes/endHTML');
         }
+        
+        }else{
+
+                    redirect('admin/restricted');
+
+                 }
     }
     
     //***************************************************************************************************
@@ -531,6 +599,7 @@ function home()
     
     function contact()
     {
+        if($this->session->userdata('is_logged_in')){
         $data=array();
 
         $this->load->model('Cmsmodel');
@@ -566,6 +635,12 @@ function home()
             $this->load->view('contactUpdate', $data);
             $this->load->view('includes/endHTML');
         }
+    
+    }else{
+
+            redirect('admin/restricted');
+
+            }
     }
 	
 }
