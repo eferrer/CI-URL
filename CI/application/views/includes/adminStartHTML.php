@@ -21,14 +21,14 @@
   
   <div id="wrapper"> <!-- wrapper begins-->
       
-    <header id="headerContainer"> <!--logo and menu container begins-->
+    <header id="headerContainerAdmin"> <!--logo and menu container begins-->
       
       <div id="logoAdmin"><!-- logo begins -->
         <ul>
           <li><a href="home.html">logo</a></li>
           <!-- <li class="logout"><input type="submit" id="updatePage" name="updatePage" value="Logout" /></li> -->
           
-          <p class="logoutLink"><a href="<?=base_url()?>admin/logout">LOGOUT</a></p>
+          <p class="logoutLink"><a href="<?=base_url()?>admin/logout">ADMIN LOGOUT</a></p>
 
       </ul>
       </div><!--logo ends-->     

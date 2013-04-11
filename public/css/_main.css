@@ -87,6 +87,11 @@ header {
   margin-top: -1rem;
 }
 
+#headerContainerAdmin{
+  background-color: #ec31b1;
+  margin-top: -1rem;
+}
+
 #logo, 
 #logoAdmin li a{
   font-size: 0rem;
@@ -453,7 +458,7 @@ footer {
   
   .logout{
     display: block;
-    margin-top: 8rem;
+    margin-top: 10rem;
     width: 100%;
   }
 
@@ -669,8 +674,8 @@ footer {
     display: block;
     margin: auto;
     width: 10rem;
-    margin-top: 8rem;
-    margin-bottom: -0.5rem;
+    margin-top: 10rem;
+    margin-bottom: 1.5rem;
   }
 
   /* ===== == = === ABOUT ME PAGE === 30em (480 px) portrait  smartphone = == ===== */
@@ -904,7 +909,7 @@ footer {
   
    .logout{
     display: block;
-    margin-top: 8rem;
+    margin-top: 10rem;
     width: 100%;
   }
 
@@ -1137,8 +1142,8 @@ footer {
     display: block;
     margin: auto;
     width: 10rem;
-    margin-top: 8rem;
-    margin-bottom: -0.5rem;
+    margin-top: 10rem;
+    margin-bottom: 1.5rem;
   }
 
 /* ===== == = === ABOUT ME PAGE === 481 px - 800 px = == ===== */
@@ -1377,7 +1382,7 @@ footer {
   
    .logout{
     display: block;
-    margin-top: 12rem;
+    margin-top: 14rem;
     width: 100%;
   }
 
@@ -1643,10 +1648,10 @@ footer {
 
    .logoutLink a{
     display: block;
-    text-align: right;
+    text-align: center;
     width: 32rem;
-    margin-top: 12rem;
-    margin-bottom: -0.5rem;
+    margin-top: 14rem;
+    margin-bottom: 2rem;
   }
 
   /* ===== == = ===ABOUT ME PAGE=== 801px  - 1280 px= == ===== */
@@ -2178,10 +2183,10 @@ footer {
 
   .logoutLink a{
     display: block;
-    text-align: right;
+    text-align: center;
     width: 32rem;
-    margin-top: 12rem;
-    margin-bottom: -0.5rem;
+    margin-top: 14rem;
+    margin-bottom: 2rem;
   }
 
   /* ===== == = ===ABOUT ME PAGE=== 1280 px plus= == ===== */
