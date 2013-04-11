@@ -673,12 +673,7 @@ footer {
     margin-bottom: -0.5rem;
   }
 
-  /* ===== == = === HOME PAGE === = == ===== */
-  /* ===== == = === 30em (480 px) portrait  smartphone === = == ===== */
-
-
-  /* ===== == = === ABOUT ME PAGE === = == ===== */
-  /* ===== == = === 30em (480 px) portrait  smartphone === = == ===== */
+  /* ===== == = === ABOUT ME PAGE === 30em (480 px) portrait  smartphone = == ===== */
 
    #about {
     width: 90%;
@@ -702,8 +697,7 @@ footer {
     display: none;
   }
 
-  /* ===== == = === CLASSES PAGE === = == ===== */
-  /* ===== == = === 30em (480 px) portrait  smartphone === = == ===== */
+  /* ===== == = === CLASSES PAGE === 30em (480 px) portrait  smartphone = == ===== */
 
   #classSchedule,
   #priceSchedule,
@@ -784,8 +778,7 @@ footer {
     color: #191919;
   }
 
-  /* ===== == = === VIDEO PAGE === = == ===== */
-  /* ===== == = === 30em (480 px) portrait  smartphone === = == ===== */
+  /* ===== == = === VIDEO PAGE === 30em (480 px) portrait  smartphone = == ===== */
 
   #videoContainer {
     width: 90%;
@@ -817,8 +810,7 @@ footer {
     height: 90%;
   }
 
-  /* ===== == = === CONTACT ME PAGE === = == ===== */
-  /* ===== == = === 30em (480 px) portrait  smartphone === = == ===== */
+  /* ===== == = === CONTACT ME PAGE === 30em (480 px) portrait  smartphone = == ===== */
 
   #contact {
     width: 90%;
@@ -1149,12 +1141,7 @@ footer {
     margin-bottom: -0.5rem;
   }
 
-/* ===== == = === HOME PAGE === = == ===== */
-  /* ===== == = === 481 px - 800 px === = == ===== */
-
-
-/* ===== == = === ABOUT ME PAGE === = == ===== */
-  /* ===== == = === 481 px - 800 px === = == ===== */
+/* ===== == = === ABOUT ME PAGE === 481 px - 800 px = == ===== */
 
    #about {
     width: 90%;
@@ -1181,8 +1168,7 @@ footer {
     display: none;
   }
 
-  /* ===== == = === CLASSES PAGE=== = == ===== */
-  /* ===== == = === 481 px - 800 px === = == ===== */
+  /* ===== == = === CLASSES PAGE=== 481 px - 800 px = == ===== */
 
   #classSchedule,
   #priceSchedule,
@@ -1270,8 +1256,7 @@ footer {
     color: #191919;
   }
 
-  /* ===== == = === VIDEO PAGE=== = == ===== */
-  /* ===== == = === 481 px - 800 px === = == ===== */
+  /* ===== == = === VIDEO PAGE=== 481 px - 800 px = == ===== */
 
   #videoContainer {
     width: 90%;
@@ -1303,8 +1288,7 @@ footer {
     height: 90%;
   }
 
-  /* ===== == = === CONTACT ME PAGE=== = == ===== */
-  /* ===== == = === 481 px - 800 px === = == ===== */
+  /* ===== == = === CONTACT ME PAGE=== 481 px - 800 px = == ===== */
 
   #contact {
     width: 90%;
@@ -1665,8 +1649,7 @@ footer {
     margin-bottom: -0.5rem;
   }
 
-  /* ===== == = ===ABOUT ME PAGE=== = == ===== */
-  /* ===== == = === 801px  - 1280 px === = == ===== */
+  /* ===== == = ===ABOUT ME PAGE=== 801px  - 1280 px= == ===== */
 
   #about {
     float: left;
@@ -1713,8 +1696,7 @@ footer {
     color: #191919;
   }
 
-  /* ===== == = ===CLASSES PAGE=== = == ===== */
-  /* ===== == = === 801px  - 1280 px === = == ===== */
+  /* ===== == = ===CLASSES PAGE=== 801px  - 1280 px= == ===== */
 
   #classSchedule,
   #priceSchedule,
@@ -1812,8 +1794,7 @@ footer {
     color: #191919;
   }
 
-  /* ===== == = ===VIDEO PAGE=== = == ===== */
-  /* ===== == = === 801px  - 1280 px === = == ===== */
+  /* ===== == = ===VIDEO PAGE=== 801px  - 1280 px= == ===== */
 
   #videoContainer {
     width: 90%;
@@ -1841,8 +1822,7 @@ footer {
     height: 90%;
   }
 
-  /* ===== == = ===CONTACT ME PAGE=== = == ===== */
-  /* ===== == = === 801px  - 1280 px === = == ===== */
+  /* ===== == = ===CONTACT ME PAGE=== 801px  - 1280 px= == ===== */
 
   .mainContainer {
     background-image: url("../assets/images/whiteWall.png");
@@ -2204,8 +2184,7 @@ footer {
     margin-bottom: -0.5rem;
   }
 
-  /* ===== == = ===ABOUT ME PAGE=== = == ===== */
-  /* ===== == = === 1280 px plus=== = == ===== */
+  /* ===== == = ===ABOUT ME PAGE=== 1280 px plus= == ===== */
 
   #about {
     float: left;
@@ -2255,8 +2234,8 @@ footer {
     color: #191919;
   }
 
-  /* ===== == = ===CLASSES PAGE=== = == ===== */
-  /* ===== == = === 1280 px plus=== = == ===== */
+  /* ===== == = ===CLASSES PAGE=== 1280 px plus= == ===== */
+ 
 
   #classSchedule,
   #priceSchedule,
@@ -2351,8 +2330,7 @@ footer {
     color: #191919;
   }
 
-  /* ===== == = ===VIDEO PAGE=== = == ===== */
-  /* ===== == = === 1280 px plus=== = == ===== */
+  /* ===== == = ===VIDEO PAGE=== 1280 px plus= == ===== */
 
   #videoContainer {
     width: 90%;
@@ -2380,8 +2358,7 @@ footer {
     height: 90%;
   }
 
-  /* ===== == = ===CONTACT ME PAGE=== = == ===== */
-  /* ===== == = === 1280 px plus=== = == ===== */
+  /* ===== == = ===CONTACT ME PAGE===1280 px plus = == ===== */
 
   .mainContainer {
     background-image: url("../assets/images/whiteWall.png");
