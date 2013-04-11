@@ -244,7 +244,7 @@ class Page extends CI_Controller {
 
     //==============================================================
     
-    function saveContact()
+    function enquiry()
     {
         $data=array();
 
@@ -257,12 +257,12 @@ class Page extends CI_Controller {
                
                 //redirect (base_url() . 'admin/classtimes/3');
              
-             $data['menu'] = $this->Cmsmodel->getMenuParts();
-             $data['pageParts'] = $this->Cmsmodel->getPageParts();
+             // $data['menu'] = $this->Cmsmodel->getMenuParts();
+             // $data['pageParts'] = $this->Cmsmodel->getPageParts();
 
-            $this->load->view('includes/startHTML', $data);
+            //$this->load->view('includes/startHTML', $data);
             $this->load->view('thankYou', $data);
-            $this->load->view('includes/endHTML');
+            //$this->load->view('includes/endHTML');
 
             }
          }

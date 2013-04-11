@@ -13,7 +13,7 @@
         <?php
         
         $attributes = array('class'=>'contactForm', 'id'=>'contactForm');
-        echo form_open('saveContact', $attributes);
+        echo form_open('enquiry', $attributes);
         
         //echo validation_errors();
         ?>
