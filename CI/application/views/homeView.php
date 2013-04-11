@@ -42,7 +42,7 @@
          
     <section id="rightContent" class="cf"> <!--right hand side content begins-->
       <article id="viewClasses" class="cf">
-        <section class="viewClassText"><a href="class.html">View Classes</a></section>
+        <section class="viewClassText"><a href="<?=base_url()?>classtimes">View Classes</a></section>
       </article>
       
       <section id="zumbaContainer">
