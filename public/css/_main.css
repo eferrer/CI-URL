@@ -689,9 +689,16 @@ footer {
   #testimonials ul {
     margin-top: 2rem;
   }
+  
   #testimonials li {
     margin-bottom: 1rem;
     color: #191919;
+    padding-bottom: 1rem;
+    border-bottom: 1px dotted #ec31b1;
+  }
+  
+  #testimonials li:last-child{
+    border-bottom: none;
   }
 
   #selfContainer {
@@ -1163,6 +1170,12 @@ footer {
   #testimonials li {
     margin-bottom: 1rem;
     color: #191919;
+    padding-bottom: 1rem;
+    border-bottom: 1px dotted #ec31b1;
+  }
+  
+  #testimonials li:last-child{
+    border-bottom: none;
   }
 
   #selfphoto {
@@ -1695,6 +1708,12 @@ footer {
   #testimonials li {
     margin-bottom: 1rem;
     color: #191919;
+    padding-bottom: 1rem;
+    border-bottom: 1px dotted #ec31b1;
+  }
+  
+  #testimonials li:last-child{
+    border-bottom: none;
   }
 
   /* ===== == = ===CLASSES PAGE=== 801px  - 1280 px= == ===== */
@@ -2233,6 +2252,12 @@ footer {
   #testimonials li {
     margin-bottom: 1rem;
     color: #191919;
+    padding-bottom: 1rem;
+    border-bottom: 1px dotted #ec31b1;
+  }
+  
+  #testimonials li:last-child{
+    border-bottom: none;
   }
 
   /* ===== == = ===CLASSES PAGE=== 1280 px plus= == ===== */
