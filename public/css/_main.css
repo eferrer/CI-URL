@@ -325,6 +325,12 @@ header {
   color: #ec31b1;
 }
 
+.day, 
+.time{
+  font-family: "Wendy One", sans-serif;
+  font-size: 3rem;
+}
+
 #contactForm {
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -1745,14 +1751,14 @@ footer {
 
   .day {
     float: left;
-    width: 25%;
-    font-size: 1.1rem;
+    width: 30%;
+    font-size: 1.5rem;
   }
 
   .time {
     float: left;
-    width: 25%;
-    font-size: 1.1rem;
+    width: 40%;
+    font-size: 1.5rem;
   }
 
   .place {
@@ -2290,14 +2296,14 @@ footer {
 
   .day {
     float: left;
-    width: 25%;
-    font-size: 1.1rem;
+    width: 30%;
+    font-size: 1.5rem;
   }
 
   .time {
     float: left;
-    width: 25%;
-    font-size: 1.1rem;
+    width: 40%;
+    font-size: 1.5rem;
   }
 
   .place {
