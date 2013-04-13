@@ -1,84 +1,82 @@
-<section class="mainContainer"><!--main container begins-->  
-  <h1>ADMIN AREA: ABOUT ME </h1>
-<section class="contentAdmin">
+  <section class="mainContainer"><!--main container begins-->  
+    <h1>ADMIN AREA: ABOUT ME </h1>
+    <section class="contentAdmin">
+    
+      <?php 
+        $aPageParts = $pageParts->row_array();
+      
+        $mainHeading=$aPageParts['H1'];
+        $contentDetails=$aPageParts['contentDetails'];
+      echo form_open('admin/about');
+      ?><!-- <form begins> -->
   
-<?php 
-  $aPageParts = $pageParts->row_array();
-
-  $mainHeading=$aPageParts['H1'];
-  $contentDetails=$aPageParts['contentDetails'];
-  echo form_open('admin/about');
-?><!-- <form begins> -->
-
-  <label for="mainHeading" class="adminLabel">Main Heading</label>
-  <input type="text" name="mainHeading" value="<?php echo set_value('mainHeading', $mainHeading);?>" />
-<!-- <h1 class="aboutHeading">ABOUT ME</h1> -->
-
-  <section id="aboutAdmin"> <!--content begins-->    
-    <label for="content" class="adminLabel">Content</label>
-    <article class="info"><!--content paragraphs begin-->
-      <textarea name="content" rows="5" cols="30"><?php echo set_value('contentDetails', $contentDetails);?></textarea>
-    </article><!--content paragraphs end-->
-  </section> <!--content ends--> 
+        <label for="mainHeading" class="adminLabel">Main Heading</label>
+        <input type="text" name="mainHeading" value="<?php echo set_value('mainHeading', $mainHeading);?>" />
+        <!-- <h1 class="aboutHeading">ABOUT ME</h1> -->
+  
+        <section id="aboutAdmin"> <!--content begins-->    
+          <label for="content" class="adminLabel">Content</label>
+          <article class="info"><!--content paragraphs begin-->
+            <textarea name="content" rows="5" cols="30"><?php echo set_value('contentDetails', $contentDetails);?></textarea>
+          </article><!--content paragraphs end-->
+        </section> <!--content ends--> 
+          
+        <section><!--tagline begins-->
+          <?php 
+            $oTagline = $tagline->row();
+            $tag = $oTagline->tagline;
+          ?>
+          <label for="tagline" class="adminLabel">Tagline</label>
+          <input type="text" name="tagline" value="<?php echo set_value('tagline', $tag);?>" />
+        </section><!--tagline ends-->
+      
+        <section id="promoAdmin" class="promoAboutAdmin"><!--promotional tag begins-->
+          <?php 
+            $oPromoDetails = $promoDetails->row();
+            $promo = $oPromoDetails->promoDetails;
+          ?>
+            <label for="promo" class="adminLabel">Promotional Message</label>
+            <textarea name="promo" rows="5" cols="30"><?php echo set_value('promoDetails', $promo);?></textarea>
+            
+            <p class="submit"><input type="submit" id="updatePage" name="updatePage" value="Update" /></p>
+          
+          </form>
+        </section><!--promotional tag ends-->
+      </section>
+    </section><!--main container ends-->
+  
+    <section class="mainContainer" class="cf"><!-- container for testimonials forms begins-->  
+      <h2>ADMIN AREA: TESTIMONIALS</h2>
+      <p class="adminAdd"><a href="<?=base_url()?>admin/addTestimonial">+ ADD NEW TESTIMONIAL</a></p>
+      
+      <section class="contentAdmin"><!--testimonials begin-->
         
-  <section><!--tagline begins-->
-    <?php 
-      $oTagline = $tagline->row();
-      $tag = $oTagline->tagline;
-    ?>
-    <label for="tagline" class="adminLabel">Tagline</label>
-    <input type="text" name="tagline" value="<?php echo set_value('tagline', $tag);?>" />
-  </section><!--tagline ends-->
+        <?php  
+          $aTestimonialDetails= $testimonialDetails->result_array();
+          
+          foreach($aTestimonialDetails as $key=>$aTestimonials){
+            $testimonials = $aTestimonials['testimonialDetails'];
+            $name = $aTestimonials['name'];
+            $testimonialsID = $aTestimonials["testID"];
+            $nameID = $aTestimonials["testID"];
     
-  <section id="promoAdmin" class="promoAboutAdmin"><!--promotional tag begins-->
-    <?php 
-      $oPromoDetails = $promoDetails->row();
-      $promo = $oPromoDetails->promoDetails;
-    ?>
-      <label for="promo" class="adminLabel">Promotional Message</label>
-      <textarea name="promo" rows="5" cols="30"><?php echo set_value('promoDetails', $promo);?></textarea>
-      
-      <p class="submit"><input type="submit" id="updatePage" name="updatePage" value="Update" /></p>
+          echo form_open('admin/updateTestimonials');
+        ?>
     
-    </form>
-  </section><!--promotional tag ends-->
-</section>
-</section><!--main container ends-->
-
-<section class="mainContainer" class="cf"><!-- container for testimonials forms begins-->  
-  <h2>ADMIN AREA: TESTIMONIALS</h2>
-  <p class="adminAdd"><a href="<?=base_url()?>admin/addTestimonial">+ ADD NEW TESTIMONIAL</a></p>
-  
-  <section class="contentAdmin"><!--testimonials begin-->
-    
-  <?php  
-   
-    
-    $aTestimonialDetails= $testimonialDetails->result_array();
-    
-    foreach($aTestimonialDetails as $key=>$aTestimonials){
-      $testimonials = $aTestimonials['testimonialDetails'];
-      $name = $aTestimonials['name'];
-      $testimonialsID = $aTestimonials["testID"];
-      $nameID = $aTestimonials["testID"];
-
-       echo form_open('admin/updateTestimonials');
-  ?>
-
-      <ul>
-        <li><textarea name="testimonial" id="<?php echo set_value('testID', $testimonialsID);?>" rows="5" cols="30"> <?php echo set_value('testimonialDetails', $testimonials);?></textarea></li>
-        <input type="hidden" name = "testID" value = "<?=$testimonialsID?>" />
-          <li><input type="text" name="testimonialRef" value=" <?php echo set_value('name', $name); ?>" /></li>
-          <input type="hidden" name = "testID" value = "<?=$nameID?>" />
-        <p class="submit"><input type="submit" id="testimonialSubmit" name="testimonialSubmit" value="Update" /></p>
-        <p class="submit"><input type="submit" id="testimonialDelete" name="testimonialDelete"value="Delete" /></p>
-      </ul>
-      </form>  
-      <?php } ?>
-      
-  </section><!--testimonials ends-->
-</section>
-</section><!-- container for testiminials form ends--> 
+          <ul>
+            <li><textarea name="testimonial" id="<?php echo set_value('testID', $testimonialsID);?>" rows="5" cols="30"> <?php echo set_value('testimonialDetails', $testimonials);?></textarea></li>
+                <input type="hidden" name = "testID" value = "<?=$testimonialsID?>" />
+            <li><input type="text" name="testimonialRef" value=" <?php echo set_value('name', $name); ?>" /></li>
+                <input type="hidden" name = "testID" value = "<?=$nameID?>" />
+            <p class="submit"><input type="submit" id="testimonialSubmit" name="testimonialSubmit" value="Update" /></p>
+            <p class="submit"><input type="submit" id="testimonialDelete" name="testimonialDelete"value="Delete" /></p>
+          </ul>
+        </form>  
+        <?php } ?>
+          
+      </section><!--testimonials ends-->
+    </section>
+  </section><!-- container for testiminials form ends--> 
 </div> <!--wrapper ends--> 
     
     
