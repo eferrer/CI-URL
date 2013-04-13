@@ -1,9 +1,8 @@
-<section id="danceTypes">
-  <p><span class="zumbaIs">Zumba is ... </span>Merengue, Salsa. Cumbia, Reggaeton, Samba, Tango, Bachata, ChaCha, Mambo, Bellydance, Calypso, Lambada, Flamenco, Rumba, HipHop, Swing, Country, Bollywood, Bhangra ...</p>
-</section>
+  <section id="danceTypes">
+    <p><span class="zumbaIs">Zumba is ... </span>Merengue, Salsa. Cumbia, Reggaeton, Samba, Tango, Bachata, ChaCha, Mambo, Bellydance, Calypso, Lambada, Flamenco, Rumba, HipHop, Swing, Country, Bollywood, Bhangra ...</p>
+  </section>
 
-<section class="mainContainer"><!--main container begins-->
-    
+  <section class="mainContainer"><!--main container begins-->
     <section id="mainImage"><!-- slideshow begins -->
         <!-- <ul class="rslides" id="slider1">
                <li><img src="base_url()public/images/full/1.jpg" alt=""></li>
@@ -13,14 +12,13 @@
     </section>   <!-- slideshow ends -->   
       
     <h1 class="homeHeading"><!-- What is ZUMBA Fitness? -->
-          <?php 
-                $aPageParts = $pageParts->row_array();
-                echo nl2br($aPageParts['H1']);
-          ?>
+      <?php 
+            $aPageParts = $pageParts->row_array();
+            echo nl2br($aPageParts['H1']);
+      ?>
     </h1>
       
     <section id="content"> <!--content begins-->    
-      
       <article class="info"><!--content paragraphs begin-->
         <p>
         <?php 
@@ -34,9 +32,8 @@
           // echo "SEGMENTS 2". $this->uri->segment(2);
           // echo "SEGMENTS 3". $this->uri->segment(3);
         ?>
-          </p>
+        </p>
       </article><!--content paragraphs end-->
-      
     </section> <!--content ends--> 
         
          
@@ -60,7 +57,6 @@
         ?>
       </h2>
     </section><!--tagline ends-->
-      
   </section><!--main container ends-->
     
   </div> <!--wrapper ends-->

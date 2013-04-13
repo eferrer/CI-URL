@@ -11,4 +11,4 @@
     </section>
   </section>
 
-<div>
+</div><!--wrapper ends--> 

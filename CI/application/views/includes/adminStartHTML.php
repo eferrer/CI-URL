@@ -27,10 +27,10 @@
         <ul>
           <li><a href="home.html">logo</a></li>
           <!-- <li class="logout"><input type="submit" id="updatePage" name="updatePage" value="Logout" /></li> -->
-          
+        </ul>  
           <p class="logoutLink"><a href="<?=base_url()?>admin/logout">ADMIN LOGOUT</a></p>
 
-      </ul>
+      
       </div><!--logo ends-->     
       
       <nav id="navBar"> <!--navigation bar begins-->
