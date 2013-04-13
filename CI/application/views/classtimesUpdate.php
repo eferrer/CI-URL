@@ -9,12 +9,12 @@
         // print_r($aPageParts);
         // echo "</pre>";
         
-        $mainHeading0=$aPageParts[0]['H1'];
+        $mainHeading=$aPageParts[0]['H1'];
         echo form_open('admin/classtimes');
       ?><!-- <form> -->
         
-        <label for="mainHeading" class="adminLabel">Main Heading</label>
-        <input type="text" name="mainHeading" value="<?php echo set_value('mainHeading', $mainHeading0);?>" />
+        <!-- <label for="mainHeading" class="adminLabel">Main Heading</label>
+        <input type="text" name="mainHeading" value="<?php //echo set_value('mainHeading', $mainHeading);?>" /> -->
           <!-- <h1 class="classHeading">CLASS SCHEDULE HEADING</h1> -->
         
           <section><!--tagline begins-->
@@ -81,47 +81,6 @@
     
   </section> <!--class schedule content ends--> 
 </section><!--container for classes forms ends-->
-      
-      
-      
-      
-      <section class="mainContainer" class="cf"><!-- container for classes forms begins-->  
-  <h2>ADMIN AREA: PRICE SCHEDULE</h2>
-            
-  <section class="contentAdmin"> <!--class schedule content begins-->    
-  
-  <?php  
-    
-    $aPriceDetails= $priceDetails->result_array();
-    
-    foreach($aPriceDetails as $key=>$aPrices){
-      $priceType = $aPrices['priceType'];
-      $priceContent = $aPrices['priceDetails'];
-      $priceID = $aPrices['priceID'];
-     
-  ?>
-             
-      <section class="classDetailsAdmin"><!--class details begins-->
-        
-        <article class="classPrice">
-        
-          <label for="mainHeading" class="adminLabel"><?php echo set_value('priceType',$priceType); ?></label>
-          <input type="hidden" name = "priceID" value = "<?=$priceID?>" />
-          
-          <?php echo form_open('admin/updatePriceSchedule');?>
-          <input type="text" name="priceContent" value="<?php echo set_value('priceDetails',$priceContent); ?>" />
-          <input type="hidden" name = "priceID" value = "<?=$priceID?>" />
-        </article>
-              
-      </section><!--class details ends-->
-        <p class="submit"><input type="submit" id="newPriceSubmit" name="newPriceSubmit" value="Update" /></p>
-        
-         </form>            
-  <?php } ?>
-    
-  </section> <!--class schedule content ends--> 
-</section><!--container for classes forms ends-->
-      
           
 <section class="mainContainer" class="cf"><!--main container for Student Info - What to expect begins-->    
   <h2>ADMIN AREA: ITEMS THAT STUDENTS NEED</h2>

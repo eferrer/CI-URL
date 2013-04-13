@@ -183,7 +183,7 @@ header {
   border-bottom: 5px solid #a8e232;
 }
 
-  .aboutHeading {
+.aboutHeading {
   border-bottom: 5px solid #ec31b1;
 }
 
@@ -313,22 +313,16 @@ header {
   background-color: #14080a;
 }
 
-#toggleButton {
-  display: block;
-  font-family: "Didact Gothic", sans-serif;
-  font-size: 1.2rem;
-  color: white;
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-  background-color: #1fe0fc;
-  border: 1px solid #1fe0fc;
-  -webkit-border-radius: 10px;
-  -moz-border-radius: 10px;
-  border-radius: 10px;
-  -webkit-box-shadow: 1px 7px 10px rgba(20, 8, 10, 0.8);
-  -moz-box-shadow: 1px 7px 10px rgba(20, 8, 10, 0.8);
-  -o-box-shadow: 1px 7px 10px rgba(20, 8, 10, 0.8);
-  box-shadow: 1px 7px 10px rgba(20, 8, 10, 0.8);
+.rangitotoClasses{
+  font-size: 0.8rem;
+}
+
+.rangitotoClasses a{
+  color: #1fe0fc;
+}
+
+.rangitotoClasses a:hover{
+  color: #ec31b1;
 }
 
 #contactForm {
@@ -343,10 +337,12 @@ input[type="text"],
 input[type="password"],
 textarea {
   background-color: white;
-  border: 1px solid rgba(153, 153, 153, 0.1);
+  border: 2px solid rgba(153, 153, 153, 0.1);
+  outline: none;
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
+  margin-top: 0.5rem;
 }
 
 .required {
@@ -747,7 +743,7 @@ footer {
     margin-top: 1rem;
     margin-bottom: 2rem;
     padding-bottom: 2rem;
-    border-bottom: 1px dotted #1fe0fc;
+    border-bottom: 2px dotted #1fe0fc;
   }
 
   .directions:last-child {
@@ -1220,7 +1216,7 @@ footer {
     margin-top: 2rem;
     margin-bottom: 2rem;
     padding-bottom: 2rem;
-    border-bottom: 1px dotted #1fe0fc;
+    border-bottom: 2px dotted #1fe0fc;
   }
 
   .directions:last-child {
@@ -1759,7 +1755,7 @@ footer {
     margin: auto;
     margin-bottom: 2rem;
     padding-bottom: 2rem;
-    border-bottom: 1px dotted #1fe0fc;
+    border-bottom: 2px dotted #1fe0fc;
   }
 
   .directions:last-child {
@@ -2298,7 +2294,7 @@ footer {
     margin: auto;
     margin-bottom: 2rem;
     padding-bottom: 2rem;
-    border-bottom: 1px dotted #1fe0fc;
+    border-bottom: 2px dotted #1fe0fc;
   }
 
   .directions:last-child {

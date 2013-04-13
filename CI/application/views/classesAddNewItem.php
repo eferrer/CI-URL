@@ -3,7 +3,7 @@
 <section class="contentAdmin">
 
 <?php echo form_open('admin/insertNeeds');?>
-<textarea name="newNeedItem" rows="5" cols="30" placeholder="item details"></textarea>
+<textarea name="newNeedItem" rows="5" cols="30" placeholder="Item details" autofocus="autofocus"></textarea>
 
 <p class="submit"><input type="submit" id="insertNeedsSubmit" name="insertNeedsSubmit" value="Add Item" /></p>
 </form>

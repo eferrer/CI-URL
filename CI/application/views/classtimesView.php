@@ -46,12 +46,15 @@
   <h1 class="classHeading"><!-- CLASS SCHEDULE -->           
   <?php
     $aPageParts = $pageParts->result_array();
+    
     echo $aPageParts[0]['H1'];
   ?>
   </h1>
 
   <section id="classSchedule"> <!--class schedule content begins-->    
   
+  <p class="rangitotoClasses">* Rangitoto College classes are only offered on a term by term basis through the Adult Education Office at Rangitoto College.
+    To enrol, please call me on 4770075 or <a href="http://rangitoto.learningsource.co.nz/courses/148-zumba">click here</a> to visit their website.</p>
     <?php
 
       $aClassDetails= $classDetails->result_array();
@@ -69,7 +72,7 @@
 
     <section class="directions"><!--location details begins-->
       <form action="http://maps.google.com/maps" method="get" target="_blank">
-         <label for="saddr">Enter your starting point</label>
+         <label for="saddr">Enter your starting point:</label>
          <input type="text" name="saddr" />
          <input type="hidden" name="daddr" value="<?php echo $aDetails['address']; ?>"/>
          <input type="submit" value="Get directions" />
@@ -108,7 +111,7 @@
       }
       ?>
       </p>
-
+      <p>No expiry date and cards can only be used for the Tuesday, Wednesday and Thursday classes</p>
     </article>
   </section> <!--price schedule content ends-->       
 </section><!--price schedule container ends-->
@@ -136,9 +139,13 @@
     
     <h3><!-- WHAT TO EXPECT -->
     <?php
+     // echo "<pre>";
+     //    print_r($aPageParts);
+     //    echo "</pre>";
+
     // $aSubHeading = $subHeading->result_array();
     // echo $aSubHeading[4]['H3'];
-      echo nl2br($aPageParts[4]['H3']);
+      echo nl2br($aPageParts[2]['H3']);
     ?>
     </h3>
 
@@ -147,7 +154,7 @@
       <?php
       // $aContent = $content->result_array();
       // echo nl2br($aContent[4]['contentDetails']);
-        echo nl2br($aPageParts[4]['contentDetails']);
+        echo nl2br($aPageParts[1]['contentDetails']);
       ?>
       </p>
     </article><!--content paragraphs end-->
@@ -156,7 +163,7 @@
     <?php
     // $aSubHeading = $subHeading->result_array();
     // echo $aSubHeading[5]['H3'];
-      echo nl2br($aPageParts[5]['H3']);
+      echo nl2br($aPageParts[1]['H3']);
     ?>
     </h3>
 
