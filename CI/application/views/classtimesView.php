@@ -1,10 +1,12 @@
   <section class="mainContainer"><!--class schedule container begins-->
     <h1 class="classHeading"><!-- CLASS SCHEDULE -->           
     <?php
-      $aPageParts = $pageParts->result_array();
+      // $aPageParts = $pageParts->result_array();
       
-      echo $aPageParts[0]['H1'];
+      // echo $aPageParts[0]['H1'];
+
     ?>
+    CLASS SCHEDULE
     </h1>
   
       <section id="classSchedule"> <!--class schedule content begins-->    
