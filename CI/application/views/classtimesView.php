@@ -1,7 +1,7 @@
   <section class="mainContainer"><!--class schedule container begins-->
     <h1 class="classHeading"><!-- CLASS SCHEDULE -->           
     <?php
-      // $aPageParts = $pageParts->result_array();
+      $aPageParts = $pageParts->result_array();
       
       // echo $aPageParts[0]['H1'];
 
@@ -103,7 +103,7 @@
   
       // $aSubHeading = $subHeading->result_array();
       // echo $aSubHeading[4]['H3'];
-        echo nl2br($aPageParts[2]['H3']);
+        echo nl2br($aPageParts[1]['H3']);
       ?>
       </h3>
   
@@ -121,7 +121,7 @@
       <?php
       // $aSubHeading = $subHeading->result_array();
       // echo $aSubHeading[5]['H3'];
-        echo nl2br($aPageParts[1]['H3']);
+        echo nl2br($aPageParts[2]['H3']);
       ?>
       </h3>
   

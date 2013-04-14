@@ -1,14 +1,14 @@
   <section class="mainContainer"><!--main container for main heading begins-->  
     <h1>ADMIN AREA: CLASSES </h1>
     <section class="contentAdmin">
-      <h2>ADMIN AREA: CLASS SCHEDULE</h2>   
+      <!-- <h2>ADMIN AREA: CLASS SCHEDULE</h2>  -->  
         <?php
           $aPageParts = $pageParts->result_array();
           
           // echo "<pre>";
           // print_r($aPageParts);
           // echo "</pre>";
-          
+          $contentDetails=$aPageParts[1]['contentDetails'];
           $mainHeading=$aPageParts[0]['H1'];
           echo form_open('admin/classtimes');
         ?><!-- <form> -->
@@ -16,7 +16,13 @@
           <!-- <label for="mainHeading" class="adminLabel">Main Heading</label>
           <input type="text" name="mainHeading" value="<?php //echo set_value('mainHeading', $mainHeading);?>" /> -->
           <!-- <h1 class="classHeading">CLASS SCHEDULE HEADING</h1> -->
-            
+      <section id="contentAdmin"> <!--content begins-->    
+        <label for="title" class="adminLabel">Content</label>
+          <article class="info"><!--content paragraphs begin-->
+            <textarea name="content" rows="5" cols="30"><?php echo set_value('contentDetails', $contentDetails);?></textarea>
+        </article><!--content paragraphs end-->
+      </section> <!--content ends--> 
+       
       <section><!--tagline begins-->
         <?php 
           $oTagline = $tagline->row();
@@ -35,9 +41,8 @@
           <textarea name="promo" rows="5" cols="30"><?php echo set_value('promoDetails', $promo);?></textarea>
           
           <p class="submit"><input type="submit" id="updatePage" name="updatePage" value="Update" /></p>
-        
-        </form>
-      </section><!--promotional tag ends-->
+        </section><!--promotional tag ends-->
+      </form>
     </section>
   </section><!--main container ends-->
     
