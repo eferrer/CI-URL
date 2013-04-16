@@ -9,12 +9,12 @@
         </ul>
         </article>
         
-        <article class="social">
+       <!--  <article class="social">
         <ul >
-          <li class="connect"><a  href="http://www.facebook.com">connect<!-- <span class="fontAwesome">&#xf082;</span>&nbsp;&nbsp; --></a></li>
-          <li class="contactUs"><a href="<?=base_url()?>contact">contact<!-- <span class="fontAwesome">&#xf0e0;</span>&nbsp;&nbsp; --></a></li>
+          <li class="connect"><a  href="http://www.facebook.com">connect</a></li>
+          <li class="contactUs"><a href="contact">contact</a></li>
         </ul>
-        </article>
+        </article> -->
           
       
     
